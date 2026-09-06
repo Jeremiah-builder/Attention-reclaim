@@ -1,7 +1,7 @@
 <!--
   Shared site chrome snip — Mind Reclaim
   Visual: cream #F7F0E6, clay #C45C26, leaf #2F6B4F, ink #1A1614
-  Fonts: Fraunces + Caveat (lockup SVG) + Source Sans 3 (nav)
+  Fonts: Fraunces (Mind) + hand-lettered Reclaim PNG + Source Sans 3 (nav)
   Only Newsletter is the clay pill (nav-cta). Invite us is a normal text link.
   Mark current page with aria-current="page" on the matching <a>.
 -->
@@ -132,18 +132,19 @@
       font-size: 1.35rem;
       color: #1A1614;
     }
-    .logo-reclaim {
-      font-family: Caveat, "Segoe Script", "Bradley Hand", cursive;
-      font-weight: 600;
-      font-size: 1.55rem;
-      color: #C45C26;
+    .logo-reclaim-img {
+      height: 1.55rem;
+      width: auto;
+      display: block;
+      /* Optical baseline vs Fraunces "Mind"; descenders sit slightly below */
+      transform: translateY(0.14em);
     }
 
   </style>
 
 <header class="site-header">
   <div class="inner">
-    <a class="site-logo" href="/"><img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-3" width="36" height="36" alt="" /><span class="site-logo-text"><span class="logo-mind">Mind</span><span class="logo-reclaim">Reclaim</span></span></a>
+    <a class="site-logo" href="/"><img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-3" width="36" height="36" alt="" /><span class="site-logo-text"><span class="logo-mind">Mind</span><img class="logo-reclaim-img" src="/brand/mind-reclaim-reclaim-hand.png?v=hand-1" alt="Reclaim" height="25" /></span></a>
           <nav class="site-nav" aria-label="Primary">
       <a href="/how-it-works">How it works</a>
       <a href="/ai-and-learning">AI &amp; learning</a>
