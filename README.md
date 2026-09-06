@@ -1,4 +1,4 @@
-# Mind Reclaim (working name)
+# Mind Reclaim
 
 Static preview site for the movement portal.
 

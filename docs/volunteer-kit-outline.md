@@ -1,6 +1,6 @@
 # Volunteer kit & community outline
 
-Internal draft for Mind Reclaim (working name).
+Internal draft for Mind Reclaim.
 
 See also the HTML version: `docs/volunteer-kit-outline.html`
 
