@@ -1,7 +1,7 @@
 <!--
   Shared site chrome snip — Mind Reclaim
   Visual: cream #F7F0E6, clay #C45C26, leaf #2F6B4F, ink #1A1614
-  Fonts: Fraunces (brand) + Source Sans 3 (nav)
+  Fonts: Fraunces + Caveat (lockup SVG) + Source Sans 3 (nav)
   Only Newsletter is the clay pill (nav-cta). Invite us is a normal text link.
   Mark current page with aria-current="page" on the matching <a>.
 -->
@@ -26,14 +26,18 @@
       gap: 12px 20px;
     }
     .site-header .brand {
-      font-family: Fraunces, Georgia, serif;
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: #1A1614;
-      text-decoration: none;
+      display: flex;
+      align-items: center;
       margin-right: auto;
+      text-decoration: none;
+      line-height: 0;
     }
-    .site-header .brand:hover { color: #C45C26; }
+    .site-header .brand img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .site-header .brand:hover { opacity: 0.88; }
     .site-nav {
       display: flex;
       flex-wrap: wrap;
@@ -105,7 +109,7 @@
 
 <header class="site-header">
   <div class="inner">
-    <a class="brand" href="/">Mind Reclaim</a>
+    <a class="brand" href="/"><img src="/brand/mind-reclaim-lockup.svg" alt="Mind Reclaim" height="38" width="auto" /></a>
           <nav class="site-nav" aria-label="Primary">
       <a href="/how-it-works">How it works</a>
       <a href="/ai-and-learning">AI &amp; learning</a>
