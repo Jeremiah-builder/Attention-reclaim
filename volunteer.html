@@ -7,11 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/brand/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="16x16" href="/brand/mind-reclaim-icon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/brand/mind-reclaim-icon-48.png">
-  <link rel="apple-touch-icon" href="/brand/mind-reclaim-icon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png?v=f1-2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/mind-reclaim-icon-16.png?v=f1-2">
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/mind-reclaim-icon-48.png?v=f1-2">
+  <link rel="icon" href="/brand/favicon.ico?v=f1-2" sizes="any">
+  <link rel="apple-touch-icon" href="/brand/mind-reclaim-icon-48.png?v=f1-2">
   <style>
     :root {
       --bg: #F7F0E6;
@@ -310,6 +310,39 @@
     .site-footer a:hover { color: #F3DCC8; }
     .site-footer .legal { margin: 8px 0 0; font-size: 13px; }
 
+  
+    .site-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .site-logo-icon {
+      width: 36px;
+      height: 36px;
+      display: block;
+      flex-shrink: 0;
+    }
+    .site-logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.2em;
+      line-height: 1;
+    }
+    .logo-mind {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: #1A1614;
+    }
+    .logo-reclaim {
+      font-family: Caveat, "Segoe Script", "Bradley Hand", cursive;
+      font-weight: 600;
+      font-size: 1.55rem;
+      color: #C45C26;
+    }
+
   </style>
 </head>
 <body>
@@ -317,7 +350,7 @@
 
   <header class="site-header">
     <div class="inner">
-      <a class="brand" href="/"><img src="/brand/mind-reclaim-lockup.svg" alt="Mind Reclaim" height="38" width="auto" /></a>
+      <a class="site-logo" href="/"><img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-2" width="36" height="36" alt="" /><span class="site-logo-text"><span class="logo-mind">Mind</span><span class="logo-reclaim">Reclaim</span></span></a>
             <nav class="site-nav" aria-label="Primary">
       <a href="/how-it-works">How it works</a>
       <a href="/ai-and-learning">AI &amp; learning</a>
