@@ -1,26 +1,4 @@
 {
   "updated": "2026-09-06",
-  "items": [
-    {
-      "title": "EXAMPLE: Surgeon General youth social media advisory",
-      "summary": "Sample card only — official U.S. advisory on social media and youth mental health.",
-      "url": "https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html",
-      "date": "2023-05-23",
-      "source": "HHS / U.S. Surgeon General"
-    },
-    {
-      "title": "EXAMPLE: APA advisory on adolescent social media use",
-      "summary": "Sample card only — developmental guidance for healthier social media use.",
-      "url": "https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use",
-      "date": "2023-05-09",
-      "source": "American Psychological Association"
-    },
-    {
-      "title": "EXAMPLE: Placeholder for weekly Research brief",
-      "summary": "Real Monday updates will replace these examples — max three short linked briefs.",
-      "url": "https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html",
-      "date": "2026-09-06",
-      "source": "Example"
-    }
-  ]
+  "items": []
 }
