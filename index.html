@@ -307,10 +307,119 @@
       color: var(--muted);
       margin: 0;
     }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(247, 240, 230, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E6DCCD;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    .site-header .inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+    }
+    .site-header .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #1A1614;
+      text-decoration: none;
+      margin-right: auto;
+    }
+    .site-header .brand:hover { color: #C45C26; }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 4px;
+    }
+    .site-nav a {
+      color: #5C534C;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .site-nav a:hover { color: #1A1614; background: #FFFBF5; }
+    .site-nav a[aria-current="page"] {
+      color: #2F6B4F;
+      background: #E8F0EA;
+    }
+    .site-nav .nav-cta {
+      background: #C45C26;
+      color: #FFFBF5 !important;
+      margin-left: 4px;
+    }
+    .site-nav .nav-cta:hover { background: #A84C1F; color: #FFFBF5 !important; }
+    .site-nav a.nav-cta[aria-current="page"] {
+      background: #2F6B4F;
+      color: #FFFBF5 !important;
+    }
+    @media (max-width: 640px) {
+      .site-header .inner { padding: 10px 14px; }
+      .site-nav { width: 100%; }
+      .site-nav a { padding: 8px 10px; font-size: 0.9rem; }
+      .site-nav .nav-cta { margin-left: 0; }
+    }
+    .site-footer {
+      background: #2A221C;
+      color: #a8a29e;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+      padding: 48px 20px;
+    }
+    .site-footer .wrap { max-width: 720px; margin: 0 auto; }
+    .site-footer .oneliner { color: #fafaf9; margin-bottom: 16px; }
+    .site-footer .cols {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      margin-bottom: 18px;
+    }
+    .site-footer .cols h3 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #a8a29e;
+      font-weight: 600;
+    }
+    .site-footer a {
+      color: #e7e5e4;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 12px 8px 0;
+    }
+    .site-footer a:hover { color: #F3DCC8; }
+    .site-footer .legal { margin: 8px 0 0; font-size: 13px; }
+
   </style>
 </head>
 <body>
   <div class="banner">Preview — placeholder brand “Attention Reclaim”. Name/domain still open. Approved plain-language pass.</div>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/">Attention Reclaim</a>
+      <nav class="site-nav" aria-label="Primary">
+      <a href="/how-it-works">How it works</a>
+      <a href="/better-ways">Better ways</a>
+      <a href="/research">Research</a>
+      <a href="/volunteer">Volunteer</a>
+      <a href="/invite">Invite us</a>
+      <a class="nav-cta" href="/#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
 
   <section class="hero">
     <div class="wrap hero-grid">
@@ -320,7 +429,7 @@
         <p class="muted">Social media apps are built to hold our children’s attention. Many parents feel unsure what to do. Some say it is just the times. Some fear that limits will hurt their child more than the apps do. We are here to talk honestly, share simple steps, and help families and schools act together—starting with our own habits too.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="#newsletter">Get the newsletter</a>
-          <a class="btn btn-secondary" href="#lectures">Invite us to speak</a>
+          <a class="btn btn-secondary" href="/invite">Invite us to speak</a>
         </div>
         <p class="micro">This website and the newsletter are our home. We post rarely on social media, and only to bring people back here.</p>
       </div>
@@ -341,7 +450,7 @@
 
   <section>
     <div class="wrap">
-      <h2>What is happening</h2>
+      <h2 id="what-is-happening">What is happening</h2>
       <p>Many parents feel something is wrong when a child stays on a phone for a long time. That feeling matters. These apps are not only a place to chat with friends. They are built to keep people watching and scrolling. The longer someone stays, the more the company can earn from ads.</p>
       <p>Children and teenagers are still growing. Their minds are still learning how to focus, sleep, and feel good about themselves. That makes them easy to pull in.</p>
       <p>Here is what the U.S. Surgeon General says about how these platforms are built:</p>
@@ -355,7 +464,7 @@
       <figure class="inline-figure">
         <img src="concepts/friends-outdoors.png" alt="Friends outdoors talking together, no phones visible" />
       </figure>
-      <a class="linkish" href="#">Read the full manifesto →</a>
+      <a class="linkish" href="/manifesto">Read the full manifesto →</a>
     </div>
   </section>
 
@@ -398,7 +507,7 @@
 
   <section class="alt">
     <div class="wrap">
-      <h2>For parents</h2>
+      <h2 id="for-parents">For parents</h2>
       <p>You know your child best. We want to support you—and we also ask something brave from all of us.</p>
       <p>First, try not to accept “it is just the times” as the end of the talk. Second, do not stay frozen because every choice feels like a bad battle. Choose the limits that protect sleep, mood, learning, and time together. You can do this with kindness.</p>
       <p>Third, look at your own habits. Social media and AI tools also break up adult time and attention. Children copy what we do. If we want them to be present, we practice being present: phone away at meals, fewer alerts, less scrolling in front of them.</p>
@@ -421,7 +530,7 @@
 
   <section>
     <div class="wrap">
-      <h2>For communities and schools</h2>
+      <h2 id="for-schools">For communities and schools</h2>
       <p>One family alone has a hard job. Shared rules make it easier.</p>
       <p>Schools and local groups can:</p>
       <ul>
@@ -430,7 +539,7 @@
         <li>Agree on age guidelines for accounts, so children feel less pressure from friends.</li>
         <li>Help families build offline activities together (clubs, sports, games, outdoor time).</li>
       </ul>
-      <a class="linkish" href="#lectures">Invite us to your school or community →</a>
+      <a class="linkish" href="/invite">Invite us to your school or community →</a>
     </div>
   </section>
 
@@ -467,6 +576,7 @@
           </div>
         </div>
         <p style="margin-top:16px">These are not extra rewards after “screen rules.” They are part of the plan. When life is full of real connection, the phone has less empty space to fill.</p>
+        <p style="margin-top:12px"><a class="linkish" href="/better-ways">Read more: Better ways →</a></p>
       </div>
     </div>
   </section>
@@ -493,7 +603,7 @@
       <h2>Invite us to speak</h2>
       <p>We give clear talks for parents, schools, and community groups. We explain how social feeds work. We share what the Surgeon General and the APA say about young people. We talk about limits, parental example, and real-life alternatives—sports, games, nature, and time with people face to face. We leave time for questions. We do not use scare tactics.</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="#">Invite us to speak</a>
+        <a class="btn btn-primary" href="/invite">Invite us to speak</a>
         <a class="btn btn-secondary" href="#newsletter">Get the newsletter</a>
       </div>
     </div>
@@ -505,31 +615,38 @@
       <p>Short emails for parents and communities: simple language you can share, ideas that work at home and at school, and dates for talks. This is our main home. Social media is only a sign that points back here.</p>
       <div class="nl-row">
         <input type="email" placeholder="Your email" aria-label="Email" />
-        <a class="btn btn-primary" href="#">Get the newsletter</a>
+        <button class="btn btn-primary" type="button">Get the newsletter</button>
       </div>
       <p class="micro" style="margin-top:12px">Short messages. You can leave anytime. · Preview form — not connected</p>
     </div>
   </section>
 
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
       <p class="oneliner">We help parents and communities protect children’s attention from AI-shaped social media—and build a fuller life offline.</p>
-      <p>
-        <a href="#">What is happening</a>
-        <a href="#">What we do</a>
-        <a href="#">For parents</a>
-        <a href="#">For schools</a>
-        <a href="#alternatives">Better ways to spend time</a>
-        <a href="#lectures">Lectures</a>
-        <a href="#">Manifesto</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/volunteer">Volunteer</a>
-        <a href="#newsletter">Newsletter</a>
-        <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html">Sources</a>
-      </p>
-      <p>Sources: U.S. Surgeon General Advisory (2023) · APA Health Advisory (2023)</p>
-      <p>hello@[domain] · Facebook · YouTube — Rare posts. We always send you back here.</p>
-      <p>© Attention Reclaim (working name) — final name and domain still open</p>
+      <div class="cols">
+        <div>
+          <h3>Explore</h3>
+          <a href="/">Home</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/better-ways">Better ways</a>
+          <a href="/research">Research</a>
+        </div>
+        <div>
+          <h3>Act</h3>
+          <a href="/volunteer">Volunteer</a>
+          <a href="/invite">Invite us</a>
+          <a href="/#newsletter">Newsletter</a>
+        </div>
+        <div>
+          <h3>About</h3>
+          <a href="/manifesto">Manifesto</a>
+          <a href="/sources">Sources</a>
+          <a href="mailto:hello@attentionreclaim.org">Contact</a>
+        </div>
+      </div>
+      <p class="legal">Sources: U.S. Surgeon General Advisory (2023) · APA Health Advisory (2023)</p>
+      <p class="legal">© Attention Reclaim (working name) — final name and domain still open</p>
     </div>
   </footer>
 

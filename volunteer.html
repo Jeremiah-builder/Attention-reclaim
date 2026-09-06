@@ -35,32 +35,6 @@
       text-align: center;
       padding: 10px 14px;
     }
-    .topnav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 18px;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--line);
-      background: var(--card);
-    }
-    .topnav .brand {
-      margin: 0;
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .topnav-links { display: flex; flex-wrap: wrap; gap: 14px 18px; }
-    .topnav a {
-      color: var(--spark);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 15px;
-    }
     section, footer { padding: 48px 20px; }
     .wrap { max-width: 720px; margin: 0 auto; }
     .wide { max-width: 920px; margin: 0 auto; }
@@ -232,18 +206,119 @@
       text-decoration: none;
       font-size: 15px;
     }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(247, 240, 230, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E6DCCD;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    .site-header .inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+    }
+    .site-header .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #1A1614;
+      text-decoration: none;
+      margin-right: auto;
+    }
+    .site-header .brand:hover { color: #C45C26; }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 4px;
+    }
+    .site-nav a {
+      color: #5C534C;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .site-nav a:hover { color: #1A1614; background: #FFFBF5; }
+    .site-nav a[aria-current="page"] {
+      color: #2F6B4F;
+      background: #E8F0EA;
+    }
+    .site-nav .nav-cta {
+      background: #C45C26;
+      color: #FFFBF5 !important;
+      margin-left: 4px;
+    }
+    .site-nav .nav-cta:hover { background: #A84C1F; color: #FFFBF5 !important; }
+    .site-nav a.nav-cta[aria-current="page"] {
+      background: #2F6B4F;
+      color: #FFFBF5 !important;
+    }
+    @media (max-width: 640px) {
+      .site-header .inner { padding: 10px 14px; }
+      .site-nav { width: 100%; }
+      .site-nav a { padding: 8px 10px; font-size: 0.9rem; }
+      .site-nav .nav-cta { margin-left: 0; }
+    }
+    .site-footer {
+      background: #2A221C;
+      color: #a8a29e;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+      padding: 48px 20px;
+    }
+    .site-footer .wrap { max-width: 720px; margin: 0 auto; }
+    .site-footer .oneliner { color: #fafaf9; margin-bottom: 16px; }
+    .site-footer .cols {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      margin-bottom: 18px;
+    }
+    .site-footer .cols h3 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #a8a29e;
+      font-weight: 600;
+    }
+    .site-footer a {
+      color: #e7e5e4;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 12px 8px 0;
+    }
+    .site-footer a:hover { color: #F3DCC8; }
+    .site-footer .legal { margin: 8px 0 0; font-size: 13px; }
+
   </style>
 </head>
 <body>
   <div class="banner">Preview — placeholder brand “Attention Reclaim”. Volunteer page · public.</div>
 
-  <nav class="topnav" aria-label="Page">
-    <p class="brand">Attention Reclaim · placeholder</p>
-    <div class="topnav-links">
-      <a href="/">← Home</a>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/">Attention Reclaim</a>
+      <nav class="site-nav" aria-label="Primary">
       <a href="/how-it-works">How it works</a>
+      <a href="/better-ways">Better ways</a>
+      <a href="/research">Research</a>
+      <a href="/volunteer" aria-current="page">Volunteer</a>
+      <a href="/invite">Invite us</a>
+      <a class="nav-cta" href="/#newsletter">Newsletter</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <section class="hero">
     <div class="wrap">
@@ -323,6 +398,7 @@
       <div class="note">
         <p><strong>Kit access:</strong> list is public; full PDF pack after apply. PDFs are not hosted as open downloads yet.</p>
       </div>
+      <p style="margin-top:16px"><a class="linkish" href="/docs/volunteer-copy-pack">Read the volunteer toolkit →</a></p>
     </div>
   </section>
 
@@ -398,19 +474,39 @@
         <summary>Is this anti-technology?</summary>
         <p>No. We care about design that captures children’s attention — and about building a fuller life offline.</p>
       </details>
+      <div class="ctas" style="margin-top:22px">
+        <a class="btn btn-secondary" href="/how-it-works">How it works</a>
+        <a class="btn btn-primary" href="/#newsletter">Get the newsletter</a>
+      </div>
     </div>
   </section>
 
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
-      <p class="oneliner-foot">We help parents and communities protect children’s attention from AI-shaped social media—and build a fuller life offline.</p>
-      <p>
-        <a href="/">Home</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/#newsletter">Newsletter</a>
-        <a href="#apply">Apply</a>
-      </p>
-      <p>© Attention Reclaim (working name) — final name and domain still open</p>
+      <p class="oneliner">We help parents and communities protect children’s attention from AI-shaped social media—and build a fuller life offline.</p>
+      <div class="cols">
+        <div>
+          <h3>Explore</h3>
+          <a href="/">Home</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/better-ways">Better ways</a>
+          <a href="/research">Research</a>
+        </div>
+        <div>
+          <h3>Act</h3>
+          <a href="/volunteer">Volunteer</a>
+          <a href="/invite">Invite us</a>
+          <a href="/#newsletter">Newsletter</a>
+        </div>
+        <div>
+          <h3>About</h3>
+          <a href="/manifesto">Manifesto</a>
+          <a href="/sources">Sources</a>
+          <a href="mailto:hello@attentionreclaim.org">Contact</a>
+        </div>
+      </div>
+      <p class="legal">Sources: U.S. Surgeon General Advisory (2023) · APA Health Advisory (2023)</p>
+      <p class="legal">© Attention Reclaim (working name) — final name and domain still open</p>
     </div>
   </footer>
 </body>
