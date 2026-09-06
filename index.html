@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Attention Reclaim — Homepage preview (placeholder)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --muted: #5C534C;
+      --card: #FFFBF5;
+      --accent: #C45C26;
+      --accent-soft: #F3DCC8;
+      --spark: #2F6B4F;
+      --line: #E6DCCD;
+      --banner: #2A221C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .banner {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 13px;
+      background: var(--banner);
+      color: #fafaf9;
+      text-align: center;
+      padding: 10px 14px;
+    }
+    section, footer { padding: 48px 20px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .wide { max-width: 920px; margin: 0 auto; }
+    .brand {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    h1, h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+    h2 { font-size: 1.45rem; margin: 0 0 12px; font-weight: 600; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .hero {
+      background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding-top: 36px;
+    }
+    .hero-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+    .hero-media {
+      margin: 0;
+    }
+    .hero-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 36px;
+      }
+      .hero-media {
+        align-self: stretch;
+      }
+      .hero-media img {
+        height: 100%;
+        min-height: 280px;
+        max-height: 420px;
+      }
+    }
+    .ctas { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 10px; }
+    .btn {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary { background: var(--accent); color: #FFFBF5; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--spark);
+    }
+    .micro {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .alt { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .quote {
+      margin: 20px 0;
+      padding: 18px 20px;
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+    }
+    .quote p {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .quote cite {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+      display: block;
+    }
+    .quote a { color: var(--accent); }
+    ul, ol { margin: 0 0 14px; padding-left: 1.2em; }
+    li { margin-bottom: 8px; }
+    .inline-figure {
+      margin: 28px 0 8px;
+    }
+    .inline-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+    .break-figure {
+      padding: 0 20px 8px;
+      margin: 0;
+      background: transparent;
+    }
+    .break-figure .inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .break-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-top: 12px;
+    }
+    .tile {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      overflow: hidden;
+    }
+    .tile.tile-photo {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .tile.tile-photo img {
+      display: block;
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0;
+    }
+    .tile.tile-photo .tile-body {
+      padding: 14px 16px 16px;
+    }
+    .tile.tile-text {
+      border-top: 4px solid var(--spark);
+    }
+    .tile h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .tile p { margin: 0; font-size: 0.98rem; color: var(--muted); }
+    .newsletter {
+      background: #2F6B4F;
+      color: #FFFBF5;
+    }
+    .newsletter h2 { color: #FFFBF5; }
+    .newsletter p { color: #F3DCC8; }
+    .newsletter .btn-primary {
+      background: #FFFBF5;
+      color: var(--spark);
+    }
+    .newsletter .micro { color: #E6DCCD; }
+    .nl-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .nl-row input {
+      flex: 1 1 220px;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    footer {
+      background: var(--banner);
+      color: #a8a29e;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+    }
+    footer .oneliner { color: #fafaf9; margin-bottom: 12px; }
+    footer a { color: #e7e5e4; margin-right: 12px; text-decoration: none; }
+    .linkish {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    /* Updates strip — weekly feed from updates.json */
+    .updates {
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      padding: 28px 20px;
+      display: none; /* shown by script when ready */
+    }
+    .updates.is-visible { display: block; }
+    .updates .label {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .updates h2 { font-size: 1.25rem; margin: 0 0 14px; }
+    .update-list {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .update-list { grid-template-columns: 1fr 1fr; }
+    }
+    .update-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .update-card h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      line-height: 1.35;
+    }
+    .update-card h3 a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .update-card h3 a:hover { color: var(--accent); }
+    .update-card .sum {
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .update-card .meta {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .updates .soon {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">Preview — placeholder brand “Attention Reclaim”. Name/domain still open. Approved plain-language pass.</div>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="brand">Attention Reclaim · placeholder</div>
+        <h1>This is not only “how life is now.” We can still choose.</h1>
+        <p class="muted">Social media apps are built to hold our children’s attention. Many parents feel unsure what to do. Some say it is just the times. Some fear that limits will hurt their child more than the apps do. We are here to talk honestly, share simple steps, and help families and schools act together—starting with our own habits too.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#newsletter">Get the newsletter</a>
+          <a class="btn btn-secondary" href="#lectures">Invite us to speak</a>
+        </div>
+        <p class="micro">This website and the newsletter are our home. We post rarely on social media, and only to bring people back here.</p>
+      </div>
+      <figure class="hero-media">
+        <img src="concepts/hero-kitchen.png" alt="Phones face-down on a kitchen table beside breakfast in morning light" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="updates" id="updates" aria-label="Updates">
+    <div class="wrap">
+      <p class="label">Updates</p>
+      <h2>Recent notes</h2>
+      <div class="update-list" id="update-list"></div>
+      <p class="soon" id="updates-soon" hidden>Updates coming soon.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What is happening</h2>
+      <p>Many parents feel something is wrong when a child stays on a phone for a long time. That feeling matters. These apps are not only a place to chat with friends. They are built to keep people watching and scrolling. The longer someone stays, the more the company can earn from ads.</p>
+      <p>Children and teenagers are still growing. Their minds are still learning how to focus, sleep, and feel good about themselves. That makes them easy to pull in.</p>
+      <p>Here is what the U.S. Surgeon General says about how these platforms are built:</p>
+      <blockquote class="quote">
+        <p>“Social media platforms are often designed to maximize user engagement, which has the potential to encourage excessive use and behavioral dysregulation.”</p>
+        <cite>— U.S. Surgeon General, Advisory on Social Media and Youth Mental Health (2023) · <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html">source</a></cite>
+      </blockquote>
+      <p>One common idea is: “This is just the sign of the times. The next generation is different.” That idea can stop us from acting. Meanwhile, a child’s sleep, mood, and school focus can get worse in front of us, week by week. We do not need to panic. We do need to stop treating harm as normal.</p>
+      <p>This is not about blaming parents. It is about seeing the design clearly.</p>
+      <p>One careful note: not every child is affected the same way. For some young people, social media also helps them find friends and support. Our focus is what happens when use becomes too much—and what families can do.</p>
+      <figure class="inline-figure">
+        <img src="concepts/friends-outdoors.png" alt="Friends outdoors talking together, no phones visible" />
+      </figure>
+      <a class="linkish" href="#">Read the full manifesto →</a>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>What we want to protect</h2>
+      <p>Attention helps a child learn, listen, rest, and feel close to other people. When a phone takes most free minutes, other things get smaller: sleep, mood, body image, homework, and time with family.</p>
+      <p>Here is one finding shared by the U.S. Surgeon General:</p>
+      <blockquote class="quote">
+        <p>“Children and adolescents who spend more than 3 hours a day on social media face double the risk of mental health problems including experiencing symptoms of depression and anxiety.”</p>
+        <cite>— U.S. Surgeon General (2023), citing Riehm et al., 2019 · <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html">source</a></cite>
+      </blockquote>
+      <p>Many young people also feel worse about their bodies because of what they see online. The Surgeon General reports:</p>
+      <blockquote class="quote">
+        <p>“When asked about the impact of social media on their body image, nearly half (46%) of adolescents aged 13–17 said social media makes them feel worse.”</p>
+        <cite>— U.S. Surgeon General (2023), citing Bickham et al., 2022 · <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html">source</a></cite>
+      </blockquote>
+      <p>Sleep matters too. From the same advisory (a review of 42 studies):</p>
+      <blockquote class="quote">
+        <p>“A systematic review of 42 studies on the effects of excessive social media use found a consistent relationship between social media use and poor sleep quality, reduced sleep duration, sleep difficulties, and depression among youth.”</p>
+        <cite>— U.S. Surgeon General (2023), citing Alonzo et al., 2021 · <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html">source</a></cite>
+      </blockquote>
+      <p>Another honest fear is: “If I limit social media, my child will be left out. That may hurt more than staying on it.” That fear is real. Friends matter. But staying stuck in that fear is also a choice. We can set limits with care. We can delay accounts. We can agree on rules with other families. We can help children stay connected to people in real life—not only through an app.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What we do</h2>
+      <p><strong>Attention Reclaim</strong> (working name) helps parents and communities understand how AI-shaped social media works. We use simple language. We share steps families and schools can try. We do not use fear stories or conspiracy talk.</p>
+      <p>We keep our own use of social media small. We use Facebook and YouTube only a little, to point people to this website and our newsletter. The real home is here.</p>
+    </div>
+  </section>
+
+  <figure class="break-figure">
+    <div class="inner">
+      <img src="concepts/morning-before-devices.png" alt="Parent and child in morning light before devices" />
+    </div>
+  </figure>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>For parents</h2>
+      <p>You know your child best. We want to support you—and we also ask something brave from all of us.</p>
+      <p>First, try not to accept “it is just the times” as the end of the talk. Second, do not stay frozen because every choice feels like a bad battle. Choose the limits that protect sleep, mood, learning, and time together. You can do this with kindness.</p>
+      <p>Third, look at your own habits. Social media and AI tools also break up adult time and attention. Children copy what we do. If we want them to be present, we practice being present: phone away at meals, fewer alerts, less scrolling in front of them.</p>
+      <p>The American Psychological Association says products for adults are not always right for children:</p>
+      <blockquote class="quote">
+        <p>“Social media use, functionality, and permissions/consenting should be tailored to youths’ developmental capabilities; designs created for adults may not be appropriate for children.”</p>
+        <cite>— American Psychological Association, Health Advisory on Social Media Use in Adolescence (2023) · <a href="https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use">source</a></cite>
+      </blockquote>
+      <p>Simple starts:</p>
+      <ul>
+        <li>Explain that the app is built to keep them there—not only “you are on it too much.”</li>
+        <li>Protect sleep, homework, and meals.</li>
+        <li>Wait longer before personal accounts when you can. Use strong privacy settings when accounts exist.</li>
+        <li>Talk with other adults in your child’s life so you are not alone.</li>
+        <li>Change one of your own phone habits where your child can see it.</li>
+      </ul>
+      <a class="linkish" href="#newsletter">Get parent notes →</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>For communities and schools</h2>
+      <p>One family alone has a hard job. Shared rules make it easier.</p>
+      <p>Schools and local groups can:</p>
+      <ul>
+        <li>Set clear phone-free times and places.</li>
+        <li>Hold parent meetings that explain how apps are designed—not only rules and bans.</li>
+        <li>Agree on age guidelines for accounts, so children feel less pressure from friends.</li>
+        <li>Help families build offline activities together (clubs, sports, games, outdoor time).</li>
+      </ul>
+      <a class="linkish" href="#lectures">Invite us to your school or community →</a>
+    </div>
+  </section>
+
+  <section class="alt" id="alternatives">
+    <div class="wide">
+      <div class="wrap" style="max-width:920px">
+        <h2>Better ways to spend time</h2>
+        <p>Taking attention back is not only about saying no to a phone. Children also need good things to say yes to. A healthy sense of self grows in real life—with other people, with the body, with play, and with the wider world.</p>
+        <div class="grid">
+          <div class="tile tile-text">
+            <h3>Real social time</h3>
+            <p>Meet friends in person; family meals; visits without phones on the table.</p>
+          </div>
+          <div class="tile tile-photo">
+            <img src="concepts/sports.png" alt="Kids or family in motion playing sports outdoors" />
+            <div class="tile-body">
+              <h3>Sports and movement</h3>
+              <p>Team sports, walking, cycling, dancing—anything that uses the body and builds skill.</p>
+            </div>
+          </div>
+          <div class="tile tile-photo">
+            <img src="concepts/board-game.png" alt="Hands around a board game at a table" />
+            <div class="tile-body">
+              <h3>Board games and shared play</h3>
+              <p>Games at home or in a club; hobbies that need focus and patience.</p>
+            </div>
+          </div>
+          <div class="tile tile-photo">
+            <img src="concepts/nature-walk.png" alt="People walking a nature path under open sky" />
+            <div class="tile-body">
+              <h3>Nature and travel</h3>
+              <p>Time outside, simple day trips, parks, and places where the feed is not the main event.</p>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:16px">These are not extra rewards after “screen rules.” They are part of the plan. When life is full of real connection, the phone has less empty space to fill.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What you can do</h2>
+      <p>Start with one small step. You do not need to fix everything this week.</p>
+      <ol>
+        <li>Say it simply: “This app is built to keep you here.”</li>
+        <li>Protect one daily block: sleep, dinner, or homework—without the feed.</li>
+        <li>Turn down the noise: fewer notifications; move apps off the home screen; stronger privacy.</li>
+        <li>Give companies less personal data when you can. Less data and less endless use means less fuel for the system.</li>
+        <li>Put something better in the calendar: sport, a walk, a board game night, time with friends in person.</li>
+        <li>Ask two other adults to back the same rules.</li>
+        <li>Change one of your own habits in front of your child.</li>
+        <li>Join our newsletter for short updates and talk dates.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="alt" id="lectures">
+    <div class="wrap">
+      <h2>Invite us to speak</h2>
+      <p>We give clear talks for parents, schools, and community groups. We explain how social feeds work. We share what the Surgeon General and the APA say about young people. We talk about limits, parental example, and real-life alternatives—sports, games, nature, and time with people face to face. We leave time for questions. We do not use scare tactics.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#">Invite us to speak</a>
+        <a class="btn btn-secondary" href="#newsletter">Get the newsletter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="wrap">
+      <h2>Stay in touch—outside the feed</h2>
+      <p>Short emails for parents and communities: simple language you can share, ideas that work at home and at school, and dates for talks. This is our main home. Social media is only a sign that points back here.</p>
+      <div class="nl-row">
+        <input type="email" placeholder="Your email" aria-label="Email" />
+        <a class="btn btn-primary" href="#">Get the newsletter</a>
+      </div>
+      <p class="micro" style="margin-top:12px">Short messages. You can leave anytime. · Preview form — not connected</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="oneliner">We help parents and communities protect children’s attention from AI-shaped social media—and build a fuller life offline.</p>
+      <p>
+        <a href="#">What is happening</a>
+        <a href="#">What we do</a>
+        <a href="#">For parents</a>
+        <a href="#">For schools</a>
+        <a href="#alternatives">Better ways to spend time</a>
+        <a href="#lectures">Lectures</a>
+        <a href="#">Manifesto</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html">Sources</a>
+      </p>
+      <p>Sources: U.S. Surgeon General Advisory (2023) · APA Health Advisory (2023)</p>
+      <p>hello@[domain] · Facebook · YouTube — Rare posts. We always send you back here.</p>
+      <p>© Attention Reclaim (working name) — final name and domain still open</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var band = document.getElementById("updates");
+    var list = document.getElementById("update-list");
+    var soon = document.getElementById("updates-soon");
+    if (!band || !list) return;
+
+    function showBand() { band.classList.add("is-visible"); }
+
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function render(items) {
+      showBand();
+      if (!items || !items.length) {
+        list.innerHTML = "";
+        soon.hidden = false;
+        return;
+      }
+      soon.hidden = true;
+      var max = Math.min(5, items.length);
+      var html = "";
+      for (var i = 0; i < max; i++) {
+        var it = items[i] || {};
+        var title = esc(it.title || "Untitled");
+        var summary = esc(it.summary || "");
+        var source = esc(it.source || "");
+        var date = esc(it.date || "");
+        var url = it.url ? String(it.url) : "";
+        var meta = [source, date].filter(Boolean).join(" · ");
+        var heading = url
+          ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + title + "</a>"
+          : title;
+        html +=
+          '<article class="update-card">' +
+          "<h3>" + heading + "</h3>" +
+          (summary ? '<p class="sum">' + summary + "</p>" : "") +
+          (meta ? '<p class="meta">' + meta + "</p>" : "") +
+          "</article>";
+      }
+      list.innerHTML = html;
+    }
+
+    fetch("updates.json", { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("fetch failed");
+        return r.json();
+      })
+      .then(function (data) {
+        render((data && data.items) || []);
+      })
+      .catch(function () {
+        // Static preview without a server, or missing file: show placeholder.
+        render([]);
+      });
+  })();
+  </script>
+
+</body>
+</html>

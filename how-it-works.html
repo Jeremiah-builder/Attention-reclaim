@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How it works — Attention Reclaim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --muted: #5C534C;
+      --card: #FFFBF5;
+      --accent: #C45C26;
+      --accent-soft: #F3DCC8;
+      --spark: #2F6B4F;
+      --line: #E6DCCD;
+      --banner: #2A221C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .banner {
+      font-size: 13px;
+      background: var(--banner);
+      color: #fafaf9;
+      text-align: center;
+      padding: 10px 14px;
+    }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+    }
+    .topnav .brand {
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .topnav a {
+      color: var(--spark);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    section, footer { padding: 48px 20px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .wide { max-width: 920px; margin: 0 auto; }
+    .brand {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    h1, h2, h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+    h2 { font-size: 1.45rem; margin: 0 0 12px; }
+    h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .oneliner {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      border-left: 4px solid var(--spark);
+      padding: 10px 0 10px 16px;
+      margin: 18px 0 8px;
+      background: transparent;
+    }
+    .hero {
+      background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding-top: 36px;
+    }
+    .ctas { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 10px; }
+    .btn {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary { background: var(--accent); color: #FFFBF5; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--spark);
+    }
+    .alt { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .path-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    @media (min-width: 640px) {
+      .path-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .path-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .path-card.a { border-top: 4px solid var(--spark); }
+    .path-card.b { border-top: 4px solid var(--accent); }
+    .path-card p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .badge.a { background: #E4F0E8; color: var(--spark); }
+    .badge.b { background: var(--accent-soft); color: var(--accent); }
+    ul, ol { margin: 0 0 14px; padding-left: 1.2em; }
+    li { margin-bottom: 10px; }
+    .fuel-chain {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 18px 0 14px;
+      font-size: 0.98rem;
+    }
+    .fuel-chain strong { color: var(--ink); }
+    .diagram {
+      margin: 8px 0 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 1px 0 var(--line);
+    }
+    .diagram img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .diagram figcaption {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 16px 0 0; }
+    .steps > li {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 16px 16px 64px;
+      margin-bottom: 12px;
+    }
+    .steps > li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #FFFBF5;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .steps > li.path-a::before,
+    .steps > li.path-b::before {
+      background: var(--spark);
+      font-size: 12px;
+    }
+    .steps > li.path-a::before { content: "5a"; }
+    .steps > li.path-b::before { content: "5b"; }
+    .steps > li.profit::before { content: "6"; background: var(--spark); }
+    .steps h3 { margin-bottom: 6px; }
+    .steps p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    .loop-note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1.5px dashed var(--spark);
+      border-radius: 12px;
+      color: var(--spark);
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+    .two-col {
+      display: grid;
+      gap: 14px;
+    }
+    @media (min-width: 640px) {
+      .two-col { grid-template-columns: 1fr 1fr; }
+    }
+    .claim-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .claim-box h3 { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .claim-box.do { border-top: 4px solid var(--spark); }
+    .claim-box.dont { border-top: 4px solid var(--accent); }
+    .claim-box ul { margin-bottom: 0; }
+    .sources a { color: var(--accent); word-break: break-word; }
+    .newsletter {
+      background: #2F6B4F;
+      color: #FFFBF5;
+    }
+    .newsletter h2 { color: #FFFBF5; }
+    .newsletter p { color: #F3DCC8; }
+    .newsletter .btn-primary {
+      background: #FFFBF5;
+      color: var(--spark);
+    }
+    .newsletter .btn-secondary {
+      color: #FFFBF5;
+      border-color: #F3DCC8;
+    }
+    footer {
+      background: var(--banner);
+      color: #a8a29e;
+      font-size: 14px;
+    }
+    footer .oneliner-foot { color: #fafaf9; margin-bottom: 12px; font-family: inherit; border: none; padding: 0; }
+    footer a { color: #e7e5e4; margin-right: 12px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="banner">Preview — placeholder brand “Attention Reclaim”. How it works page · approved copy.</div>
+
+  <nav class="topnav" aria-label="Page">
+    <p class="brand">Attention Reclaim · placeholder</p>
+    <a href="index.html">← Back to home</a>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="brand">How it works</div>
+      <h1>How social media makes money from attention</h1>
+      <p class="muted">Even when a child buys nothing, the company can still earn. Likes, words, photos, videos, and time on the app help the system hold attention—and sell ads. Sometimes there is a second path: buys, or “ask your parents.”</p>
+      <p class="oneliner">You are not the customer. Your attention—and the trail of what you do and share—is the product.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="index.html#newsletter">Get the newsletter</a>
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Two paths</h2>
+      <div class="path-grid">
+        <div class="path-card a">
+          <span class="badge a">Path A</span>
+          <h3>The child spends $0</h3>
+          <p>The platform can still make money. The child’s time and what they put into the app help show ads to the right people.</p>
+        </div>
+        <div class="path-card b">
+          <span class="badge b">Path B</span>
+          <h3>Someone pays</h3>
+          <p>The same system can also push products: ads that look like normal posts, influencers, in-app buys, or “ask your parents.”</p>
+        </div>
+      </div>
+      <p style="margin-top:16px">Both paths use the same fuel: what the child does and shares.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>The fuel: what children put in</h2>
+      <p>Every action can teach the system.</p>
+      <ul>
+        <li><strong>Likes, reactions, shares</strong> — “They like this.” So the feed shows more of it. Advertisers can also target similar interests.</li>
+        <li><strong>Text</strong> (captions, comments, and chats the platform can process) — Topics, friends, brands, and moods help build a richer profile.</li>
+        <li><strong>Photos and videos</strong> — What is in the content (hobbies, places, brands, faces) and who reacts to it can improve recommendations and ad fit.</li>
+        <li><strong>Other signals</strong> — Who they follow, how long they watch, when they pause or scroll, what they search, location signals, and app habits. These show who they are and when they are easiest to keep on the app.</li>
+      </ul>
+      <div class="fuel-chain">
+        <strong>Fuel chain:</strong> Their inputs → profile and AI training → better ranking and targeting → more attention held → more ad money (Path A) → and a stronger Path B (want → buy or ask parents).
+      </div>
+      <p>This is not mind control. It is pattern-matching at a very large scale. The more a child feeds the system, the better it can get at holding them—and at selling access to their attention.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wide">
+      <div class="wrap" style="max-width:920px">
+        <h2>The loop, in one picture</h2>
+        <p class="muted">A simple map of how hooks, kids’ inputs, ranking, ads, and buys feed back into stronger hooks.</p>
+        <figure class="diagram">
+          <img src="how-it-works-diagram.png" alt="Diagram: How the app makes money from attention — hooks, kid inputs, profile and AI, stickier ranking, ads with zero spend, buys and ask-parents, then profit looping back to stronger hooks" width="900" height="1600" />
+          <figcaption>Attention Reclaim · simple explanation for parents</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Six steps (how the loop works)</h2>
+      <ol class="steps">
+        <li>
+          <h3>Hook attention</h3>
+          <p>The feed is free to open. Features are built to keep people there: notifications, endless scroll, autoplay, likes.</p>
+        </li>
+        <li>
+          <h3>Collect behaviors and inputs (the fuel)</h3>
+          <p>Likes, text, photos, videos, follows, watch time, searches, location signals, and more.</p>
+        </li>
+        <li>
+          <h3>Build a profile and train AI</h3>
+          <p>Those inputs teach the system what holds <em>this</em> child. Ranking AI tries to predict the next post or video most likely to keep them watching.</p>
+        </li>
+        <li>
+          <h3>Rank for more time</h3>
+          <p>The feed is optimized for engagement—more minutes—not for what is best for a child’s growth or an adult’s goals.</p>
+        </li>
+        <li class="path-a">
+          <h3>Path A — Money when the child spends $0</h3>
+          <p>The company sells ad space and targeting. A sharper profile from the child’s own inputs can make those ads more valuable—even if the child never buys anything.</p>
+        </li>
+        <li class="path-b">
+          <h3>Path B — Extra money when someone pays</h3>
+          <p>The same sharper profile can support influencer posts, ads that blend into the feed, product pushes, in-app purchases, and “ask your parents.” Platforms often earn from ads or store fees.</p>
+        </li>
+        <li class="profit">
+          <h3>Profit → stronger hooks</h3>
+          <p>Money from ads and buys funds more of the same design: better hooks, richer profiles, stickier feeds.</p>
+        </li>
+      </ol>
+      <p class="loop-note">The loop: More input + more time → better predictions → more time → more ads (and more chances to sell).</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Why this matters for kids</h2>
+      <p>Children and teens are still learning self-control, sleep, and social habits. Products built for <em>maximum</em> engagement are a poor match for that stage. Designs made for adults are not automatically safe for children (see APA and the U.S. Surgeon General).</p>
+      <p>Young users are also valuable to the business: early habits, many future years of attention, and data that improves the system. Rules like COPPA exist because children’s data should not be freely monetized.</p>
+      <p>Younger children can also struggle to see the difference between entertainment and advertising—especially when ads are blurred into normal-looking posts (FTC). That can create want → nagging → a parent purchase, or pressure to buy inside an app.</p>
+      <p>We talk about <strong>influence and commercial pressure</strong>. We do not talk about mind control or “guaranteed addiction.”</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What families can do</h2>
+      <ul>
+        <li>Limit time and protect sleep.</li>
+        <li>Delay personal accounts when you can.</li>
+        <li>Post and share less that trains the feed (especially personal photos, location, and constant reactions).</li>
+        <li>Turn off needless notifications; use stronger privacy settings.</li>
+        <li>Set clear spend rules: no in-app buys without a parent; talk about ads that look like normal videos.</li>
+        <li>Fill the day with real-life alternatives: friends in person, sports, games, time outside.</li>
+        <li>Change one of your own phone habits where your child can see it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="wrap">
+      <h2>Stay in touch—outside the feed</h2>
+      <p>Short notes in plain words. Ideas for home and school. Dates for talks.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="index.html#newsletter">Get the newsletter</a>
+        <a class="btn btn-secondary" href="index.html#lectures">Invite us to speak</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt sources">
+    <div class="wrap">
+      <h2>Sources</h2>
+      <ol>
+        <li>U.S. Surgeon General (2023), <em>Social Media and Youth Mental Health</em> (PDF): <a href="https://www.hhs.gov/sites/default/files/sg-youth-mental-health-social-media-advisory.pdf">hhs.gov PDF</a></li>
+        <li>Center for Humane Technology — The Attention Economy: <a href="https://www.humanetech.com/youth/the-attention-economy">humanetech.com</a></li>
+        <li>FTC (2025) — COPPA updates on children’s data and monetization: <a href="https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-changes-childrens-privacy-rule-limiting-companies-ability-monetize-kids-data">ftc.gov</a></li>
+        <li>FTC (2023) — Blurred advertising to kids: <a href="https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-staff-paper-details-potential-harms-kids-blurred-advertising-recommends-marketers-steer-clear">ftc.gov</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="oneliner-foot">Attention Reclaim (working name) — We explain how the machine works, in plain words, so parents and communities can choose what to feed it.</p>
+      <p>
+        <a href="index.html">Home</a>
+        <a href="index.html#newsletter">Newsletter</a>
+        <a href="index.html#lectures">Lectures</a>
+      </p>
+      <p>© Attention Reclaim (working name) — final name and domain still open</p>
+    </div>
+  </footer>
+</body>
+</html>
