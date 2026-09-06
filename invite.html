@@ -321,36 +321,43 @@
       <p>Lengths: about 5, 15, or 40 minutes—plus questions.</p>
       <h2>Request a talk</h2>
       <p class="muted">Tell us who you are and what you need. We’ll reply with dates and format.</p>
-      <form class="form-card" action="mailto:hello@attentionreclaim.org" method="post" enctype="text/plain">
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="Name" required autocomplete="name" />
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="Email" required autocomplete="email" />
-        </div>
-        <div class="field">
-          <label for="org">School / group / city</label>
-          <input type="text" id="org" name="Organization" required />
-        </div>
-        <div class="field">
-          <label for="length">Preferred length</label>
-          <select id="length" name="Length">
-            <option>5 minutes</option>
-            <option selected>15 minutes</option>
-            <option>40 minutes</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="notes">Notes <span class="micro">(optional)</span></label>
-          <textarea id="notes" name="Notes" placeholder="Audience, date window, language…"></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Send talk request</button>
-        <p class="micro" style="margin-top:14px;margin-bottom:0">Form backend coming — for now this opens an email draft to hello@attentionreclaim.org (placeholder address).</p>
-      </form>
+      <div class="form-card">
+        <p class="micro" style="margin-top:0">Talk requests still use email for now. After you write, you can also join the <a href="/#newsletter">newsletter</a> (Brevo, double opt-in) and — when ready — our Discord community for interested adults/parents.</p>
+        <form action="mailto:hello@attentionreclaim.org" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="org">School / group / city</label>
+            <input type="text" id="org" name="Organization" required />
+          </div>
+          <div class="field">
+            <label for="length">Preferred length</label>
+            <select id="length" name="Length">
+              <option>5 minutes</option>
+              <option selected>15 minutes</option>
+              <option>40 minutes</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="notes">Notes <span class="micro">(optional)</span></label>
+            <textarea id="notes" name="Notes" placeholder="Audience, date window, language…"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send talk request</button>
+          <p class="micro" style="margin-top:14px;margin-bottom:0">Opens an email draft to hello@attentionreclaim.org. Thank you — we’ll reply with dates. Meanwhile: newsletter signup on the homepage; Discord invite coming for interested adults/parents (no children’s data).</p>
+        </form>
+      </div>
       <p style="margin-top:20px"><a class="linkish" href="/#newsletter">Prefer the newsletter first →</a></p>
+      <p style="margin-top:10px">
+        <!-- DISCORD_INVITE -->
+        <span class="linkish" aria-disabled="true">Community (Discord) — invite coming</span>
+      </p>
     </div>
   </section>
 

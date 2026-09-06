@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>INTERNAL — Signup setup — Attention Reclaim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#F7F0E6; --ink:#1A1614; --muted:#5C534C; --accent:#C45C26; --leaf:#2F6B4F; --line:#E6DCCD; --card:#FFFBF5; }
+    body { margin:0; font-family:"Source Sans 3",system-ui,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; font-size:18px; }
+    .wrap { max-width:720px; margin:0 auto; padding:40px 20px 64px; }
+    h1,h2,h3 { font-family:Fraunces,Georgia,serif; }
+    h1 { font-size:2rem; margin:0 0 8px; }
+    h2 { font-size:1.35rem; margin:28px 0 10px; }
+    h3 { font-size:1.1rem; margin:18px 0 8px; }
+    .meta { color:var(--muted); font-size:14px; margin-bottom:24px; }
+    a { color:var(--accent); }
+    table { width:100%; border-collapse:collapse; font-size:15px; background:var(--card); margin:12px 0; }
+    th,td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:#F3DCC8; }
+    ul, ol { padding-left:1.2em; }
+    .note { background:var(--card); border-left:4px solid var(--leaf); padding:12px 14px; margin:18px 0; }
+    .warn { background:var(--card); border-left:4px solid var(--accent); padding:12px 14px; margin:18px 0; }
+    .banner { background:#7A1C1C; color:#fafaf9; font-size:13px; text-align:center; padding:10px; font-weight:600; letter-spacing:0.02em; }
+    .banner a { color:#F3DCC8; }
+    code { font-size:0.9em; background:#E6DCCD; padding:1px 6px; border-radius:4px; }
+    label.check { display:flex; gap:10px; align-items:flex-start; margin:8px 0; font-size:16px; }
+    label.check input { margin-top:4px; }
+  </style>
+</head>
+<body>
+  <div class="banner">INTERNAL — founder ops checklist · not a public marketing page · <a href="/">Home</a> · <a href="/docs/signup-setup.md">Markdown</a></div>
+  <div class="wrap">
+    <h1>Signup setup checklist</h1>
+    <p class="meta">Attention Reclaim · locked stack: Tally (volunteers → Sheets) + Brevo (newsletter) + Discord (webhook + invite). Placeholders only — do not invent live form IDs.</p>
+
+    <div class="warn"><strong>Privacy:</strong> Adults and parents community only. No children’s personal data in forms, Sheets, Brevo, or Discord.</div>
+
+    <h2>Locked stack</h2>
+    <table>
+      <thead><tr><th>Path</th><th>Tool</th><th>Destination</th></tr></thead>
+      <tbody>
+        <tr><td>Volunteers</td><td>Tally</td><td>Google Sheet + email notify + Discord webhook → private <code>#registrations</code></td></tr>
+        <tr><td>Newsletter</td><td>Brevo (double opt-in)</td><td>List + tags <code>site-newsletter</code> / <code>invite</code></td></tr>
+        <tr><td>Community</td><td>Discord</td><td>Roles <code>interested</code> + <code>volunteer</code>; invite for interested</td></tr>
+      </tbody>
+    </table>
+
+    <h2>1) Google Sheet</h2>
+    <label class="check"><input type="checkbox" /> <span>Create sheet <strong>Attention Reclaim — Volunteers</strong></span></label>
+    <label class="check"><input type="checkbox" /> <span>Columns match Tally fields (email, first name, locality, how they help, 18+/parent attestation, timestamp)</span></label>
+    <label class="check"><input type="checkbox" /> <span>Share edit only with founder / CoS</span></label>
+
+    <h2>2) Tally (volunteers)</h2>
+    <h3>Fields</h3>
+    <table>
+      <thead><tr><th>Field</th><th>Required</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Email</td><td>*</td><td>Primary contact</td></tr>
+        <tr><td>First name</td><td>optional</td><td></td></tr>
+        <tr><td>Locality</td><td>optional</td><td>City / region</td></tr>
+        <tr><td>How they want to help</td><td>yes</td><td>Short text or select</td></tr>
+        <tr><td>18+ / parent attestation</td><td>*</td><td>No children’s data</td></tr>
+        <tr><td>Also-newsletter note</td><td>optional</td><td>Point to Brevo thank-you / site <code>#newsletter</code></td></tr>
+      </tbody>
+    </table>
+    <label class="check"><input type="checkbox" /> <span>Connect Tally → Google Sheets</span></label>
+    <label class="check"><input type="checkbox" /> <span>Email notify on each submission</span></label>
+    <label class="check"><input type="checkbox" /> <span>Discord webhook → private <code>#registrations</code> (do not commit webhook URL)</span></label>
+    <label class="check"><input type="checkbox" /> <span>Copy embed URL / iframe → paste at <code>&lt;!-- TALLY_EMBED --&gt;</code> in <code>volunteer.html</code></span></label>
+
+    <h2>3) Brevo (newsletter)</h2>
+    <label class="check"><input type="checkbox" /> <span>Create list + enable <strong>double opt-in</strong></span></label>
+    <label class="check"><input type="checkbox" /> <span>Embed form; tags <code>site-newsletter</code> / <code>invite</code></span></label>
+    <label class="check"><input type="checkbox" /> <span>Paste at <code>&lt;!-- BREVO_EMBED --&gt;</code> on homepage <code>#newsletter</code></span></label>
+    <label class="check"><input type="checkbox" /> <span>Later: DNS for <code>attentionreclaim.org</code> (SPF/DKIM/DMARC)</span></label>
+    <p class="meta">Site microcopy: short messages · double opt-in · leave anytime.</p>
+
+    <h2>4) Discord</h2>
+    <label class="check"><input type="checkbox" /> <span>Create server; roles <strong>interested</strong> + <strong>volunteer</strong></span></label>
+    <label class="check"><input type="checkbox" /> <span>Private <code>#registrations</code> + webhook for Tally</span></label>
+    <label class="check"><input type="checkbox" /> <span>Invite URL for interested → paste at <code>&lt;!-- DISCORD_INVITE --&gt;</code></span></label>
+
+    <h2>5) Paste back to CoS</h2>
+    <div class="note">
+      <p>When live, send Builder/CoS:</p>
+      <ul>
+        <li>Tally embed URL / iframe</li>
+        <li>Brevo form embed</li>
+        <li>Discord invite URL</li>
+      </ul>
+      <p>Until then: site keeps mailto / “coming” placeholders only.</p>
+    </div>
+
+    <p class="meta" style="margin-top:32px">See also <code>README-signup.md</code> · markdown twin <a href="/docs/signup-setup.md">signup-setup.md</a></p>
+  </div>
+</body>
+</html>
