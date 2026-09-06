@@ -20,7 +20,7 @@ Do **not** invent or commit real Tally/Brevo form IDs. Paste live embeds into th
 
 ## 1) Google Sheet
 
-1. Create a Google Sheet named **Attention Reclaim — Volunteers**.
+1. Create a Google Sheet named **Mind Reclaim — Volunteers**.
 2. Keep columns aligned with Tally fields (email, first name, locality, how they want to help, 18+/parent attestation, timestamp).
 3. Share edit access only with founder / CoS as needed.
 
@@ -67,7 +67,7 @@ Microcopy on site: short messages, double opt-in, leave anytime.
 
 ## 4) Discord
 
-1. Create server for Attention Reclaim community.
+1. Create server for Mind Reclaim community.
 2. Roles: **interested**, **volunteer**.
 3. Private channel `#registrations` (staff only) + webhook for Tally.
 4. Create invite URL for **interested** (not public registrations dump).

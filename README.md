@@ -1,4 +1,4 @@
-# Attention Reclaim (working name)
+# Mind Reclaim (working name)
 
 Static preview site for the movement portal.
 

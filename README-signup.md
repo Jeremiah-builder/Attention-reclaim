@@ -1,6 +1,6 @@
 # Signup stack (locked) — Builder summary
 
-**Volunteers:** Tally form → Google Sheet “Attention Reclaim — Volunteers” + email notify + Discord webhook to private `#registrations`.
+**Volunteers:** Tally form → Google Sheet “Mind Reclaim — Volunteers” + email notify + Discord webhook to private `#registrations`.
 
 **Newsletter:** Brevo list with double opt-in embed; tags `site-newsletter` / `invite`. DNS for `attentionreclaim.org` later.
 
