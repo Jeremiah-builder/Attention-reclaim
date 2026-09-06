@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volunteer — Attention Reclaim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --muted: #5C534C;
+      --card: #FFFBF5;
+      --accent: #C45C26;
+      --accent-soft: #F3DCC8;
+      --spark: #2F6B4F;
+      --line: #E6DCCD;
+      --banner: #2A221C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .banner {
+      font-size: 13px;
+      background: var(--banner);
+      color: #fafaf9;
+      text-align: center;
+      padding: 10px 14px;
+    }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+    }
+    .topnav .brand {
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .topnav-links { display: flex; flex-wrap: wrap; gap: 14px 18px; }
+    .topnav a {
+      color: var(--spark);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    section, footer { padding: 48px 20px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .wide { max-width: 920px; margin: 0 auto; }
+    .brand {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    h1, h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+    h2 { font-size: 1.45rem; margin: 0 0 12px; }
+    h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .micro {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .hero {
+      background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding-top: 36px;
+    }
+    .ctas { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 10px; }
+    .btn {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #FFFBF5; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--spark);
+    }
+    .alt {
+      background: var(--card);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    ul, ol { margin: 0 0 14px; padding-left: 1.2em; }
+    li { margin-bottom: 8px; }
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-top: 12px;
+    }
+    .tile {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      border-top: 4px solid var(--spark);
+    }
+    .tile.clay { border-top-color: var(--accent); }
+    .tile p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    .note {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0 0;
+    }
+    .note p { margin: 0; font-size: 0.98rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      background: #fff;
+      margin: 12px 0 8px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--accent-soft); font-weight: 700; }
+    .form-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-top: 8px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+    .field { margin-bottom: 14px; }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 16px;
+      padding: 11px 12px;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--ink);
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 15px;
+      margin: 8px 0 16px;
+    }
+    .check input { margin-top: 4px; }
+    .faq details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .faq summary {
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq details[open] summary { margin-bottom: 8px; color: var(--accent); }
+    .faq details p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    footer {
+      background: var(--banner);
+      color: #a8a29e;
+      font-size: 14px;
+    }
+    footer .oneliner-foot {
+      color: #fafaf9;
+      margin-bottom: 12px;
+    }
+    footer a {
+      color: #e7e5e4;
+      margin-right: 12px;
+      text-decoration: none;
+    }
+    a.linkish {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">Preview — placeholder brand “Attention Reclaim”. Volunteer page · public.</div>
+
+  <nav class="topnav" aria-label="Page">
+    <p class="brand">Attention Reclaim · placeholder</p>
+    <div class="topnav-links">
+      <a href="/">← Home</a>
+      <a href="/how-it-works">How it works</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="brand">Volunteer · local ambassadors</div>
+      <h1>Help your street, school, and circle take attention back</h1>
+      <p class="muted">Attention Reclaim needs local people — not influencers. If you can host a short parent night, share a one-pager, or model phone-free meals with neighbours, you can help. We give you a kit, simple talking points, and a private group for support.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#apply">Apply to volunteer</a>
+        <a class="btn btn-secondary" href="#what-youll-do">See what you’ll do</a>
+      </div>
+      <p class="micro">Small local talks. Plain language. No scare stories.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Why local people matter</h2>
+      <p>One family alone has a hard job. Shared rules and shared understanding make limits feel normal — not weird. A neighbour or teacher who can explain how apps hold attention, in calm words, often helps more than another post in the feed.</p>
+      <p>We keep our own use of social media small. The website and newsletter are home. Volunteers extend that same habit: real conversations, offline first.</p>
+    </div>
+  </section>
+
+  <section class="alt" id="what-youll-do">
+    <div class="wrap">
+      <h2>What you’ll do</h2>
+      <div class="grid">
+        <div class="tile">
+          <h3>Host or join a short talk</h3>
+          <p>5, 15, or 40 minutes for parents, PTA, or a neighbour circle — at your pace.</p>
+        </div>
+        <div class="tile clay">
+          <h3>Share the kit</h3>
+          <p>One-pager, slides, and how-it-works sheet after you’re approved.</p>
+        </div>
+        <div class="tile">
+          <h3>Model the norms</h3>
+          <p>Phones away at meals, fewer alerts, sleep protected — kids copy what we do.</p>
+        </div>
+        <div class="tile clay">
+          <h3>Send people here</h3>
+          <p>Point to the website and newsletter — not deeper into short-form feeds.</p>
+        </div>
+      </div>
+      <p style="margin-top:18px">You set the pace. One talk a season is enough to start.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What we provide</h2>
+      <ul>
+        <li>Starter kit (PDF pack after apply): one-pager, parent-night slides, talking points, how-it-works sheet, poster, brand do’s &amp; don’ts.</li>
+        <li>Welcome email and a private Signal/Telegram group for vetted volunteers.</li>
+        <li>Monthly 45-minute office hours with the founder (optional).</li>
+        <li>Shared FAQ and light coaching before your first talk.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="alt" id="kit">
+    <div class="wrap">
+      <h2>What’s in the kit</h2>
+      <p>We list the kit here so you know what you’ll get. <strong>Full PDFs are sent after you apply</strong> and we welcome you in.</p>
+      <table>
+        <thead>
+          <tr><th>Asset</th><th>Use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>One-pager</td><td>Manifesto-lite + what to try this week</td></tr>
+          <tr><td>Parent-night slides</td><td>8–12 slides for a short evening talk</td></tr>
+          <tr><td>Talking points</td><td>5 / 15 / 40 minute versions</td></tr>
+          <tr><td>How it works one-sheet</td><td>Diagram + Path A / Path B</td></tr>
+          <tr><td>Poster / handout (A4)</td><td>Leave-behind for boards and tables</td></tr>
+          <tr><td>Brand do’s &amp; don’ts</td><td>Warm hero; no scare-teen imagery</td></tr>
+        </tbody>
+      </table>
+      <div class="note">
+        <p><strong>Kit access:</strong> list is public; full PDF pack after apply. PDFs are not hosted as open downloads yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply">
+    <div class="wrap">
+      <h2>Apply to volunteer</h2>
+      <p class="muted">Tell us a little about yourself. We’ll reply with next steps and kit access.</p>
+      <form class="form-card" action="mailto:hello@attentionreclaim.org" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="city">City / region</label>
+          <input type="text" id="city" name="City" required autocomplete="address-level2" />
+        </div>
+        <div class="field">
+          <label for="role">Role</label>
+          <select id="role" name="Role" required>
+            <option value="">Select…</option>
+            <option>Parent</option>
+            <option>Teacher</option>
+            <option>Neighbour</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="languages">Languages <span class="micro">(optional)</span></label>
+          <input type="text" id="languages" name="Languages" placeholder="e.g. English, Irish" />
+        </div>
+        <div class="field">
+          <label for="idea">Idea for a first talk or circle <span class="micro">(optional)</span></label>
+          <textarea id="idea" name="First talk idea" placeholder="School PTA, neighbour coffee, faith group…"></textarea>
+        </div>
+        <label class="check">
+          <input type="checkbox" name="Guidelines" value="I agree" required />
+          <span>I agree to the volunteer guidelines: no shaming, no conspiracy content, no collecting children’s data, and I will point people back to the website and newsletter.</span>
+        </label>
+        <button class="btn btn-primary" type="submit">Send application</button>
+        <p class="micro" style="margin-top:14px;margin-bottom:0">Form backend coming — for now this opens an email draft to hello@attentionreclaim.org (placeholder address).</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="alt faq" id="faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Do I need to be an expert?</summary>
+        <p>No. You need curiosity, kindness, and willingness to use our talking points. We coach before your first talk.</p>
+      </details>
+      <details>
+        <summary>How much time is this?</summary>
+        <p>As little as one short talk a season, plus reading the kit. Monthly office hours are optional.</p>
+      </details>
+      <details>
+        <summary>Will I get the PDFs right away?</summary>
+        <p>We list the kit publicly. Full PDFs come after you apply and we welcome you — so the pack stays with people who agree to the guidelines.</p>
+      </details>
+      <details>
+        <summary>Can I post about this on social media?</summary>
+        <p>Lightly, and always point back to the website and newsletter. We do not grow by feeding the attention machine.</p>
+      </details>
+      <details>
+        <summary>What if press contacts me?</summary>
+        <p>Thank them and escalate to the founder. Don’t speak as official spokesperson unless agreed.</p>
+      </details>
+      <details>
+        <summary>Is this anti-technology?</summary>
+        <p>No. We care about design that captures children’s attention — and about building a fuller life offline.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="oneliner-foot">We help parents and communities protect children’s attention from AI-shaped social media—and build a fuller life offline.</p>
+      <p>
+        <a href="/">Home</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/#newsletter">Newsletter</a>
+        <a href="#apply">Apply</a>
+      </p>
+      <p>© Attention Reclaim (working name) — final name and domain still open</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volunteer copy pack (internal draft) — Attention Reclaim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --muted: #5C534C;
+      --card: #FFFBF5;
+      --accent: #C45C26;
+      --accent-soft: #F3DCC8;
+      --leaf: #2F6B4F;
+      --line: #E6DCCD;
+      --banner: #2A221C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .banner {
+      background: var(--banner);
+      color: #fafaf9;
+      font-size: 13px;
+      text-align: center;
+      padding: 10px 14px;
+    }
+    .banner a { color: #F3DCC8; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 72px; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; }
+    h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin: 0 0 8px; font-weight: 700; line-height: 1.2; }
+    h2 { font-size: 1.35rem; margin: 36px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+    h2:first-of-type { border-top: none; padding-top: 0; }
+    h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 22px 0 8px;
+      color: var(--leaf);
+    }
+    .meta { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+    .draft-badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0 0 14px; padding-left: 1.2em; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    .note {
+      background: var(--card);
+      border-left: 4px solid var(--leaf);
+      padding: 12px 14px;
+      margin: 16px 0;
+      border-radius: 0 10px 10px 0;
+    }
+    .warn {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      margin: 16px 0;
+      border-radius: 0 10px 10px 0;
+    }
+    .block {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+    }
+    .toc { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+    .toc ol { margin: 8px 0 0; }
+    .label {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+    code { font-size: 0.9em; background: #fff; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--card); margin: 12px 0 16px; }
+    th, td { border: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: var(--accent-soft); }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    INTERNAL DRAFT — Copywriter Volunteer pack · not the public page ·
+    <a href="/">Home</a> ·
+    <a href="/volunteer">Public Volunteer page</a> ·
+    <a href="/docs/volunteer-kit-outline">Kit outline</a>
+  </div>
+
+  <div class="wrap">
+    <span class="draft-badge">Internal draft</span>
+    <h1>Volunteer copy pack</h1>
+    <p class="meta">Attention Reclaim (working name) · Copywriter deliverable for page + kit text · Marked internal until founder lock-in · Tone: warm, plain language, no scare-teen, no conspiracy</p>
+
+    <div class="toc">
+      <p class="label">Contents</p>
+      <ol>
+        <li><a href="#guidelines">Volunteer guidelines</a></li>
+        <li><a href="#page">Public page sections (approved-ready copy)</a></li>
+        <li><a href="#talking">Talking points — 5 / 15 / 40 min</a></li>
+        <li><a href="#onepager">One-pager text</a></li>
+        <li><a href="#slides">Parent-night slide outline</a></li>
+        <li><a href="#faq">FAQ copy</a></li>
+        <li><a href="#form">Form field labels &amp; confirmations</a></li>
+      </ol>
+    </div>
+
+    <div class="warn">
+      <strong>Access rule (default):</strong> list the kit publicly on the Volunteer page; full PDF pack is sent after apply (or shared with approved volunteers). Do not ship PDFs in this pass.
+    </div>
+
+    <!-- ========== GUIDELINES ========== -->
+    <h2 id="guidelines">1) Volunteer guidelines</h2>
+    <p><strong>Who you are:</strong> a local ambassador — parent, teacher, neighbour, or community leader who helps others understand how attention-capturing apps work, and what small local steps look like.</p>
+    <p><strong>Who you are not:</strong> a social-media influencer for this movement. We grow through conversations, parent nights, and shared habits — not through growth-hacking short-form feeds.</p>
+
+    <h3>In scope</h3>
+    <ul>
+      <li>Host or co-host a short parent night, PTA talk, or neighbour circle.</li>
+      <li>Share kit materials (one-pager, slides, talking points) with permission from the organizer.</li>
+      <li>Model phone norms in your own home and group settings (meals, meetings, sleep).</li>
+      <li>Point people back to the website and newsletter — our real home.</li>
+      <li>Escalate press, partnership, or sensitive cases to the founder.</li>
+    </ul>
+
+    <h3>Out of scope</h3>
+    <ul>
+      <li>Harassment, shaming parents or children, or diagnosing anyone’s mental health.</li>
+      <li>Conspiracy content, panic framing, or “the kids are ruined” scare talk.</li>
+      <li>Collecting children’s data, scraping profiles, or building contact lists of minors.</li>
+      <li>Using Attention Reclaim branding to sell products or push unrelated politics.</li>
+      <li>Speaking as if you are staff or the founder without agreement.</li>
+    </ul>
+
+    <div class="note">
+      <strong>Brand feel:</strong> warm kitchen-table honesty. Clay (#C45C26) and leaf (#2F6B4F) on cream. Hero imagery of presence and ordinary life — not distressed teens. Prefer “we can still choose” over doom.
+    </div>
+
+    <!-- ========== PUBLIC PAGE ========== -->
+    <h2 id="page">2) Public Volunteer page — section copy</h2>
+
+    <div class="block">
+      <p class="label">Hero</p>
+      <p><strong>Eyebrow:</strong> Volunteer · local ambassadors</p>
+      <p><strong>H1:</strong> Help your street, school, and circle take attention back</p>
+      <p><strong>Lead:</strong> Attention Reclaim needs local people — not influencers. If you can host a short parent night, share a one-pager, or model phone-free meals with neighbours, you can help. We give you a kit, simple talking points, and a private group for support.</p>
+      <p><strong>Primary CTA:</strong> Apply to volunteer</p>
+      <p><strong>Secondary CTA:</strong> See what you’ll do</p>
+      <p><strong>Micro:</strong> Small local talks. Plain language. No scare stories.</p>
+    </div>
+
+    <div class="block">
+      <p class="label">Why we need local people</p>
+      <p><strong>H2:</strong> Why local people matter</p>
+      <p>One family alone has a hard job. Shared rules and shared understanding make limits feel normal — not weird. A neighbour or teacher who can explain how apps hold attention, in calm words, often helps more than another post in the feed.</p>
+      <p>We keep our own use of social media small. The website and newsletter are home. Volunteers extend that same habit: real conversations, offline first.</p>
+    </div>
+
+    <div class="block">
+      <p class="label">What you’ll do</p>
+      <p><strong>H2:</strong> What you’ll do</p>
+      <ul>
+        <li><strong>Host or join a short talk</strong> — 5, 15, or 40 minutes for parents, PTA, or a neighbour circle.</li>
+        <li><strong>Share the kit</strong> — one-pager, slides, and how-it-works sheet (after you’re approved).</li>
+        <li><strong>Model the norms</strong> — phones away at meals, fewer alerts, sleep protected.</li>
+        <li><strong>Send people here</strong> — website and newsletter, not deeper into short-form feeds.</li>
+      </ul>
+      <p>You set the pace. One talk a season is enough to start.</p>
+    </div>
+
+    <div class="block">
+      <p class="label">What we provide</p>
+      <p><strong>H2:</strong> What we provide</p>
+      <ul>
+        <li>Starter kit (PDF pack after apply): one-pager, parent-night slides, talking points, how-it-works sheet, poster, brand do’s &amp; don’ts.</li>
+        <li>Welcome email and a private Signal/Telegram group for vetted volunteers.</li>
+        <li>Monthly 45-minute office hours with the founder (optional).</li>
+        <li>Shared FAQ and light coaching before your first talk.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <p class="label">Kit list (public)</p>
+      <p><strong>H2:</strong> What’s in the kit</p>
+      <p>We list the kit here so you know what you’ll get. Full PDFs are sent after you apply and we welcome you in.</p>
+      <table>
+        <thead><tr><th>Asset</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>One-pager</td><td>Manifesto-lite + what to try this week</td></tr>
+          <tr><td>Parent-night slides</td><td>8–12 slides for a short evening talk</td></tr>
+          <tr><td>Talking points</td><td>5 / 15 / 40 minute versions</td></tr>
+          <tr><td>How it works one-sheet</td><td>Diagram + Path A / Path B</td></tr>
+          <tr><td>Poster / handout (A4)</td><td>Leave-behind for boards and tables</td></tr>
+          <tr><td>Brand do’s &amp; don’ts</td><td>Warm hero; no scare-teen imagery</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== TALKING POINTS ========== -->
+    <h2 id="talking">3) Talking points — 5 / 15 / 40 minutes</h2>
+    <p class="meta">Use calm voice. Cite sources lightly (Surgeon General, APA). Invite questions. Never diagnose a child in the room.</p>
+
+    <h3>5 minutes — “Why this matters”</h3>
+    <div class="block">
+      <ol>
+        <li><strong>Open:</strong> “Many of us feel uneasy when a child stays on a phone for hours. That feeling is useful — these apps are built to hold attention.”</li>
+        <li><strong>Design, not blame:</strong> Platforms earn from time and engagement. Children are still growing focus, sleep, and self-image — so they are easier to pull in.</li>
+        <li><strong>One fact:</strong> U.S. Surgeon General (2023): more than 3 hours/day on social media is linked with double the risk of depression/anxiety symptoms.</li>
+        <li><strong>Fear of missing out:</strong> Limits can feel scary (“my child will be left out”). Shared family/school norms reduce that pressure.</li>
+        <li><strong>Close + ask:</strong> “This week: one phone-free meal, and one honest talk about how the app is designed. Want the one-pager and newsletter?”</li>
+      </ol>
+    </div>
+
+    <h3>15 minutes — parent circle / PTA warm-up</h3>
+    <div class="block">
+      <ol>
+        <li><strong>Welcome (1 min):</strong> Who you are; this is not a ban lecture; we practice together.</li>
+        <li><strong>What’s happening (3 min):</strong> Attention as product; Path A (child spends $0, ads still pay) vs Path B (buys / “ask parents”). Point to how-it-works sheet.</li>
+        <li><strong>What we protect (3 min):</strong> Sleep, mood, body image, homework, real friendship. Short Surgeon General / APA cites only.</li>
+        <li><strong>What families can try (4 min):</strong> Explain design; protect sleep/meals/homework; delay accounts when possible; strong privacy; change one adult habit where kids can see it; agree norms with other parents.</li>
+        <li><strong>What schools/communities add (2 min):</strong> Phone-free times; parent nights that explain design; age guidelines; offline clubs/sports.</li>
+        <li><strong>Close (2 min):</strong> Hand one-pager; invite newsletter; offer volunteer path for anyone who wants to host next time.</li>
+      </ol>
+    </div>
+
+    <h3>40 minutes — full parent night</h3>
+    <div class="block">
+      <ol>
+        <li><strong>Arrive &amp; norms (5):</strong> Phones face-down optional; no shaming; questions welcome.</li>
+        <li><strong>Story of the problem (8):</strong> “Just the times” vs design; attention as product; Path A / B with diagram.</li>
+        <li><strong>Evidence, lightly (7):</strong> Engagement design; sleep review; body image stat; APA note that adult product design is not always right for youth. Emphasize: not every child is affected the same; some find community online — our focus is excess and what families can do.</li>
+        <li><strong>Fear of limits (5):</strong> Left-out fear is real; shared rules; offline belonging.</li>
+        <li><strong>Practice block (8):</strong> In pairs: one adult habit to change; one family limit; one person to invite to the next circle.</li>
+        <li><strong>School &amp; street (4):</strong> What to ask of PTA/school; neighbour agreements.</li>
+        <li><strong>Close &amp; kit (3):</strong> Newsletter, how-it-works page, volunteer apply, office hours mention.</li>
+      </ol>
+    </div>
+
+    <!-- ========== ONE-PAGER ========== -->
+    <h2 id="onepager">4) One-pager text (for later PDF)</h2>
+    <div class="block">
+      <p class="label">Front — manifesto lite</p>
+      <p><strong>Title:</strong> We can still choose</p>
+      <p><strong>Sub:</strong> Attention Reclaim — plain talk for parents and communities</p>
+      <p>Social media apps are built to hold attention. Many parents feel unsure. Some say it is just the times. Some fear that limits will hurt more than the apps do. We are here to talk honestly, share simple steps, and help families and schools act together — starting with our own habits too.</p>
+      <p><strong>Remember:</strong> You are not the customer. Your attention — and the trail of what you do and share — is the product.</p>
+      <p class="label">Back — what to do this week</p>
+      <ul>
+        <li>Explain that the app is built to keep them there — not only “you’re on it too much.”</li>
+        <li>Protect sleep, homework, and meals.</li>
+        <li>Wait longer before personal accounts when you can; use strong privacy when accounts exist.</li>
+        <li>Talk with other adults in your child’s life so you are not alone.</li>
+        <li>Change one of your own phone habits where your child can see it.</li>
+      </ul>
+      <p><strong>Footer:</strong> Website · Newsletter · Volunteer · hello@attentionreclaim.org (placeholder)</p>
+    </div>
+
+    <!-- ========== SLIDES ========== -->
+    <h2 id="slides">5) Parent-night slide outline (8–12 slides)</h2>
+    <div class="block">
+      <ol>
+        <li><strong>Title:</strong> We can still choose · Attention Reclaim parent night</li>
+        <li><strong>Why we’re here:</strong> Uneasy feeling is useful; design, not blame</li>
+        <li><strong>Attention as product:</strong> Time + engagement → ads</li>
+        <li><strong>Two paths:</strong> Path A ($0) / Path B (someone pays)</li>
+        <li><strong>What we protect:</strong> Sleep, mood, learning, belonging</li>
+        <li><strong>One careful note:</strong> Not every child is the same; focus on excess</li>
+        <li><strong>Fear of missing out:</strong> Shared norms beat going alone</li>
+        <li><strong>Family starts:</strong> Five simple actions (from one-pager)</li>
+        <li><strong>Adult habits:</strong> Kids copy what we do</li>
+        <li><strong>Schools &amp; streets:</strong> Phone-free times, parent nights, offline yes</li>
+        <li><strong>Practice:</strong> One habit · one limit · one ally</li>
+        <li><strong>Next step:</strong> Newsletter · how-it-works · volunteer · thank you</li>
+      </ol>
+      <p class="meta">Design note: cream background, clay accents, leaf for positive actions; kitchen/outdoor imagery — no distressed-teen stock.</p>
+    </div>
+
+    <!-- ========== FAQ ========== -->
+    <h2 id="faq">6) FAQ copy (for public page)</h2>
+    <div class="block">
+      <p><strong>Do I need to be an expert?</strong><br />No. You need curiosity, kindness, and willingness to use our talking points. We coach before your first talk.</p>
+      <p><strong>How much time is this?</strong><br />As little as one short talk a season, plus reading the kit. Monthly office hours are optional.</p>
+      <p><strong>Will I get the PDFs right away?</strong><br />We list the kit publicly. Full PDFs come after you apply and we welcome you (keeps the pack with people who agree to the guidelines).</p>
+      <p><strong>Can I post about this on social media?</strong><br />Lightly, and always point back to the website and newsletter. We do not grow by feeding the attention machine.</p>
+      <p><strong>What if press contacts me?</strong><br />Thank them and escalate to the founder. Don’t speak as official spokesperson unless agreed.</p>
+      <p><strong>Is this anti-technology?</strong><br />No. We care about design that captures children’s attention — and about building a fuller life offline.</p>
+    </div>
+
+    <!-- ========== FORM ========== -->
+    <h2 id="form">7) Apply form — fields &amp; microcopy</h2>
+    <div class="block">
+      <ul>
+        <li>Name (required)</li>
+        <li>Email (required)</li>
+        <li>City / region (required)</li>
+        <li>Role — Parent / Teacher / Neighbour / Other (required)</li>
+        <li>Languages (optional)</li>
+        <li>Optional: idea for a first talk or circle</li>
+        <li>Checkbox: I agree to the volunteer guidelines (required)</li>
+      </ul>
+      <p><strong>Submit button:</strong> Send application</p>
+      <p><strong>Until backend ships:</strong> form uses <code>mailto:hello@attentionreclaim.org</code> with a note: “Form backend coming — for now this opens an email draft.”</p>
+      <p><strong>Success microcopy:</strong> Thanks — we’ll reply with next steps and kit access.</p>
+    </div>
+
+    <p class="meta" style="margin-top:36px">End of internal draft · Align with site voice on index.html / how-it-works.html · PDFs not created in this pass</p>
+  </div>
+</body>
+</html>
