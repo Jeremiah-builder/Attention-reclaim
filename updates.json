@@ -1,4 +1,26 @@
 {
-  "updated": "2026-09-06",
-  "items": []
+  "updated": "2026-09-07",
+  "items": [
+    {
+      "title": "Early look at Australia’s under-16 social media age law",
+      "summary": "BMJ study finds little early drop in teen use; many still get through weak age checks.",
+      "url": "https://www.bmj.com/content/393/bmj-2026-363695",
+      "date": "2026",
+      "source": "The BMJ"
+    },
+    {
+      "title": "Kids turning to AI for emotional support may be in distress",
+      "summary": "Large Ontario study links chatbot emotional use to higher rates of serious emotional problems.",
+      "url": "https://www.uottawa.ca/research-innovation/news-all/uottawa-study-finds-ai-use-emotional-support-may-signal-youth-distress",
+      "date": "2026-08-31",
+      "source": "University of Ottawa"
+    },
+    {
+      "title": "OECD maps how social media shapes young people’s lives",
+      "summary": "New report covers school phone limits, platform rules, and risks to learning and wellbeing.",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/06/growing-up-in-the-social-media-age_be0c75c6/a1132839-en.pdf",
+      "date": "2026-06",
+      "source": "OECD"
+    }
+  ]
 }
