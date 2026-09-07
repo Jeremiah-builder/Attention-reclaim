@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1180" viewBox="0 0 1400 1180"
+     role="img" aria-label="The loop: Extract, Predict what holds, Personalize / hold, Test again.">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bg { fill: #F7F0E6; }
+      .card { fill: #FFFBF5; stroke: #E6DCCD; stroke-width: 2; }
+      .arc { fill: none; stroke: #E6DCCD; stroke-width: 5; stroke-linecap: round; }
+      .micro { font-family: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif; font-size: 15px; font-weight: 700; fill: #2F6B4F; letter-spacing: 0.28em; }
+      .caption { font-family: Fraunces, Georgia, "Times New Roman", serif; font-size: 28px; font-style: italic; fill: #1A1614; }
+      .step { font-family: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif; font-size: 22px; font-weight: 700; fill: #1A1614; }
+      .helper { font-family: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif; font-size: 14px; fill: #5C534C; }
+      .num { font-family: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif; font-size: 16px; font-weight: 700; fill: #FFFBF5; }
+    ]]></style>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1A1614" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#E6DCCD"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1400" height="1180"/>
+  <rect x="0" y="0" width="1400" height="6" fill="#C45C26"/>
+  <text class="micro" x="700" y="62" text-anchor="middle">THE LOOP</text>
+  <rect x="682" y="72" width="36" height="4" rx="2" fill="#2F6B4F"/>
+  <path d="M 810.69,288.52 A 340,340 0 0 1 1021.48,499.31" class="arc" marker-end="url(#arrowHead)"/>
+  <path d="M 1021.48,720.69 A 340,340 0 0 1 810.69,931.48" class="arc" marker-end="url(#arrowHead)"/>
+  <path d="M 589.31,931.48 A 340,340 0 0 1 378.52,720.69" class="arc" marker-end="url(#arrowHead)"/>
+  <path d="M 378.52,499.31 A 340,340 0 0 1 589.31,288.52" class="arc" marker-end="url(#arrowHead)"/>
+  <rect x="460.0" y="551.0" width="480" height="118" rx="28" class="card" filter="url(#softShadow)"/>
+  <text class="caption" x="700.0" y="602.0" text-anchor="middle">Chosen to hold them,</text>
+  <text class="caption" x="700.0" y="638.0" text-anchor="middle">not to grow them.</text>
+  <rect x="664.0" y="652.0" width="72" height="4" rx="2" fill="#C45C26"/>
+  <g>
+    <rect x="560.0" y="182.0" width="280" height="96" rx="20" class="card" filter="url(#softShadow)"/>
+    <circle cx="588.0" cy="230.0" r="16" fill="#C45C26"/>
+    <text class="num" x="588.0" y="235.0" text-anchor="middle">1</text>
+    <text class="step" x="620.0" y="222.0">Extract</text>
+    <text class="helper" x="620.0" y="248.0">what they do &amp; share</text>
+  </g>
+  <g>
+    <rect x="920.0" y="562.0" width="320" height="96" rx="20" class="card" filter="url(#softShadow)"/>
+    <circle cx="948.0" cy="610.0" r="16" fill="#2F6B4F"/>
+    <text class="num" x="948.0" y="615.0" text-anchor="middle">2</text>
+    <text class="step" x="980.0" y="602.0">Predict what holds</text>
+    <text class="helper" x="980.0" y="628.0">what keeps them there</text>
+  </g>
+  <g>
+    <rect x="540.0" y="942.0" width="320" height="96" rx="20" class="card" filter="url(#softShadow)"/>
+    <circle cx="568.0" cy="990.0" r="16" fill="#C45C26"/>
+    <text class="num" x="568.0" y="995.0" text-anchor="middle">3</text>
+    <text class="step" x="600.0" y="982.0">Personalize / hold</text>
+    <text class="helper" x="600.0" y="1008.0">feed shaped to them</text>
+  </g>
+  <g>
+    <rect x="180.0" y="562.0" width="280" height="96" rx="20" class="card" filter="url(#softShadow)"/>
+    <circle cx="208.0" cy="610.0" r="16" fill="#2F6B4F"/>
+    <text class="num" x="208.0" y="615.0" text-anchor="middle">4</text>
+    <text class="step" x="240.0" y="602.0">Test again</text>
+    <text class="helper" x="240.0" y="628.0">learn & tighten</text>
+  </g>
+</svg>
