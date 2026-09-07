@@ -1,0 +1,37 @@
+{
+  "updated": "2026-09-07",
+  "items": [
+    {
+      "type": "podcast",
+      "title": "Our Youth’s Perspective 2025: AI & Public Policy",
+      "summary": "Youth Scientific Council members talk with Nick Allen about how AI may reshape education—and why policy and equity matter.",
+      "url": "https://developingadolescent.ucla.edu/podcast/our-youths-perspective-2025-ai-public-policy/",
+      "date": "2025",
+      "source": "UCLA Adaptivity"
+    },
+    {
+      "type": "conference",
+      "title": "iRAISE Alliance global convenings 2026",
+      "summary": "Coalition on AI and children’s development: French G7 (June 2026) and Paris Peace Forum (Nov 2026), plus research labs.",
+      "url": "https://i-raise.org/",
+      "date": "2026",
+      "source": "iRAISE Alliance"
+    },
+    {
+      "type": "article",
+      "title": "Teens who use AI for schoolwork are handing off critical thinking",
+      "summary": "Common Sense survey: 7 in 10 teens use AI for schoolwork; few get classroom AI literacy.",
+      "url": "https://www.commonsensemedia.org/press-releases/teens-who-use-ai-for-schoolwork-are-handing-off-critical-thinking-common-sense-media-research-finds",
+      "date": "2026-08-18",
+      "source": "Common Sense Media"
+    },
+    {
+      "type": "podcast",
+      "title": "Our Youth’s Perspective 2026: Benefits and challenges of social media",
+      "summary": "Youth-led Adaptivity episode with Lucia Magis-Weinberg on real social-media benefits, risks, and healthier habits.",
+      "url": "https://developingadolescent.ucla.edu/podcast/our-youths-perspective-2026-the-real-benefits-and-challenges-of-social-media/",
+      "date": "2026",
+      "source": "UCLA Adaptivity"
+    }
+  ]
+}

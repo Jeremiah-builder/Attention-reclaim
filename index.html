@@ -257,13 +257,13 @@
       text-decoration: none;
       font-size: 15px;
     }
-    /* Updates strip — weekly feed from updates.json */
+    /* Updates strip — News + Events & media tabs */
     .updates {
       background: var(--card);
       border-bottom: 1px solid var(--line);
       border-left: 4px solid var(--accent);
       padding: 28px 20px;
-      display: none; /* shown by script when ready */
+      display: block; /* always discoverable */
     }
     .updates.is-visible { display: block; }
     .updates .label {
@@ -275,6 +275,36 @@
       margin: 0 0 12px;
     }
     .updates h2 { font-size: 1.25rem; margin: 0 0 14px; }
+    .updates-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+    }
+    .updates-tab {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 6px 14px;
+      cursor: pointer;
+      line-height: 1.2;
+    }
+    .updates-tab:hover { color: var(--ink); border-color: var(--line); }
+    .updates-tab[aria-selected="true"] {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .updates-tab:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
     .update-list {
       display: grid;
       gap: 10px;
@@ -493,12 +523,16 @@
     </div>
   </section>
 
-  <section class="updates" id="updates" aria-label="Updates">
+  <section class="updates is-visible" id="updates" aria-label="News and events">
     <div class="wrap">
       <p class="label">Updates</p>
       <h2>Recent notes</h2>
-      <div class="update-list" id="update-list"></div>
-      <p class="soon" id="updates-soon" hidden>Updates coming soon.</p>
+      <div class="updates-tabs" role="tablist" aria-label="Feed type">
+        <button type="button" class="updates-tab" role="tab" id="tab-news" aria-selected="true" aria-controls="update-list" data-tab="news">News</button>
+        <button type="button" class="updates-tab" role="tab" id="tab-media" aria-selected="false" aria-controls="update-list" data-tab="media">Events &amp; media</button>
+      </div>
+      <div class="update-list" id="update-list" role="tabpanel" aria-labelledby="tab-news"></div>
+      <p class="soon" id="updates-soon" hidden>More coming soon.</p>
     </div>
   </section>
 
@@ -719,7 +753,11 @@
     var band = document.getElementById("updates");
     var list = document.getElementById("update-list");
     var soon = document.getElementById("updates-soon");
+    var tabs = document.querySelectorAll(".updates-tab");
     if (!band || !list) return;
+
+    var cache = { news: [], media: [] };
+    var active = "news";
 
     function showBand() { band.classList.add("is-visible"); }
 
@@ -731,11 +769,20 @@
         .replace(/"/g, "&quot;");
     }
 
-    function render(items) {
+    function metaLine(it, mode) {
+      var parts = [];
+      if (mode === "media" && it.type) parts.push(String(it.type).toUpperCase());
+      if (it.source) parts.push(String(it.source));
+      if (it.date) parts.push(String(it.date));
+      return parts.filter(Boolean).map(esc).join(" \u00b7 ");
+    }
+
+    function render(items, mode) {
       showBand();
       if (!items || !items.length) {
         list.innerHTML = "";
         soon.hidden = false;
+        soon.textContent = "More coming soon.";
         return;
       }
       soon.hidden = true;
@@ -745,10 +792,8 @@
         var it = items[i] || {};
         var title = esc(it.title || "Untitled");
         var summary = esc(it.summary || "");
-        var source = esc(it.source || "");
-        var date = esc(it.date || "");
         var url = it.url ? String(it.url) : "";
-        var meta = [source, date].filter(Boolean).join(" · ");
+        var meta = metaLine(it, mode);
         var heading = url
           ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + title + "</a>"
           : title;
@@ -762,18 +807,39 @@
       list.innerHTML = html;
     }
 
-    fetch("updates.json", { cache: "no-store" })
-      .then(function (r) {
+    function setTab(name) {
+      active = name;
+      for (var i = 0; i < tabs.length; i++) {
+        var t = tabs[i];
+        var on = t.getAttribute("data-tab") === name;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      }
+      list.setAttribute("aria-labelledby", name === "media" ? "tab-media" : "tab-news");
+      render(cache[name] || [], name);
+    }
+
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener("click", function (e) {
+        var name = e.currentTarget.getAttribute("data-tab");
+        if (name) setTab(name);
+      });
+    }
+
+    function loadJson(url) {
+      return fetch(url, { cache: "no-store" }).then(function (r) {
         if (!r.ok) throw new Error("fetch failed");
         return r.json();
-      })
-      .then(function (data) {
-        render((data && data.items) || []);
-      })
-      .catch(function () {
-        // Static preview without a server, or missing file: show placeholder.
-        render([]);
       });
+    }
+
+    Promise.all([
+      loadJson("updates.json").catch(function () { return { items: [] }; }),
+      loadJson("media.json").catch(function () { return { items: [] }; })
+    ]).then(function (results) {
+      cache.news = (results[0] && results[0].items) || [];
+      cache.media = (results[1] && results[1].items) || [];
+      setTab(active);
+    });
   })();
   </script>
 
