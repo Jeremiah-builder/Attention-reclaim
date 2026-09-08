@@ -1,0 +1,26 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Static preview site for the movement portal.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeremiah-builder/Attention-reclaim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeremiah-builder/Attention-reclaim/issues"
+  },
+  "homepage": "https://github.com/Jeremiah-builder/Attention-reclaim#readme",
+  "devDependencies": {
+    "wrangler": "^3.114.17"
+  }
+}

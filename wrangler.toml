@@ -6,3 +6,7 @@ preview_urls = true
 [assets]
 directory = "./"
 not_found_handling = "404-page"
+
+[[routes]]
+pattern = "mindreclaim.org"
+custom_domain = true
