@@ -456,36 +456,17 @@
       <h2>Apply to volunteer</h2>
       <p class="muted">Tell us a little about yourself. We’ll reply with next steps and kit access.</p>
       <div class="form-card" id="volunteer-form">
-        <!-- TALLY_EMBED: paste iframe here -->
-        <p><strong>Volunteer form connecting</strong> — live Tally embed will replace this block. Meanwhile, email <a href="mailto:hello@attentionreclaim.org">hello@attentionreclaim.org</a>.</p>
-        <p class="micro">Temporary mailto fallback until the Tally form is pasted above. Stack: Tally → Google Sheets + Discord <code>#registrations</code>.</p>
-        <form action="mailto:hello@attentionreclaim.org" method="post" enctype="text/plain" style="margin-top:16px">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="Name" required autocomplete="name" />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" required autocomplete="email" />
-          </div>
-          <div class="field">
-            <label for="city">City / region</label>
-            <input type="text" id="city" name="City" autocomplete="address-level2" />
-          </div>
-          <div class="field">
-            <label for="help">How you want to help <span class="micro">(optional)</span></label>
-            <textarea id="help" name="How I want to help" placeholder="Parent nights, school talks, neighbour circles…"></textarea>
-          </div>
-          <label class="check">
-            <input type="checkbox" name="Attestation" value="18+ or parent" required />
-            <span>I am 18+ or a parent/guardian applying for this adults/parents community. I will not submit children’s personal data.</span>
-          </label>
-          <label class="check">
-            <input type="checkbox" name="Guidelines" value="I agree" required />
-            <span>I agree to the volunteer guidelines: no shaming, no conspiracy content, no collecting children’s data, and I will point people back to the website and newsletter.</span>
-          </label>
-          <button class="btn btn-primary" type="submit">Send application (email draft)</button>
-        </form>
+        <!-- TALLY_EMBED: A7gNlW -->
+        <iframe
+          data-tally-src="https://tally.so/embed/A7gNlW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="520"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Mind Reclaim volunteer application"></iframe>
+        <p class="micro" style="margin-top:14px">Stack: Tally → Google Sheets + Discord <code>#registrations</code> (Sheets + Discord wiring next).</p>
         <p class="micro" style="margin-top:14px;margin-bottom:0">Privacy: this community is for adults and parents. We do not collect children’s personal data.</p>
         <p style="margin-top:16px">
           <!-- DISCORD_INVITE -->
@@ -561,5 +542,11 @@
     </div>
   </footer>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f85eff386cd4b91a75be0b980de76a9"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="https://tally.so/widgets/embed.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.Tally && typeof Tally.loadEmbeds === 'function') Tally.loadEmbeds();
+  });
+</script>
 </body>
 </html>
