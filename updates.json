@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-07",
+  "updated": "2026-09-14",
   "items": [
     {
-      "title": "Early look at Australia’s under-16 social media age law",
-      "summary": "BMJ study finds little early drop in teen use; many still get through weak age checks.",
-      "url": "https://www.bmj.com/content/393/bmj-2026-363695",
-      "date": "2026",
-      "source": "The BMJ"
+      "title": "California bans addictive social feeds for under-16s",
+      "summary": "Newsom signed AB 1709 barring infinite scroll and autoplay for under-16s, plus chatbot toy and companion AI safeguards.",
+      "url": "https://www.reuters.com/legal/litigation/california-enacts-new-curbs-social-media-children-2026-09-11/",
+      "date": "2026-09-10",
+      "source": "Reuters"
     },
     {
-      "title": "Kids turning to AI for emotional support may be in distress",
-      "summary": "Large Ontario study links chatbot emotional use to higher rates of serious emotional problems.",
-      "url": "https://www.uottawa.ca/research-innovation/news-all/uottawa-study-finds-ai-use-emotional-support-may-signal-youth-distress",
-      "date": "2026-08-31",
-      "source": "University of Ottawa"
+      "title": "France resubmits under-15 social media ban to the EU",
+      "summary": "Macron’s government notified the European Commission of a reworked ban after courts struck down the earlier law.",
+      "url": "https://www.thehindu.com/news/international/france-submits-new-proposal-to-ban-social-media-for-under-15s/article71465480.ece",
+      "date": "2026-09-14",
+      "source": "The Hindu / AFP"
     },
     {
-      "title": "OECD maps how social media shapes young people’s lives",
-      "summary": "New report covers school phone limits, platform rules, and risks to learning and wellbeing.",
-      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/06/growing-up-in-the-social-media-age_be0c75c6/a1132839-en.pdf",
-      "date": "2026-06",
-      "source": "OECD"
+      "title": "California’s Adam’s Law tightens AI chatbot rules for kids",
+      "summary": "New law requires parental controls, crisis alerts, and safety audits for companion chatbots used by minors.",
+      "url": "https://calmatters.org/economy/technology/2026/09/california-enacts-laws-restricting-chatbots-protecting-kids-online/",
+      "date": "2026-09-10",
+      "source": "CalMatters"
     }
   ]
 }
