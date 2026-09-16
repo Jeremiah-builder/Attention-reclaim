@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DEPRECATED — schematic / thin geometric hero rejected for storyboard fidelity.
+  Production path: hero-attention-home/frame-1.png … frame-4.png + hero-attention-home.css
+  See README-hero-attention-home.md. Do not use this SVG as the live homepage hero.
+-->
+
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" width="560" height="360"
      class="hero-attention-home" role="img"
      aria-label="Attention coming home: sparks leave a muted feed and gather into the Mind Reclaim mind and heart"

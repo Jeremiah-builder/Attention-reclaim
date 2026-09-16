@@ -1,165 +1,20 @@
-<!-- Builder: replace homepage hero <figure class="hero-media"> img with this partial; keep prefers-reduced-motion (link hero-attention-home.css). -->
-<figure class="hero-media">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" width="560" height="360"
-     class="hero-attention-home" role="img"
-     aria-label="Attention coming home: sparks leave a muted feed and gather into the Mind Reclaim mind and heart"
-     preserveAspectRatio="xMidYMid meet">
-  <title>Attention coming home</title>
-  <desc>Muted feed, clay attention sparks, then the F1 mind outline and clay heart. Concept 1 loop.</desc>
-  <defs>
-    <style type="text/css"><![CDATA[
-      .mrh-bg { fill: #F7F0E6; }
-      .mrh-feed-card { fill: #D6CFC4; }
-      .mrh-feed-line { fill: #B8AFA3; }
-      .mrh-spark { fill: #C45C26; }
-      .mrh-mind {
-        fill: none;
-        stroke: #2F6B4F;
-        stroke-width: 3.2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        opacity: 0;
-        animation: mrh-mind 7s ease-in-out infinite;
-      }
-      .mrh-heart {
-        fill: none;
-        stroke: #C45C26;
-        stroke-width: 2.7;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 66;
-        stroke-dashoffset: 66;
-        opacity: 0;
-        animation: mrh-heart 7s ease-in-out infinite;
-      }
-      .mrh-feed {
-        animation: mrh-feed 7s ease-in-out infinite;
-      }
-      .mrh-spark {
-        opacity: 0;
-        transform-box: view-box;
-        transform-origin: 0 0;
-        transform: translate(0%, 0%);
-      }
-      .mrh-spark-a { animation: mrh-spark-a 7s ease-in-out infinite; }
-      .mrh-spark-b { animation: mrh-spark-b 7s ease-in-out infinite; }
-      .mrh-spark-c { animation: mrh-spark-c 7s ease-in-out infinite; }
-
-      /* 0–1.2s feed full; 3.2–5s feed fades; hidden through hold */
-      @keyframes mrh-feed {
-        0%, 40% { opacity: 1; }
-        45.7% { opacity: 0.85; }
-        71.4%, 100% { opacity: 0; }
-      }
-      /* 1.2–3.2s mind outline fades in; then holds */
-      @keyframes mrh-mind {
-        0%, 17.1% { opacity: 0; }
-        28.6% { opacity: 0.7; }
-        45.7%, 100% { opacity: 1; }
-      }
-      /* 5–6.2s heart draws/fades in; hold complete F1 */
-      @keyframes mrh-heart {
-        0%, 71.4% { opacity: 0; stroke-dashoffset: 66; }
-        88.6%, 100% { opacity: 1; stroke-dashoffset: 0; }
-      }
-      /* Sparks: appear at feed → drift (mid = spread in mind) → tighten on heart → fade */
-      @keyframes mrh-spark-a {
-        0% { opacity: 0; transform: translate(0%, 0%); }
-        7% { opacity: 1; transform: translate(0%, 0%); }
-        17.1% { opacity: 1; transform: translate(0%, 0%); }
-        25.7% { opacity: 1; transform: translate(calc(var(--mx) * 0.38), calc(var(--my) * 0.38 + var(--arc))); }
-        45.7% { opacity: 1; transform: translate(var(--mx), var(--my)); }
-        71.4% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
-        82% { opacity: 0.3; transform: translate(var(--dx), var(--dy)); }
-        88.6%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)); }
-      }
-      @keyframes mrh-spark-b {
-        0%, 3% { opacity: 0; transform: translate(0%, 0%); }
-        11% { opacity: 1; transform: translate(0%, 0%); }
-        18% { opacity: 1; transform: translate(0%, 0%); }
-        27% { opacity: 1; transform: translate(calc(var(--mx) * 0.40), calc(var(--my) * 0.40 + var(--arc))); }
-        47% { opacity: 1; transform: translate(var(--mx), var(--my)); }
-        71.4% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
-        84% { opacity: 0.25; transform: translate(var(--dx), var(--dy)); }
-        90%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)); }
-      }
-      @keyframes mrh-spark-c {
-        0%, 6% { opacity: 0; transform: translate(0%, 0%); }
-        14% { opacity: 1; transform: translate(0%, 0%); }
-        19.5% { opacity: 1; transform: translate(0%, 0%); }
-        28.5% { opacity: 1; transform: translate(calc(var(--mx) * 0.36), calc(var(--my) * 0.36 + var(--arc))); }
-        48.5% { opacity: 1; transform: translate(var(--mx), var(--my)); }
-        71.4% { opacity: 1; transform: translate(var(--dx), var(--dy)); }
-        85% { opacity: 0.2; transform: translate(var(--dx), var(--dy)); }
-        91%, 100% { opacity: 0; transform: translate(var(--dx), var(--dy)); }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .mrh-feed,
-        .mrh-spark {
-          animation: none !important;
-          opacity: 0 !important;
-          visibility: hidden !important;
-        }
-        .mrh-mind,
-        .mrh-heart {
-          animation: none !important;
-          opacity: 1 !important;
-          visibility: visible !important;
-          stroke-dashoffset: 0 !important;
-        }
-      }
-    ]]></style>
-  </defs>
-
-  <rect class="mrh-bg" width="560" height="360"/>
-
-  <!-- Left: muted rounded feed card -->
-  <g class="mrh-feed">
-    <rect class="mrh-feed-card" x="30" y="78" width="158" height="204" rx="36"/>
-    <rect class="mrh-feed-line" x="52" y="118" width="114" height="8" rx="4"/>
-    <rect class="mrh-feed-line" x="52" y="150" width="96" height="8" rx="4"/>
-    <rect class="mrh-feed-line" x="52" y="182" width="108" height="8" rx="4"/>
-    <rect class="mrh-feed-line" x="52" y="214" width="84" height="8" rx="4"/>
-  </g>
-
-  <!-- Clay attention sparks (staggered a/b/c) -->
-  <g class="mrh-sparks">
-    <circle class="mrh-spark mrh-spark-a" cx="188" cy="166" r="6.8" style="--mx:32.14%;--my:-3.06%;--dx:36.43%;--dy:0.56%;--arc:3.2%;"/>
-    <circle class="mrh-spark mrh-spark-b" cx="204" cy="148" r="4.4" style="--mx:35.36%;--my:-1.67%;--dx:36.07%;--dy:2.78%;--arc:-2.4%;"/>
-    <circle class="mrh-spark mrh-spark-c" cx="196" cy="190" r="7.4" style="--mx:32.50%;--my:2.22%;--dx:33.93%;--dy:-2.22%;--arc:2.0%;"/>
-    <circle class="mrh-spark mrh-spark-a" cx="214" cy="174" r="3.6" style="--mx:38.57%;--my:-1.67%;--dx:35.71%;--dy:0.00%;--arc:-3.6%;"/>
-    <circle class="mrh-spark mrh-spark-b" cx="190" cy="208" r="5.2" style="--mx:30.36%;--my:-5.56%;--dx:35.71%;--dy:-5.00%;--arc:4.0%;"/>
-    <circle class="mrh-spark mrh-spark-c" cx="218" cy="140" r="4.0" style="--mx:35.71%;--my:3.33%;--dx:35.71%;--dy:7.22%;--arc:-1.6%;"/>
-    <circle class="mrh-spark mrh-spark-a" cx="206" cy="198" r="5.8" style="--mx:33.21%;--my:3.33%;--dx:34.64%;--dy:-3.33%;--arc:2.8%;"/>
-    <circle class="mrh-spark mrh-spark-b" cx="226" cy="160" r="3.2" style="--mx:21.79%;--my:2.78%;--dx:27.50%;--dy:1.11%;--arc:-4.2%;"/>
-    <circle class="mrh-spark mrh-spark-c" cx="198" cy="128" r="6.2" style="--mx:37.86%;--my:1.11%;--dx:37.50%;--dy:6.11%;--arc:1.4%;"/>
-    <circle class="mrh-spark mrh-spark-a" cx="220" cy="216" r="4.6" style="--mx:27.14%;--my:-10.56%;--dx:31.07%;--dy:-11.11%;--arc:-2.0%;"/>
-    <circle class="mrh-spark mrh-spark-b" cx="184" cy="150" r="3.8" style="--mx:45.36%;--my:11.11%;--dx:42.50%;--dy:8.33%;--arc:3.6%;"/>
-    <circle class="mrh-spark mrh-spark-c" cx="210" cy="226" r="5.0" style="--mx:26.07%;--my:-7.22%;--dx:30.00%;--dy:-15.00%;--arc:-3.0%;"/>
-    <circle class="mrh-spark mrh-spark-a" cx="228" cy="186" r="4.2" style="--mx:30.71%;--my:-7.22%;--dx:31.07%;--dy:-7.22%;--arc:2.4%;"/>
-    <circle class="mrh-spark mrh-spark-b" cx="192" cy="176" r="8.0" style="--mx:34.29%;--my:-1.11%;--dx:35.00%;--dy:-1.67%;--arc:-1.2%;"/>
-    <circle class="mrh-spark mrh-spark-c" cx="216" cy="124" r="3.4" style="--mx:37.14%;--my:22.22%;--dx:35.00%;--dy:17.78%;--arc:4.4%;"/>
-    <circle class="mrh-spark mrh-spark-a" cx="200" cy="238" r="4.8" style="--mx:29.29%;--my:-25.00%;--dx:32.86%;--dy:-22.78%;--arc:-2.8%;"/>
-  </g>
-
-  <!-- Exact F1 paths from brand/mind-reclaim-icon.svg (viewBox 0 0 64 64) -->
-  <g class="mrh-mark" transform="translate(250 40) scale(4.4)">
-    <path class="mrh-mind" d="M20 14
-    C28 9, 40 9, 47 16
-    C52 21, 54 29, 51 37
-    C49 42, 47 45.5, 47.5 50
-    C48 53.5, 45 56, 41.5 55
-    C37.5 53.5, 35.5 49, 34.5 44.5
-    C27 43.5, 18.5 38, 16 29.5
-    C13.5 21.5, 15 17, 20 14 Z"/>
-    <path class="mrh-heart" d="M33.5 41
-    C33.5 41, 23.5 34, 23.5 27
-    C23.5 23.2, 26.2 20.8, 29.2 20.8
-    C31.2 20.8, 32.6 22.1, 33.5 24
-    C34.4 22.1, 35.8 20.8, 37.8 20.8
-    C40.8 20.8, 43.5 23.2, 43.5 27
-    C43.5 34, 33.5 41, 33.5 41 Z"/>
-  </g>
-</svg>
+<!-- Builder: replace homepage hero <figure class="hero-media"> with this partial;
+     link hero-attention-home.css. Wait for Founder OK on preview before live push.
+     Production path = 4 stills + CSS crossfade (not the deprecated schematic SVG). -->
+<figure class="hero-media hero-attention-home">
+  <div class="hero-attention-stack" role="img"
+       aria-label="Attention coming home: sparks leave a muted feed, gather in the mind, and settle as the Mind Reclaim mind and clay heart">
+    <img class="hero-attention-frame hero-attention-frame--1"
+         src="assets/hero-attention-home/frame-1.png"
+         width="1120" height="720" alt="" decoding="async" />
+    <img class="hero-attention-frame hero-attention-frame--2"
+         src="assets/hero-attention-home/frame-2.png"
+         width="1120" height="720" alt="" decoding="async" />
+    <img class="hero-attention-frame hero-attention-frame--3"
+         src="assets/hero-attention-home/frame-3.png"
+         width="1120" height="720" alt="" decoding="async" />
+    <img class="hero-attention-frame hero-attention-frame--4"
+         src="assets/hero-attention-home/frame-4.png"
+         width="1120" height="720" alt="" decoding="async" />
+  </div>
 </figure>
