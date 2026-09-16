@@ -1,0 +1,51 @@
+/* Mind Reclaim homepage hero — Concept 1 “Attention coming home”
+   Link this on the homepage when swapping .hero-media to the SVG partial.
+   The SVG already embeds the 7s loop + prefers-reduced-motion; these rules
+   size the media to match the current kitchen img and reinforce reduced-motion
+   when the SVG is inlined. */
+
+.hero-media {
+  margin: 0;
+}
+
+.hero-media > .hero-attention-home,
+.hero-media svg.hero-attention-home,
+.hero-media object.hero-attention-home,
+.hero-media img.hero-attention-home {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  aspect-ratio: 560 / 360;
+  background: #F7F0E6;
+}
+
+@media (min-width: 768px) {
+  .hero-media > .hero-attention-home,
+  .hero-media svg.hero-attention-home,
+  .hero-media object.hero-attention-home,
+  .hero-media img.hero-attention-home {
+    height: 100%;
+    min-height: 280px;
+    max-height: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media .mrh-feed,
+  .hero-media .mrh-sparks,
+  .hero-media .mrh-spark {
+    animation: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  .hero-media .mrh-mind,
+  .hero-media .mrh-heart {
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
