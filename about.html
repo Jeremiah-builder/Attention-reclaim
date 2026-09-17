@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Mind Reclaim</title>
+  <link rel="canonical" href="https://mindreclaim.org/about" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/mind-reclaim-icon-16.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <link rel="icon" href="/brand/favicon.ico?v=f1-3" sizes="any">
+  <link rel="apple-touch-icon" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <style>
+    :root {
+      --cream: #F7F0E6;
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --clay: #C45C26;
+      --accent: #C45C26;
+      --leaf: #2F6B4F;
+      --spark: #2F6B4F;
+      --card: #FFFBF5;
+      --accent-soft: #F3DCC8;
+      --line: #E6DCCD;
+      --muted: #5C534C;
+      --banner: #2A221C;
+      --radius: 14px;
+      --wrap: 1040px;
+      --read: 38rem;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--cream);
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--leaf); }
+    a:hover { color: var(--clay); }
+
+    .banner {
+      font-size: 13px;
+      background: var(--banner);
+      color: #fafaf9;
+      text-align: center;
+      padding: 10px 14px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(247, 240, 230, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E6DCCD;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    .site-header .inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+    }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 4px;
+    }
+    .site-nav a {
+      color: #5C534C;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .site-nav a:hover { color: #1A1614; background: #FFFBF5; }
+    .site-nav a[aria-current="page"] {
+      color: #2F6B4F;
+      background: #E8F0EA;
+    }
+    .site-nav .nav-cta {
+      background: #C45C26;
+      color: #FFFBF5 !important;
+      margin-left: 4px;
+    }
+    .site-nav .nav-cta:hover { background: #A84C1F; color: #FFFBF5 !important; }
+    .site-nav a.nav-cta[aria-current="page"] {
+      background: #2F6B4F;
+      color: #FFFBF5 !important;
+    }
+    @media (max-width: 640px) {
+      .site-header .inner { padding: 10px 14px; }
+      .site-nav { width: 100%; }
+      .site-nav a { padding: 8px 10px; font-size: 0.9rem; }
+      .site-nav .nav-cta { margin-left: 0; }
+    }
+
+    .site-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      margin-right: auto;
+    }
+    .site-logo-icon {
+      width: 36px;
+      height: 36px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+    .site-logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.2em;
+      line-height: 1;
+    }
+    .logo-mind {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: #1A1614;
+    }
+    .logo-reclaim-img {
+      height: 1.55rem;
+      width: auto;
+      display: block;
+      transform: translateY(0.14em);
+    }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      padding: 2.75rem 0 2.5rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse 70% 60% at 90% 20%, rgba(243, 220, 200, 0.55), transparent 60%),
+        var(--cream);
+    }
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 2.75rem;
+      }
+    }
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--leaf);
+      margin: 0 0 0.65rem;
+    }
+    .hero h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 4.2vw, 2.85rem);
+      line-height: 1.12;
+      margin: 0 0 0.65rem;
+      color: var(--ink);
+    }
+    .hero .subtitle {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--clay);
+      margin: 0 0 1.25rem;
+    }
+    .hero-copy p {
+      margin: 0 0 1rem;
+      color: var(--ink);
+      max-width: 36em;
+    }
+    .soft-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.15rem;
+      margin-top: 1.35rem;
+    }
+    .soft-links a {
+      color: var(--leaf);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(47, 107, 79, 0.35);
+      padding-bottom: 1px;
+    }
+    .soft-links a:hover {
+      color: var(--clay);
+      border-bottom-color: var(--clay);
+    }
+    .hero-media {
+      margin: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 1px 0 rgba(26, 22, 20, 0.04);
+    }
+    .hero-media img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .section { padding: 3rem 0; }
+    .section.alt {
+      background: var(--card);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-inner { max-width: var(--read); }
+    .section-inner.wide { max-width: 720px; }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(1.55rem, 2.8vw, 1.9rem);
+      line-height: 1.2;
+      margin: 0 0 0.85rem;
+      color: var(--ink);
+    }
+    h2 .leaf-underline {
+      display: block;
+      width: 3rem;
+      height: 3px;
+      background: var(--leaf);
+      border-radius: 2px;
+      margin-top: 0.55rem;
+    }
+    .section p { margin: 0 0 1rem; }
+    .section p:last-child { margin-bottom: 0; }
+    .pull {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 1.15rem 0;
+    }
+    .section ul {
+      margin: 0.75rem 0 1.15rem;
+      padding-left: 1.2rem;
+    }
+    .section li { margin: 0.35rem 0; }
+
+    .soft-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+      max-width: 720px;
+    }
+    .soft-card {
+      display: block;
+      background: var(--card);
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.98rem;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .soft-card:nth-child(odd) { border-color: rgba(47, 107, 79, 0.35); }
+    .soft-card:nth-child(even) { border-color: rgba(196, 92, 38, 0.35); }
+    .soft-card:hover {
+      background: #FFF8F0;
+      border-color: var(--leaf);
+      color: var(--leaf);
+    }
+    .soft-card span {
+      display: block;
+      font-weight: 500;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .quiet-prose {
+      max-width: var(--read);
+      color: var(--ink);
+    }
+    .quiet-prose .contact-line {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .inout {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+      max-width: 720px;
+    }
+    @media (min-width: 640px) {
+      .inout { grid-template-columns: 1fr 1fr; }
+    }
+    .inout-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid var(--line);
+    }
+    .inout-card.in { border-left: 4px solid var(--leaf); }
+    .inout-card.out { border-left: 4px solid var(--clay); }
+    .inout-card h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.65rem;
+    }
+    .inout-card.in h3 { color: var(--leaf); }
+    .inout-card.out h3 { color: var(--clay); }
+    .inout-card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.98rem;
+    }
+
+    .join {
+      background: linear-gradient(165deg, var(--card) 0%, var(--accent-soft) 100%);
+      border-top: 1px solid var(--line);
+      padding: 3rem 0 3.25rem;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin: 1.35rem 0 1.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+    .btn-primary {
+      background: var(--clay);
+      color: #FFFBF5 !important;
+    }
+    .btn-primary:hover { background: #A84C1F; color: #FFFBF5 !important; }
+    .btn-secondary {
+      background: var(--leaf);
+      color: #FFFBF5 !important;
+    }
+    .btn-secondary:hover { background: #24553E; color: #FFFBF5 !important; }
+    .btn-ghost {
+      background: var(--card);
+      color: var(--ink) !important;
+      border-color: var(--line);
+    }
+    .btn-ghost:hover {
+      border-color: var(--leaf);
+      color: var(--leaf) !important;
+    }
+    .closing-line {
+      font-style: italic;
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .site-footer {
+      background: #2A221C;
+      color: #a8a29e;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+      padding: 48px 20px;
+    }
+    .site-footer .wrap { max-width: 720px; margin: 0 auto; padding: 0; }
+    .site-footer .oneliner { color: #fafaf9; margin-bottom: 16px; }
+    .site-footer .cols {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      margin-bottom: 18px;
+    }
+    .site-footer .cols h3 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #a8a29e;
+      font-weight: 600;
+    }
+    .site-footer a {
+      color: #e7e5e4;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 12px 8px 0;
+    }
+    .site-footer a:hover { color: #F3DCC8; }
+    .site-footer .legal { margin: 8px 0 0; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="banner">Mind Reclaim · Bring attention and creativity back home</div>
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-logo" href="/"><img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-3" width="36" height="36" alt="" /><span class="site-logo-text"><span class="logo-mind">Mind</span><img class="logo-reclaim-img" src="/brand/mind-reclaim-reclaim-hand.png?v=hand-1" alt="Reclaim" height="25" /></span></a>
+      <nav class="site-nav" aria-label="Primary">
+      <a href="/how-it-works">How it works</a>
+      <a href="/manifesto">Manifesto</a>
+      <a href="/about" aria-current="page">About</a>
+      <a href="/ai-and-learning">AI &amp; learning</a>
+      <a href="/better-ways">Better ways</a>
+      <a href="/research">Research</a>
+      <a href="/volunteer">Volunteer</a>
+      <a href="/invite">Invite us</a>
+      <a class="nav-cta" href="/#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">About</p>
+        <h1>Who we are</h1>
+        <p class="subtitle">Bring attention and creativity back home.</p>
+        <p>Mind Reclaim is a global group of concerned parents and educators. We care about better development opportunities for the next generations. That means helping families and schools set healthy boundaries around social networks and AI use — so attention and creativity can come back home.</p>
+        <p>We are not a company pitch. We are people who meet at kitchen tables, parent nights, and staff huddles to talk honestly about what these tools do to focus, learning, and family life.</p>
+        <div class="soft-links">
+          <a href="/manifesto">Manifesto</a>
+          <a href="/how-it-works">How it works</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img
+          src="/concepts/about-hero-campfire.png"
+          alt="Adults conversing around a campfire while kids play nearby in nature — warm unhurried presence"
+          width="800"
+          height="600"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="believe">
+    <div class="wrap">
+      <div class="section-inner">
+        <h2>What we believe<span class="leaf-underline" aria-hidden="true"></span></h2>
+        <p>Two pressures often travel together.</p>
+        <p>Sticky feeds pull attention out of the room. They are built to hold eyes — often by ranking what keeps someone watching, not what helps a child think, learn, or grow.</p>
+        <p>Easy AI answers can skip the practice of thinking and creating. Used with care, these tools can help. Used as a default before skills are strong, they can take the struggle that builds real understanding.</p>
+        <p class="pull"><strong>Feeds steal time and focus. Default AI can skip the work of learning.</strong></p>
+        <p>We do not treat this as a weather report (“that’s just how it is”). We treat it as design — and as something families and schools can answer with shared rules, offline yeses, and practice before shortcuts.</p>
+        <p>We are not anti-technology. We are for healthy boundaries, for young people and for adults too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="do">
+    <div class="wrap">
+      <div class="section-inner wide">
+        <h2>What we do<span class="leaf-underline" aria-hidden="true"></span></h2>
+        <p>We keep things simple and human:</p>
+        <ul>
+          <li>Clear talks for parents, schools, and educator groups</li>
+          <li>Small kits you can take home or share at a meeting</li>
+          <li>Shared norms: protect sleep and meals; delay accounts when you can; try alone first on schoolwork; explain the work in your own words</li>
+          <li>Offline yeses — friends in person, sports, games, nature — so life is fuller than the feed</li>
+        </ul>
+        <p>Our website and newsletter are home base. We post rarely on social media, and only to point people back here. If you want to exchange ideas with others, you are welcome in our Discord — soft, optional, never louder than the site.</p>
+
+        <div class="soft-cards" aria-label="Ways to take part">
+          <a class="soft-card" href="/#newsletter">Newsletter<span>Short updates · leave anytime</span></a>
+          <a class="soft-card" href="/invite">Invite us to speak<span>Parent nights &amp; groups</span></a>
+          <a class="soft-card" href="/docs">Kits<span>Talk outlines &amp; leave-behinds</span></a>
+          <a class="soft-card" href="/volunteer">Volunteer<span>Local ambassadors</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="behind">
+    <div class="wrap">
+      <div class="quiet-prose">
+        <h2>Who’s behind this<span class="leaf-underline" aria-hidden="true"></span></h2>
+        <p>Mind Reclaim started when concerned parents and educators teamed up to form a movement — on a completely voluntary basis. We operate at minimum cost. We do not require funding, because participating members contribute their time and work voluntarily.</p>
+        <p>There is no celebrity founder story here. There is a circle of people who care, plus local volunteers who host conversations in their own communities.</p>
+        <p>If you need a human door for a talk or a parent night, Jeremiah handles public outreach and email. He is a contact face for invitations — not “the founder,” and not the whole movement.</p>
+        <p class="contact-line">Outreach: <a href="mailto:hello@mindreclaim.org">hello@mindreclaim.org</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="talk">
+    <div class="wrap">
+      <div class="section-inner wide">
+        <h2>How we talk<span class="leaf-underline" aria-hidden="true"></span></h2>
+        <p>Warm kitchen-table honesty. Plain words. Short sentences when we can.</p>
+        <p>We name the design, not a villain. We speak of influence and commercial pressure — not mind control, not conspiracy, not doom.</p>
+        <p>We do not shame parents or children. We do not diagnose anyone from a webpage. We do not ask schools to ban all phones or all AI. We ask for sequence and shared courage: skills first, tools second; attention and creativity back home.</p>
+
+        <div class="inout">
+          <div class="inout-card in">
+            <h3>In</h3>
+            <ul>
+              <li>Name the design, not a villain</li>
+              <li>Influence and commercial pressure — plain words</li>
+              <li>Sequence and shared courage: skills first, tools second</li>
+              <li>Attention and creativity back home</li>
+            </ul>
+          </div>
+          <div class="inout-card out">
+            <h3>Out</h3>
+            <ul>
+              <li>Mind control, conspiracy, or doom talk</li>
+              <li>Shaming parents or children</li>
+              <li>Diagnosing anyone from a webpage</li>
+              <li>Asking schools to ban all phones or all AI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap">
+      <div class="section-inner wide">
+        <h2>Join us<span class="leaf-underline" aria-hidden="true"></span></h2>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/#newsletter">Get the newsletter</a>
+          <a class="btn btn-secondary" href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Join the Discord</a>
+          <a class="btn btn-ghost" href="/volunteer">Volunteer</a>
+          <a class="btn btn-ghost" href="/invite">Invite us to speak</a>
+        </div>
+        <p style="margin-top:1rem;color:var(--muted);font-size:0.98rem;"><strong>Get the newsletter</strong> — short notes for parents and communities. This is our main home.<br />
+        <strong>Join the Discord</strong> — exchange ideas and suggest activities with other parents and educators. Optional.<br />
+        <strong>Volunteer</strong> — become a local ambassador. Host a small talk. Share a kit. Model the habits you describe. Not an influencer role.<br />
+        <strong>Invite us to speak</strong> — a calm parent night or staff huddle. We can come once and leave materials.</p>
+        <p class="closing-line"><em>Mind Reclaim · Bring attention and creativity back home. · mindreclaim.org</em></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="oneliner">We help parents and communities protect children’s attention and the work of learning—and build a fuller life offline.</p>
+      <div class="cols">
+        <div>
+          <h3>Explore</h3>
+          <a href="/">Home</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/ai-and-learning">AI &amp; learning</a>
+          <a href="/better-ways">Better ways</a>
+          <a href="/research">Research</a>
+        </div>
+        <div>
+          <h3>Act</h3>
+          <a href="/volunteer">Volunteer</a>
+          <a href="/invite">Invite us</a>
+          <a href="/#newsletter">Newsletter</a>
+        </div>
+        <div>
+          <h3>About</h3>
+          <a href="/about">About</a>
+          <a href="/manifesto">Manifesto</a>
+          <a href="/sources">Sources</a>
+          <a href="mailto:hello@mindreclaim.org">Contact</a>
+        </div>
+      </div>
+      <p class="legal">Sources: U.S. Surgeon General (2023) · APA (2023) · UNESCO · OECD · Common Sense Media · Science Advances</p>
+      <p class="legal">Analytics: cookieless Cloudflare Web Analytics — no personal profiles.</p>
+      <p class="legal">© Mind Reclaim — Bring attention and creativity back home</p>
+    </div>
+  </footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a79ef8869f4f4928ae95044ee9c4bb53"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
