@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kit — Mind Reclaim</title>
+  <link rel="canonical" href="https://mindreclaim.org/kit" />
+  <meta name="description" content="Download the Mind Reclaim clip kit — print, cut, and use. Practice and research cards for socials and AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/mind-reclaim-icon-16.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <link rel="icon" href="/brand/favicon.ico?v=f1-3" sizes="any">
+  <link rel="apple-touch-icon" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <style>
+    :root {
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --muted: #5C534C;
+      --card: #FFFBF5;
+      --accent: #C45C26;
+      --accent-soft: #F3DCC8;
+      --spark: #2F6B4F;
+      --line: #E6DCCD;
+      --banner: #2A221C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .banner {
+      font-size: 13px;
+      background: var(--banner);
+      color: #fafaf9;
+      text-align: center;
+      padding: 10px 14px;
+    }
+    section { padding: 48px 20px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .hero-subtitle {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0 0 14px;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+    h1, h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+    h2 { font-size: 1.45rem; margin: 0 0 12px; }
+    h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .hero {
+      background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding-top: 36px;
+    }
+    .alt {
+      background: var(--card);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .pillars {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin: 8px 0 4px;
+    }
+    .pillar {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .pillar h3 { color: var(--spark); margin-bottom: 6px; }
+    .downloads {
+      list-style: none;
+      margin: 8px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .downloads a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: var(--card);
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .downloads a:hover {
+      border-color: var(--spark);
+      background: #FFFBF5;
+      color: var(--ink);
+    }
+    .downloads .label { font-size: 1.02rem; }
+    .downloads .meta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .steps {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--spark);
+      margin: 0 0 8px;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(247, 240, 230, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E6DCCD;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    .site-header .inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+    }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 4px;
+    }
+    .site-nav a {
+      color: #5C534C;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .site-nav a:hover { color: #1A1614; background: #FFFBF5; }
+    .site-nav a[aria-current="page"] {
+      color: #2F6B4F;
+      background: #E8F0EA;
+    }
+    .site-nav .nav-cta {
+      background: #C45C26;
+      color: #FFFBF5 !important;
+      margin-left: 4px;
+    }
+    .site-nav .nav-cta:hover { background: #A84C1F; color: #FFFBF5 !important; }
+    .site-nav a.nav-cta[aria-current="page"] {
+      background: #2F6B4F;
+      color: #FFFBF5 !important;
+    }
+    @media (max-width: 640px) {
+      .site-header .inner { padding: 10px 14px; }
+      .site-nav { width: 100%; }
+      .site-nav a { padding: 8px 10px; font-size: 0.9rem; }
+      .site-nav .nav-cta { margin-left: 0; }
+    }
+    .site-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      margin-right: auto;
+    }
+    .site-logo-icon {
+      width: 36px;
+      height: 36px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+    .site-logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.2em;
+      line-height: 1;
+    }
+    .logo-mind {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: #1A1614;
+    }
+    .logo-reclaim-img {
+      height: 1.55rem;
+      width: auto;
+      display: block;
+      transform: translateY(0.14em);
+    }
+    .site-footer {
+      background: #2A221C;
+      color: #a8a29e;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+      padding: 48px 20px;
+    }
+    .site-footer .wrap { max-width: 720px; margin: 0 auto; }
+    .site-footer .oneliner { color: #fafaf9; margin-bottom: 16px; }
+    .site-footer .cols {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      margin-bottom: 18px;
+    }
+    .site-footer .cols h3 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #a8a29e;
+      font-weight: 600;
+    }
+    .site-footer a {
+      color: #e7e5e4;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 12px 8px 0;
+    }
+    .site-footer a:hover { color: #F3DCC8; }
+    .site-footer .legal { margin: 8px 0 0; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="banner">Mind Reclaim · Bring attention and creativity back home</div>
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-logo" href="/"><img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-3" width="36" height="36" alt="" /><span class="site-logo-text"><span class="logo-mind">Mind</span><img class="logo-reclaim-img" src="/brand/mind-reclaim-reclaim-hand.png?v=hand-1" alt="Reclaim" height="25" /></span></a>
+      <nav class="site-nav" aria-label="Primary">
+      <a href="/how-it-works">How it works</a>
+      <a href="/manifesto">Manifesto</a>
+      <a href="/about">About</a>
+      <a href="/ai-and-learning">AI &amp; learning</a>
+      <a href="/better-ways">Better ways</a>
+      <a href="/kit" aria-current="page">Kit</a>
+      <a href="/research">Research</a>
+      <a href="/volunteer">Volunteer</a>
+      <a href="/invite">Invite us</a>
+      <a class="nav-cta" href="/#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Downloads</div>
+      <h1>Clip kit</h1>
+      <p class="hero-subtitle muted">Bring attention and creativity back home.</p>
+      <p class="muted">Printable cards and a how-to strip for kitchen tables, parent nights, and small talks.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Twin pillars</h2>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Socials</h3>
+          <p class="muted" style="margin:0">Feeds pull attention out of the room. Practice cards help families name the design and choose limits with care.</p>
+        </div>
+        <div class="pillar">
+          <h3>AI</h3>
+          <p class="muted" style="margin:0">Easy answers can skip the practice of thinking. Practice cards keep skills first, tools second.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <p class="steps">Print → cut → use</p>
+      <p class="muted">Download a PDF. Print at home or school. Cut the cards. Keep them on the table or hand them out after a talk.</p>
+      <h2>Downloads</h2>
+      <ul class="downloads">
+        <li>
+          <a href="/assets/kit/howto-strip.pdf" download="howto-strip.pdf">
+            <span class="label">How-to strip</span>
+            <span class="meta">PDF</span>
+          </a>
+        </li>
+        <li>
+          <a href="/assets/kit/practice-cards-socials.pdf" download="practice-cards-socials.pdf">
+            <span class="label">Practice cards — Socials</span>
+            <span class="meta">PDF</span>
+          </a>
+        </li>
+        <li>
+          <a href="/assets/kit/practice-cards-ai.pdf" download="practice-cards-ai.pdf">
+            <span class="label">Practice cards — AI</span>
+            <span class="meta">PDF</span>
+          </a>
+        </li>
+        <li>
+          <a href="/assets/kit/research-cards-clip.pdf" download="research-cards-clip.pdf">
+            <span class="label">Research cards</span>
+            <span class="meta">PDF</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="oneliner">We help parents and communities protect children’s attention and the work of learning—and build a fuller life offline.</p>
+      <div class="cols">
+        <div>
+          <h3>Explore</h3>
+          <a href="/">Home</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/ai-and-learning">AI &amp; learning</a>
+          <a href="/better-ways">Better ways</a>
+          <a href="/kit">Kit</a>
+          <a href="/research">Research</a>
+        </div>
+        <div>
+          <h3>Act</h3>
+          <a href="/volunteer">Volunteer</a>
+          <a href="/invite">Invite us</a>
+          <a href="/#newsletter">Newsletter</a>
+        </div>
+        <div>
+          <h3>About</h3>
+          <a href="/about">About</a>
+          <a href="/manifesto">Manifesto</a>
+          <a href="/sources">Sources</a>
+          <a href="mailto:hello@mindreclaim.org">Contact</a>
+        </div>
+      </div>
+      <p class="legal">Sources: U.S. Surgeon General (2023) · APA (2023) · UNESCO · OECD · Common Sense Media · Science Advances</p>
+      <p class="legal">Analytics: cookieless Cloudflare Web Analytics — no personal profiles.</p>
+      <p class="legal">© Mind Reclaim — Bring attention and creativity back home</p>
+    </div>
+  </footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a79ef8869f4f4928ae95044ee9c4bb53"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
