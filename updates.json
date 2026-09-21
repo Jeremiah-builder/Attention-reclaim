@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-14",
+  "updated": "2026-09-21",
   "items": [
     {
-      "title": "California bans addictive social feeds for under-16s",
-      "summary": "Newsom signed AB 1709 barring infinite scroll and autoplay for under-16s, plus chatbot toy and companion AI safeguards.",
-      "url": "https://www.reuters.com/legal/litigation/california-enacts-new-curbs-social-media-children-2026-09-11/",
-      "date": "2026-09-10",
+      "title": "EU proposes KIDS Act age gates for social media",
+      "summary": "Commission would bar under-13s, limit 13–14s to parent-run mini accounts capped at one hour a day, and require safer defaults.",
+      "url": "https://commission.europa.eu/news-and-media/news/eu-kids-act-helping-children-navigate-safer-online-world-2026-09-17_en",
+      "date": "2026-09-17",
+      "source": "European Commission"
+    },
+    {
+      "title": "EU age-check app would power Kids Act enforcement",
+      "summary": "Reuters explains Brussels’ privacy-preserving age app, rolling out via member states including Ireland.",
+      "url": "https://www.reuters.com/legal/litigation/how-eus-age-verification-app-children-would-work-2026-09-18/",
+      "date": "2026-09-18",
       "source": "Reuters"
     },
     {
-      "title": "France resubmits under-15 social media ban to the EU",
-      "summary": "Macron’s government notified the European Commission of a reworked ban after courts struck down the earlier law.",
-      "url": "https://www.thehindu.com/news/international/france-submits-new-proposal-to-ban-social-media-for-under-15s/article71465480.ece",
-      "date": "2026-09-14",
-      "source": "The Hindu / AFP"
-    },
-    {
-      "title": "California’s Adam’s Law tightens AI chatbot rules for kids",
-      "summary": "New law requires parental controls, crisis alerts, and safety audits for companion chatbots used by minors.",
-      "url": "https://calmatters.org/economy/technology/2026/09/california-enacts-laws-restricting-chatbots-protecting-kids-online/",
-      "date": "2026-09-10",
-      "source": "CalMatters"
+      "title": "From Australia to Europe, kids’ social media curbs spread",
+      "summary": "Reuters maps new under-age bans and proposals after Australia’s under-16 rule and the EU Kids Act.",
+      "url": "https://www.reuters.com/legal/government/australia-europe-countries-move-curb-childrens-social-media-access-2026-09-17/",
+      "date": "2026-09-17",
+      "source": "Reuters"
     }
   ]
 }
