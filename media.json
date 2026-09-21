@@ -1,37 +1,37 @@
 {
-  "updated": "2026-09-07",
+  "updated": "2026-09-21",
   "items": [
     {
-      "type": "podcast",
-      "title": "Our Youth’s Perspective 2025: AI & Public Policy",
-      "summary": "Youth Scientific Council members talk with Nick Allen about how AI may reshape education—and why policy and equity matter.",
-      "url": "https://developingadolescent.ucla.edu/podcast/our-youths-perspective-2025-ai-public-policy/",
-      "date": "2025",
-      "source": "UCLA Adaptivity"
+      "type": "conference",
+      "title": "Ireland\u2019s EU Presidency conference on child online safety",
+      "summary": "Dublin Castle gathering on kids\u2019 online safety, EU Kids Online 2026 findings, and youth voices.",
+      "url": "https://irish-presidency.consilium.europa.eu/en/events/conference-on-online-safety-for-children-and-young-people/",
+      "date": "2026-09-10",
+      "source": "Irish EU Presidency"
     },
     {
-      "type": "conference",
-      "title": "iRAISE Alliance global convenings 2026",
-      "summary": "Coalition on AI and children’s development: French G7 (June 2026) and Paris Peace Forum (Nov 2026), plus research labs.",
-      "url": "https://i-raise.org/",
-      "date": "2026",
-      "source": "iRAISE Alliance"
+      "type": "podcast",
+      "title": "Will the social media ban protect kids from AI?",
+      "summary": "Raising Generation AI asks whether a UK under-16 ban touches addictive feeds and companion chatbots.",
+      "url": "https://raisinggenerationai.com/will-the-social-media-ban-protect-kids-from-ai/",
+      "date": "2026-06-29",
+      "source": "Raising Generation AI"
     },
     {
       "type": "article",
-      "title": "Teens who use AI for schoolwork are handing off critical thinking",
-      "summary": "Common Sense survey: 7 in 10 teens use AI for schoolwork; few get classroom AI literacy.",
-      "url": "https://www.commonsensemedia.org/press-releases/teens-who-use-ai-for-schoolwork-are-handing-off-critical-thinking-common-sense-media-research-finds",
-      "date": "2026-08-18",
-      "source": "Common Sense Media"
+      "title": "How many countries have phone bans in school?",
+      "summary": "UNESCO GEM Report: 114 systems ban school phones, while stressing digital literacy and justified tech use.",
+      "url": "https://www.unesco.org/gem-report/en/articles/phone-bans-schools-are-spreading-worldwide-policy-debate-rages",
+      "date": "2026-09-18",
+      "source": "UNESCO Global Education Monitoring Report"
     },
     {
-      "type": "podcast",
-      "title": "Our Youth’s Perspective 2026: Benefits and challenges of social media",
-      "summary": "Youth-led Adaptivity episode with Lucia Magis-Weinberg on real social-media benefits, risks, and healthier habits.",
-      "url": "https://developingadolescent.ucla.edu/podcast/our-youths-perspective-2026-the-real-benefits-and-challenges-of-social-media/",
-      "date": "2026",
-      "source": "UCLA Adaptivity"
+      "type": "conference",
+      "title": "FOSI 2026 Annual Conference",
+      "summary": "Upcoming session on teens\u2019 chatbot use, perceived risks and benefits, parental controls, and youth mental health.",
+      "url": "https://fosi.org/event/fosi-2026-annual-conference/",
+      "date": "2026-11-19",
+      "source": "Family Online Safety Institute"
     }
   ]
 }
