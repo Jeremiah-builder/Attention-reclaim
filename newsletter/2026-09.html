@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>September 2026 — Mind Reclaim Newsletter</title>
+  <link rel="canonical" href="https://mindreclaim.org/newsletter/2026-09" />
+  <meta name="description" content="Age gates, AI chatbots, and what parents can still do — Mind Reclaim monthly for September 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/mind-reclaim-icon-16.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <link rel="icon" href="/brand/favicon.ico?v=f1-3" sizes="any">
+  <link rel="apple-touch-icon" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <style>
+    :root {
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --muted: #5C534C;
+      --card: #FFFBF5;
+      --accent: #C45C26;
+      --accent-soft: #F3DCC8;
+      --spark: #2F6B4F;
+      --line: #E6DCCD;
+      --banner: #2A221C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .banner {
+      font-size: 13px;
+      background: var(--banner);
+      color: #fafaf9;
+      text-align: center;
+      padding: 10px 14px;
+    }
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .site-header .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .site-logo-icon { display: block; }
+    .logo-mind {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-right: 4px;
+    }
+    .logo-reclaim-img { vertical-align: middle; }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      align-items: center;
+      font-size: 0.92rem;
+    }
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
+    .site-nav .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+    section { padding: 48px 20px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-weight: 400;
+    }
+    h1, h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+    h2 { font-size: 1.45rem; margin: 0 0 12px; }
+    h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .hero {
+      background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding-top: 36px;
+    }
+    .alt {
+      background: var(--card);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .pillars {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin: 8px 0 4px;
+    }
+    .pillar {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .pillar.socials { border-top: 3px solid var(--accent); }
+    .pillar.ai { border-top: 3px solid var(--spark); }
+    .pillar h3.socials { color: var(--accent); }
+    .pillar h3.ai { color: var(--spark); }
+    .story {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 0 0 12px;
+    }
+    .story .meta {
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+    .story a.title {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: block;
+      margin: 0 0 8px;
+    }
+    .story a.title:hover { color: var(--accent); }
+    .story .blurb { margin: 0 0 10px; color: var(--muted); font-size: 0.98rem; }
+    .story .read {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .cta-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 26px;
+      margin-top: 8px;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      margin-left: 8px;
+    }
+    .issue-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .issue-list a {
+      display: block;
+      background: var(--card);
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .issue-list a:hover { border-color: var(--accent); }
+    .issue-list .when {
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+    .issue-list h3 { margin: 0 0 6px; font-family: Fraunces, Georgia, serif; font-size: 1.25rem; }
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin: 28px 0 12px;
+    }
+    .site-footer {
+      background: var(--banner);
+      color: #e7e5e4;
+      padding: 40px 20px 48px;
+      margin-top: 24px;
+    }
+    .site-footer .wrap { max-width: 1100px; }
+    .site-footer h3 { color: #F3DCC8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .site-footer a {
+      color: #e7e5e4;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 12px 8px 0;
+    }
+    .site-footer a:hover { color: #F3DCC8; }
+    .site-footer .legal { margin: 8px 0 0; font-size: 13px; color: #a8a29e; }
+    .cols { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin: 18px 0; }
+    .oneliner { margin: 0 0 12px; }
+</style>
+</head>
+<body>
+  <div class="banner">Mind Reclaim · Bring attention and creativity back home</div>
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-logo" href="/"><img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-3" width="36" height="36" alt="" /><span class="site-logo-text"><span class="logo-mind">Mind</span><img class="logo-reclaim-img" src="/brand/mind-reclaim-reclaim-hand.png?v=hand-1" alt="Reclaim" height="25" /></span></a>
+      <nav class="site-nav" aria-label="Primary">
+      <a href="/how-it-works">How it works</a>
+      <a href="/manifesto">Manifesto</a>
+      <a href="/about">About</a>
+      <a href="/ai-and-learning">AI &amp; learning</a>
+      <a href="/better-ways">Better ways</a>
+      <a href="/kit">Kit</a>
+      <a href="/research">Research</a>
+      <a href="/volunteer">Volunteer</a>
+      <a href="/invite">Invite us</a>
+      <a href="/newsletter" aria-current="page">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Monthly · September 2026</div>
+      <h1>Age gates, AI chatbots, and what parents can still do</h1>
+      <p class="hero-subtitle muted">Bring attention and creativity back home.</p>
+      <p>September was noisy in a useful way. Governments from California to Brussels tightened rules on kids’ feeds and companion AI. Researchers kept reminding us that age checks alone don’t invent healthy habits at home.</p>
+      <p class="muted">Here’s a calm roundup from our Updates strip — and a kitchen-table take for families and schools.</p>
+      <p class="muted" style="font-size:0.92rem"><a href="/newsletter">← All newsletters</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="pillars">
+        <div class="pillar socials">
+          <h3 class="socials">Socials</h3>
+          <p class="muted" style="margin:0">Feeds steal time and focus. Age gates can raise the floor — homes still set the rhythm.</p>
+        </div>
+        <div class="pillar ai">
+          <h3 class="ai">AI</h3>
+          <p class="muted" style="margin:0">Easy answers can skip practice. Companion chatbots need adult boundaries too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>The big picture</h2>
+      <p>Lawmakers are treating sticky feeds and easy AI as design problems, not weather. Australia’s under-16 rule is being watched; Europe proposed Kids Act age gates; California barred infinite scroll for under-16s and tightened chatbot rules. France is back at the EU with an under-15 ban proposal.</p>
+      <p class="muted" style="margin:0">None of that replaces dinner-table norms: sleep, meals, homework without the feed, and try-alone-first before AI help.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What we read</h2>
+      <p class="section-kicker">Age gates &amp; kids’ social media</p>
+            <article class="story">
+        <p class="meta">European Commission · 17 Sep</p>
+        <a class="title" href="https://commission.europa.eu/news-and-media/news/eu-kids-act-helping-children-navigate-safer-online-world-2026-09-17_en">EU proposes KIDS Act age gates for social media</a>
+        <p class="blurb">Under-13 bar; parent-run mini accounts for 13–14s with time caps and safer defaults.</p>
+        <a class="read" href="https://commission.europa.eu/news-and-media/news/eu-kids-act-helping-children-navigate-safer-online-world-2026-09-17_en">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">Reuters · 18 Sep</p>
+        <a class="title" href="https://www.reuters.com/legal/litigation/how-eus-age-verification-app-children-would-work-2026-09-18/">EU age-check app would power Kids Act enforcement</a>
+        <p class="blurb">Privacy-preserving age checks, rolling out via member states including Ireland.</p>
+        <a class="read" href="https://www.reuters.com/legal/litigation/how-eus-age-verification-app-children-would-work-2026-09-18/">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">Reuters · 17 Sep</p>
+        <a class="title" href="https://www.reuters.com/legal/government/australia-europe-countries-move-curb-childrens-social-media-access-2026-09-17/">From Australia to Europe, kids’ social media curbs spread</a>
+        <p class="blurb">Roundup after Australia’s under-16 rule and the EU Kids Act.</p>
+        <a class="read" href="https://www.reuters.com/legal/government/australia-europe-countries-move-curb-childrens-social-media-access-2026-09-17/">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">The Hindu / AFP · 14 Sep</p>
+        <a class="title" href="https://www.thehindu.com/news/international/france-submits-new-proposal-to-ban-social-media-for-under-15s/article71465480.ece">France resubmits under-15 social media ban to the EU</a>
+        <p class="blurb">Reworked proposal after courts struck down the earlier law.</p>
+        <a class="read" href="https://www.thehindu.com/news/international/france-submits-new-proposal-to-ban-social-media-for-under-15s/article71465480.ece">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">The BMJ</p>
+        <a class="title" href="https://www.bmj.com/content/393/bmj-2026-363695">Early look at Australia’s under-16 social media age law</a>
+        <p class="blurb">Little early drop in teen use; weak age checks still let many through.</p>
+        <a class="read" href="https://www.bmj.com/content/393/bmj-2026-363695">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">OECD · June 2026</p>
+        <a class="title" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/06/growing-up-in-the-social-media-age_be0c75c6/a1132839-en.pdf">OECD maps how social media shapes young people’s lives</a>
+        <p class="blurb">School phone limits, platform rules, learning and wellbeing.</p>
+        <a class="read" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/06/growing-up-in-the-social-media-age_be0c75c6/a1132839-en.pdf">Read →</a>
+      </article>
+
+      <p class="section-kicker">Feeds designed to hold attention</p>
+            <article class="story">
+        <p class="meta">Reuters · 10 Sep</p>
+        <a class="title" href="https://www.reuters.com/legal/litigation/california-enacts-new-curbs-social-media-children-2026-09-11/">California bans addictive social feeds for under-16s</a>
+        <p class="blurb">Infinite scroll and autoplay barred for under-16s; chatbot toy safeguards too.</p>
+        <a class="read" href="https://www.reuters.com/legal/litigation/california-enacts-new-curbs-social-media-children-2026-09-11/">Read →</a>
+      </article>
+
+      <p class="section-kicker">AI and young minds</p>
+            <article class="story">
+        <p class="meta">CalMatters · 10 Sep</p>
+        <a class="title" href="https://calmatters.org/economy/technology/2026/09/california-enacts-laws-restricting-chatbots-protecting-kids-online/">California’s Adam’s Law tightens AI chatbot rules for kids</a>
+        <p class="blurb">Parental controls, crisis alerts, and safety audits for companion chatbots.</p>
+        <a class="read" href="https://calmatters.org/economy/technology/2026/09/california-enacts-laws-restricting-chatbots-protecting-kids-online/">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">University of Ottawa · 31 Aug</p>
+        <a class="title" href="https://www.uottawa.ca/research-innovation/news-all/uottawa-study-finds-ai-use-emotional-support-may-signal-youth-distress">Kids turning to AI for emotional support may be in distress</a>
+        <p class="blurb">Chatbot emotional use linked to higher rates of serious emotional problems.</p>
+        <a class="read" href="https://www.uottawa.ca/research-innovation/news-all/uottawa-study-finds-ai-use-emotional-support-may-signal-youth-distress">Read →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Media &amp; events</h2>
+            <article class="story">
+        <p class="meta">Conference · Dublin Castle · 10–11 Sep</p>
+        <a class="title" href="https://irish-presidency.consilium.europa.eu/en/events/conference-on-online-safety-for-children-and-young-people/">Ireland’s EU Presidency conference on child online safety</a>
+        <p class="blurb">Kids’ online safety, EU Kids Online 2026, and youth voices.</p>
+        <a class="read" href="https://irish-presidency.consilium.europa.eu/en/events/conference-on-online-safety-for-children-and-young-people/">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">Podcast · Raising Generation AI · 29 Jun</p>
+        <a class="title" href="https://raisinggenerationai.com/will-the-social-media-ban-protect-kids-from-ai/">Will the social media ban protect kids from AI?</a>
+        <p class="blurb">Under-16 bans vs addictive feeds and companion chatbots.</p>
+        <a class="read" href="https://raisinggenerationai.com/will-the-social-media-ban-protect-kids-from-ai/">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">UNESCO GEM Report · 18 Sep</p>
+        <a class="title" href="https://www.unesco.org/gem-report/en/articles/phone-bans-schools-are-spreading-worldwide-policy-debate-rages">How many countries have phone bans in school?</a>
+        <p class="blurb">114 systems ban school phones; still stress digital literacy.</p>
+        <a class="read" href="https://www.unesco.org/gem-report/en/articles/phone-bans-schools-are-spreading-worldwide-policy-debate-rages">Read →</a>
+      </article>
+            <article class="story">
+        <p class="meta">Conference · 19 Nov</p>
+        <a class="title" href="https://fosi.org/event/fosi-2026-annual-conference/">FOSI 2026 Annual Conference</a>
+        <p class="blurb">Teens’ chatbot use, parental controls, and youth mental health.</p>
+        <a class="read" href="https://fosi.org/event/fosi-2026-annual-conference/">Read →</a>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-box">
+        <p class="section-kicker" style="margin-top:0;color:var(--spark)">Kitchen-table take</p>
+        <h2>Laws raise the floor. Homes set the rhythm.</h2>
+        <p class="muted">Print our free clip kit — Socials and AI practice cards you can cut and use at the table or a parent night.</p>
+        <p style="margin:0">
+          <a class="btn btn-primary" href="/kit">Get the free kit</a>
+          <a class="btn btn-secondary" href="/#newsletter">Subscribe</a>
+        </p>
+      </div>
+      <p class="muted" style="margin-top:28px;font-size:0.95rem"><a href="/newsletter">← All newsletters</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="oneliner">We help parents and communities protect children’s attention and the work of learning—and build a fuller life offline.</p>
+      <div class="cols">
+        <div>
+          <h3>Explore</h3>
+          <a href="/">Home</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/ai-and-learning">AI &amp; learning</a>
+          <a href="/better-ways">Better ways</a>
+          <a href="/kit">Kit</a>
+          <a href="/research">Research</a>
+          <a href="/newsletter">Newsletter</a>
+        </div>
+        <div>
+          <h3>Act</h3>
+          <a href="/volunteer">Volunteer</a>
+          <a href="/invite">Invite us</a>
+          <a href="/#newsletter">Subscribe</a>
+        </div>
+        <div>
+          <h3>About</h3>
+          <a href="/about">About</a>
+          <a href="/manifesto">Manifesto</a>
+          <a href="/sources">Sources</a>
+          <a href="mailto:hello@mindreclaim.org">Contact</a>
+        </div>
+      </div>
+      <p class="legal">Setting healthy boundaries around social network and AI use.</p>
+      <p class="legal">Analytics: cookieless Cloudflare Web Analytics — no personal profiles.</p>
+    </div>
+  </footer>
+</body>
+</html>
