@@ -1,3 +1,11 @@
 .wrangler/
 node_modules/
 .DS_Store
+
+# Secrets and local credentials
+.env
+.env.*
+*.pem
+*credentials*
+service-account*.json
+.dev.vars

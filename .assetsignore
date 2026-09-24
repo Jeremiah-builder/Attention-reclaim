@@ -8,3 +8,23 @@ README.md
 node_modules
 node_modules/**
 **/.DS_Store
+
+# Internal ops docs. The public volunteer toolkit stays deployed:
+# docs/volunteer-copy-pack.html is linked from volunteer.html.
+docs/signup-setup*
+docs/volunteer-kit-outline*
+
+# Signup ops notes
+README-signup.md
+
+# Deploy and package config (not public site content)
+wrangler.toml
+package.json
+package-lock.json
+
+# Layout sketches and HTML snips / partial drafts
+about-layout-sketch.html
+partials-*-snip.html
+*.partial.html
+*-preview.html
+assets/README-hero-attention-home.md
