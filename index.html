@@ -257,7 +257,7 @@
       text-decoration: none;
       font-size: 15px;
     }
-    /* Updates strip — News + Events & media tabs */
+    /* Updates strip — News, Events & media, Listening */
     .updates {
       background: var(--card);
       border-bottom: 1px solid var(--line);
@@ -348,6 +348,13 @@
       font-size: 14px;
       color: var(--muted);
       margin: 0;
+    }
+    .updates .listening-note {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0 0 14px;
+      max-width: 62ch;
     }
 
     .site-header {
@@ -525,14 +532,16 @@
     </div>
   </section>
 
-  <section class="updates is-visible" id="updates" aria-label="News and events">
+  <section class="updates is-visible" id="updates" aria-label="News, events, and listening">
     <div class="wrap">
       <p class="label">Updates</p>
-      <h2>Recent notes</h2>
+      <h2 id="updates-heading">Recent notes</h2>
       <div class="updates-tabs" role="tablist" aria-label="Feed type">
-        <button type="button" class="updates-tab" role="tab" id="tab-news" aria-selected="true" aria-controls="update-list" data-tab="news">News</button>
-        <button type="button" class="updates-tab" role="tab" id="tab-media" aria-selected="false" aria-controls="update-list" data-tab="media">Events &amp; media</button>
+        <button type="button" class="updates-tab" role="tab" id="tab-news" aria-selected="true" aria-controls="update-list" data-tab="news" tabindex="0">News</button>
+        <button type="button" class="updates-tab" role="tab" id="tab-media" aria-selected="false" aria-controls="update-list" data-tab="media" tabindex="-1">Events &amp; media</button>
+        <button type="button" class="updates-tab" role="tab" id="tab-listening" aria-selected="false" aria-controls="update-list" data-tab="listening" tabindex="-1">Listening</button>
       </div>
+      <p class="listening-note" id="listening-note" hidden>Free episodes for parents and educators — healthy boundaries around social networks and AI.</p>
       <div class="update-list" id="update-list" role="tabpanel" aria-labelledby="tab-news"></div>
       <p class="soon" id="updates-soon" hidden>More coming soon.</p>
     </div>
@@ -708,8 +717,15 @@
     var tabs = document.querySelectorAll(".updates-tab");
     if (!band || !list) return;
 
-    var cache = { news: [], media: [] };
+    var cache = { news: [], media: [], listening: [] };
     var active = "news";
+    var note = document.getElementById("listening-note");
+    var heading = document.getElementById("updates-heading");
+    var headings = {
+      news: "Recent notes",
+      media: "Events and media",
+      listening: "Listening suggestions"
+    };
 
     function showBand() { band.classList.add("is-visible"); }
 
@@ -738,7 +754,7 @@
         return;
       }
       soon.hidden = true;
-      var max = Math.min(5, items.length);
+      var max = mode === "listening" ? items.length : Math.min(5, items.length);
       var html = "";
       for (var i = 0; i < max; i++) {
         var it = items[i] || {};
@@ -746,12 +762,12 @@
         var summary = esc(it.summary || "");
         var url = it.url ? String(it.url) : "";
         var meta = metaLine(it, mode);
-        var heading = url
+        var linkHeading = url
           ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + title + "</a>"
           : title;
         html +=
           '<article class="update-card">' +
-          "<h3>" + heading + "</h3>" +
+          "<h3>" + linkHeading + "</h3>" +
           (summary ? '<p class="sum">' + summary + "</p>" : "") +
           (meta ? '<p class="meta">' + meta + "</p>" : "") +
           "</article>";
@@ -759,14 +775,29 @@
       list.innerHTML = html;
     }
 
+    function tabButtonId(name) {
+      if (name === "media") return "tab-media";
+      if (name === "listening") return "tab-listening";
+      return "tab-news";
+    }
+
     function setTab(name) {
+      if (!cache[name] && name !== "news" && name !== "media" && name !== "listening") return;
       active = name;
       for (var i = 0; i < tabs.length; i++) {
         var t = tabs[i];
         var on = t.getAttribute("data-tab") === name;
         t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
       }
-      list.setAttribute("aria-labelledby", name === "media" ? "tab-media" : "tab-news");
+      list.setAttribute("aria-labelledby", tabButtonId(name));
+      if (heading && headings[name]) heading.textContent = headings[name];
+      if (note) {
+        var listeningOn = name === "listening";
+        note.hidden = !listeningOn;
+        if (listeningOn) list.setAttribute("aria-describedby", "listening-note");
+        else list.removeAttribute("aria-describedby");
+      }
       render(cache[name] || [], name);
     }
 
@@ -774,6 +805,26 @@
       tabs[i].addEventListener("click", function (e) {
         var name = e.currentTarget.getAttribute("data-tab");
         if (name) setTab(name);
+      });
+    }
+
+    var tablist = document.querySelector(".updates-tabs");
+    if (tablist) {
+      tablist.addEventListener("keydown", function (e) {
+        var keys = ["ArrowRight", "ArrowLeft", "Home", "End"];
+        if (keys.indexOf(e.key) === -1) return;
+        var names = [];
+        for (var n = 0; n < tabs.length; n++) names.push(tabs[n].getAttribute("data-tab"));
+        var idx = names.indexOf(active);
+        if (idx < 0) idx = 0;
+        if (e.key === "ArrowRight") idx = (idx + 1) % names.length;
+        else if (e.key === "ArrowLeft") idx = (idx - 1 + names.length) % names.length;
+        else if (e.key === "Home") idx = 0;
+        else idx = names.length - 1;
+        e.preventDefault();
+        setTab(names[idx]);
+        var btn = document.getElementById(tabButtonId(names[idx]));
+        if (btn) btn.focus();
       });
     }
 
@@ -789,7 +840,13 @@
       loadJson("media.json").catch(function () { return { items: [] }; })
     ]).then(function (results) {
       cache.news = (results[0] && results[0].items) || [];
-      cache.media = (results[1] && results[1].items) || [];
+      var mediaItems = (results[1] && results[1].items) || [];
+      cache.listening = mediaItems.filter(function (it) {
+        return String(it && it.type || "").toLowerCase() === "podcast";
+      });
+      cache.media = mediaItems.filter(function (it) {
+        return String(it && it.type || "").toLowerCase() !== "podcast";
+      });
       setTab(active);
     });
   })();
