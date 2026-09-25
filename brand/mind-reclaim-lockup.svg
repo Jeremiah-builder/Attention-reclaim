@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" role="img" aria-label="Mind Reclaim">
-  <!-- Fonts: load Fraunces + Caveat (Google Fonts) in the host page.
-       Builder reminder:
-       <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
-  -->
-  <g transform="translate(6, 16) scale(1.08)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 14 C28 9, 40 9, 47 16 C52 21, 54 29, 51 37 C49 42, 47 45.5, 47.5 50 C48 53.5, 45 56, 41.5 55 C37.5 53.5, 35.5 49, 34.5 44.5 C27 43.5, 18.5 38, 16 29.5 C13.5 21.5, 15 17, 20 14 Z" stroke="#2F6B4F" stroke-width="3.2"/>
-    <path d="M33.5 41 C33.5 41, 23.5 34, 23.5 27 C23.5 23.2, 26.2 20.8, 29.2 20.8 C31.2 20.8, 32.6 22.1, 33.5 24 C34.4 22.1, 35.8 20.8, 37.8 20.8 C40.8 20.8, 43.5 23.2, 43.5 27 C43.5 34, 33.5 41, 33.5 41 Z" stroke="#C45C26" stroke-width="2.7"/>
-  </g>
-  <!-- Wordmark: Mind (Fraunces serif, ink) + Reclaim (Caveat handwriting, clay). NO subtitle. -->
-  <text x="88" y="62" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="42" font-weight="600" fill="#1A1614">Mind</text>
-  <text x="198" y="60" font-family="Caveat, 'Segoe Script', 'Bradley Hand', cursive" font-size="46" font-weight="600" fill="#C45C26">Reclaim</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 311 100" role="img" aria-label="Mind Reclaim">
+  <!-- Brand lock 2026-09-25: icon + Fraunces Mind + handwritten reclaim-hand.png (never typeset Reclaim). -->
+  <image href="mind-reclaim-icon-48.png" x="6" y="26" width="48" height="48"/>
+  <text x="66" y="62" font-family="Fraunces, Georgia, serif" font-size="36" font-weight="600" fill="#1A1614">Mind</text>
+  <image href="mind-reclaim-reclaim-hand.png" x="168" y="34" width="131" height="42" preserveAspectRatio="xMinYMid meet"/>
 </svg>
