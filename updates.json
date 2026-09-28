@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-21",
+  "updated": "2026-09-28",
   "items": [
     {
-      "title": "EU proposes KIDS Act age gates for social media",
-      "summary": "Commission would bar under-13s, limit 13–14s to parent-run mini accounts capped at one hour a day, and require safer defaults.",
-      "url": "https://commission.europa.eu/news-and-media/news/eu-kids-act-helping-children-navigate-safer-online-world-2026-09-17_en",
-      "date": "2026-09-17",
-      "source": "European Commission"
+      "title": "TikTok to pay Alabama at least $100M over teen safety",
+      "summary": "Settlement resolves state claims the app was designed to addict children and adds new teen safety limits before trial.",
+      "url": "https://www.apr.org/news/2026-09-26/tiktok-to-pay-alabama-100-million-in-legal-settlement",
+      "date": "2026-09-26",
+      "source": "Alabama Public Radio"
     },
     {
-      "title": "EU age-check app would power Kids Act enforcement",
-      "summary": "Reuters explains Brussels’ privacy-preserving age app, rolling out via member states including Ireland.",
-      "url": "https://www.reuters.com/legal/litigation/how-eus-age-verification-app-children-would-work-2026-09-18/",
-      "date": "2026-09-18",
-      "source": "Reuters"
+      "title": "EU member states begin examining the Kids Act",
+      "summary": "Coreper opened talks on the Commission’s minors proposal; age checks and DSA alignment are early concerns ahead of November.",
+      "url": "https://agenceurope.eu/en/bulletin/article/13944/4/member-states-begin-examining-eu-kids-act",
+      "date": "2026-09-23",
+      "source": "Agence Europe"
     },
     {
-      "title": "From Australia to Europe, kids’ social media curbs spread",
-      "summary": "Reuters maps new under-age bans and proposals after Australia’s under-16 rule and the EU Kids Act.",
-      "url": "https://www.reuters.com/legal/government/australia-europe-countries-move-curb-childrens-social-media-access-2026-09-17/",
-      "date": "2026-09-17",
-      "source": "Reuters"
+      "title": "Canada’s Safe Social Media Act goes beyond an under-16 ban",
+      "summary": "Bill C-34 pairs an age limit with platform duties on addictive design, AI companions, and privacy-preserving age checks.",
+      "url": "https://www.techpolicy.press/canada-is-not-banning-teenagers-from-social-media-its-trying-something-new/",
+      "date": "2026-09-21",
+      "source": "Tech Policy Press"
     }
   ]
 }
