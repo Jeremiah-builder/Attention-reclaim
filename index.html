@@ -1,8 +1,10 @@
+<!-- Homepage, https://mindreclaim.org/ . Edit headings and paragraphs. News and Listening text is in updates.json and media.json. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Browser tab label. -->
   <title>Mind Reclaim — Bring attention and creativity back home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -512,6 +514,7 @@
   </style>
 </head>
 <body>
+  <!-- Top bar, menu, and logo. This page only. Do not change the icon, the word Mind, or brand/mind-reclaim-reclaim-hand.png. -->
   <div class="banner">Mind Reclaim · Bring attention and creativity back home</div>
 
   <header class="site-header">
@@ -532,6 +535,7 @@
     </div>
   </header>
 
+  <!-- Opening section. Edit the heading and paragraphs. Photo: concepts/hero-lovinghands.jpg -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
@@ -552,6 +556,7 @@
     </div>
   </section>
 
+  <!-- Updates tabs. Card text is not in this file. News: updates.json. Events and Listening: media.json in the repo root, not site/media.json. -->
   <section class="updates is-visible" id="updates" aria-label="News, events, and listening">
     <div class="wrap">
       <p class="label">Updates</p>
@@ -674,6 +679,7 @@
     </div>
   </section>
 
+  <!-- Signup form. Edit the sentences. Do not change the iframe address. -->
   <section class="newsletter" id="newsletter">
     <div class="wrap">
       <h2>Stay in touch—outside the feed</h2>
@@ -695,6 +701,7 @@
     </div>
   </section>
 
+  <!-- Footer links. This page only. -->
   <footer class="site-footer">
     <div class="wrap">
       <p class="oneliner">Mind Reclaim · Bring attention and creativity back home · <a href="mailto:hello@mindreclaim.org">hello@mindreclaim.org</a></p>
@@ -729,6 +736,7 @@
     </div>
   </footer>
 
+  <!-- Fills the Updates tabs from those JSON files. Podcast items show under Listening. Leave this script as it is. -->
   <script>
   (function () {
     var band = document.getElementById("updates");

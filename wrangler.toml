@@ -1,3 +1,7 @@
+# Live site config for Cloudflare Worker attention-reclaim.
+# A commit on main triggers Workers Builds, which runs: npx wrangler deploy
+# That publishes this folder to mindreclaim.org. There is no separate build step.
+# Do not put passwords in this file. package.json only names the wrangler tool.
 name = "attention-reclaim"
 compatibility_date = "2026-09-06"
 workers_dev = true

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Source drawing. The live page shows how-it-works-loop.png. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1180" viewBox="0 0 1400 1180"
      role="img" aria-label="The loop: Extract, Predict what holds, Personalize / hold, Test again.">
   <defs>
