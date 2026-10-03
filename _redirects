@@ -1,1 +1,2 @@
+# /about-us sends visitors to /about. Other lines are ignored.
 /about-us /about 301
