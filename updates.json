@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-28",
+  "updated": "2026-10-05",
   "items": [
     {
-      "title": "TikTok to pay Alabama at least $100M over teen safety",
-      "summary": "Settlement resolves state claims the app was designed to addict children and adds new teen safety limits before trial.",
-      "url": "https://www.apr.org/news/2026-09-26/tiktok-to-pay-alabama-100-million-in-legal-settlement",
-      "date": "2026-09-26",
-      "source": "Alabama Public Radio"
+      "title": "US bill would stop chatbots acting human with kids",
+      "summary": "Bipartisan House bill makes a non-personified mode the default for minors: no claimed feelings, guilt-tripping, or relationship-building to keep kids engaged.",
+      "url": "https://whitesides.house.gov/2026/10/01/rep-whitesides-introduces-bipartisan-legislation-to-protect-children-from-human-like-chatbots/",
+      "date": "2026-10-01",
+      "source": "Office of Rep. George Whitesides"
     },
     {
-      "title": "EU member states begin examining the Kids Act",
-      "summary": "Coreper opened talks on the Commission’s minors proposal; age checks and DSA alignment are early concerns ahead of November.",
-      "url": "https://agenceurope.eu/en/bulletin/article/13944/4/member-states-begin-examining-eu-kids-act",
-      "date": "2026-09-23",
-      "source": "Agence Europe"
+      "title": "Australia defends its under-16 social media ban in court",
+      "summary": "Answering a High Court challenge, the government cites credible risks like addictive behaviour and disrupted sleep, while conceding scientific consensus is still lacking.",
+      "url": "https://www.theguardian.com/australia-news/2026/sep/30/social-media-ban-australia-high-court-mental-health-risks-teens",
+      "date": "2026-09-30",
+      "source": "The Guardian"
     },
     {
-      "title": "Canada’s Safe Social Media Act goes beyond an under-16 ban",
-      "summary": "Bill C-34 pairs an age limit with platform duties on addictive design, AI companions, and privacy-preserving age checks.",
-      "url": "https://www.techpolicy.press/canada-is-not-banning-teenagers-from-social-media-its-trying-something-new/",
-      "date": "2026-09-21",
-      "source": "Tech Policy Press"
+      "title": "India’s Supreme Court questions children’s social media accounts",
+      "summary": "Judges noted minors cannot legally sign contracts and asked the government to require an 18+ threshold or parental consent for platform accounts.",
+      "url": "https://www.thehindu.com/news/national/supreme-court-asks-how-children-can-have-social-media-accounts-as-underlying-contracts-are-legally-void/article71520970.ece",
+      "date": "2026-09-28",
+      "source": "The Hindu"
     }
   ]
 }
