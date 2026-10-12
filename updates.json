@@ -1,26 +1,26 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-12",
   "items": [
+    {
+      "title": "Bradford teens join trial cutting social media time",
+      "summary": "Born in Bradford recruits 4,000 secondary students for an IRL study on limiting social media, to inform the UK’s planned under-16 ban.",
+      "url": "https://www.bbc.co.uk/news/articles/cqgm0yy8dnkro",
+      "date": "2026-10-12",
+      "source": "BBC News"
+    },
+    {
+      "title": "Classroom phone bans raise grades in large trial",
+      "summary": "A Science study of 16,683 Indian college students found lecture phone bans lifted GPA, with the biggest gains for lower performers.",
+      "url": "https://www.science.org/doi/10.1126/science.aef7249",
+      "date": "2026-10-08",
+      "source": "Science"
+    },
     {
       "title": "US bill would stop chatbots acting human with kids",
       "summary": "Bipartisan House bill makes a non-personified mode the default for minors: no claimed feelings, guilt-tripping, or relationship-building to keep kids engaged.",
       "url": "https://whitesides.house.gov/2026/10/01/rep-whitesides-introduces-bipartisan-legislation-to-protect-children-from-human-like-chatbots/",
       "date": "2026-10-01",
       "source": "Office of Rep. George Whitesides"
-    },
-    {
-      "title": "Australia defends its under-16 social media ban in court",
-      "summary": "Answering a High Court challenge, the government cites credible risks like addictive behaviour and disrupted sleep, while conceding scientific consensus is still lacking.",
-      "url": "https://www.theguardian.com/australia-news/2026/sep/30/social-media-ban-australia-high-court-mental-health-risks-teens",
-      "date": "2026-09-30",
-      "source": "The Guardian"
-    },
-    {
-      "title": "India’s Supreme Court questions children’s social media accounts",
-      "summary": "Judges noted minors cannot legally sign contracts and asked the government to require an 18+ threshold or parental consent for platform accounts.",
-      "url": "https://www.thehindu.com/news/national/supreme-court-asks-how-children-can-have-social-media-accounts-as-underlying-contracts-are-legally-void/article71520970.ece",
-      "date": "2026-09-28",
-      "source": "The Hindu"
     }
   ]
 }
