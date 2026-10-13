@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24",
+  "updated": "2026-10-13",
   "items": [
     {
       "type": "podcast",
@@ -56,6 +56,14 @@
       "url": "https://www.youtube.com/watch?v=RN2GhPal4qA",
       "date": "2025-04-01",
       "source": "The Ezra Klein Show"
+    },
+    {
+      "type": "video",
+      "title": "Plugged Out: Senate hearing on technology and America’s youth",
+      "summary": "Neuroscientist Jared Cooney Horvath tells the US Senate why heavy classroom screen use is linked to weaker learning in children.",
+      "url": "https://www.commerce.senate.gov/meetings/chairman-cruz-announces-kids-screen-time-hearing/",
+      "date": "2026-01-15",
+      "source": "US Senate Commerce Committee"
     },
     {
       "type": "conference",
