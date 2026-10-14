@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!-- Digital Citizenship Week 2026 parent companion, https://mindreclaim.org/digital-citizenship-week . Not in main nav. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Browser tab label. -->
+  <title>Digital Citizenship Week at home — Mind Reclaim</title>
+  <link rel="canonical" href="https://mindreclaim.org/digital-citizenship-week" />
+  <meta name="description" content="A five-minute home companion for Digital Citizenship Week, 19–23 October 2026: talk about feeds, attention and AI with your kids." />
+  <meta property="og:title" content="Digital Citizenship Week at home — Mind Reclaim" />
+  <meta property="og:description" content="A five-minute home companion for Digital Citizenship Week, 19–23 October 2026: talk about feeds, attention and AI with your kids." />
+  <meta property="og:image" content="https://mindreclaim.org/concepts/hero-lovinghands.jpg" />
+  <meta property="og:image:secure_url" content="https://mindreclaim.org/concepts/hero-lovinghands.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="2000" />
+  <meta property="og:image:height" content="1414" />
+  <meta property="og:image:alt" content="Handmade collage of community, children playing outdoors, and a quiet pause by the water" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mindreclaim.org/concepts/hero-lovinghands.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/mind-reclaim-icon-16.png?v=f1-3">
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <link rel="icon" href="/brand/favicon.ico?v=f1-3" sizes="any">
+  <link rel="apple-touch-icon" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
+  <style>
+    :root {
+      --bg: #F7F0E6;
+      --ink: #1A1614;
+      --muted: #5C534C;
+      --card: #FFFBF5;
+      --accent: #C45C26;
+      --accent-soft: #F3DCC8;
+      --spark: #2F6B4F;
+      --line: #E6DCCD;
+      --banner: #2A221C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .banner {
+      font-size: 13px;
+      background: var(--banner);
+      color: #fafaf9;
+      text-align: center;
+      padding: 10px 14px;
+    }
+    section { padding: 48px 20px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-weight: 400;
+    }
+    h1, h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+    h2 { font-size: 1.45rem; margin: 0 0 12px; }
+    h3 {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .hero {
+      background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding-top: 36px;
+    }
+    .alt {
+      background: var(--card);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .pillars {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin: 8px 0 4px;
+    }
+    .pillar {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .pillar.socials { border-top: 3px solid var(--accent); }
+    .pillar.ai { border-top: 3px solid var(--spark); }
+    .pillar h3.socials { color: var(--accent); }
+    .pillar h3.ai { color: var(--spark); }
+    .story {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 0 0 12px;
+    }
+    .story .meta {
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+    .story a.title {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: block;
+      margin: 0 0 8px;
+    }
+    .story a.title:hover { color: var(--accent); }
+    .story .blurb { margin: 0 0 10px; color: var(--muted); font-size: 0.98rem; }
+    .story .read {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .cta-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 26px;
+      margin-top: 8px;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      margin-left: 8px;
+    }
+    .issue-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .issue-list a {
+      display: block;
+      background: var(--card);
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .issue-list a:hover { border-color: var(--accent); }
+    .issue-list .when {
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+    .issue-list h3 { margin: 0 0 6px; font-family: Fraunces, Georgia, serif; font-size: 1.25rem; }
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin: 28px 0 12px;
+    }
+    .hero-collage {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      border-radius: 14px;
+      margin: 8px 0 10px;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(247, 240, 230, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E6DCCD;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    .site-header .inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+    }
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      text-decoration: none;
+      line-height: 0;
+    }
+    .site-header .brand img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .site-header .brand:hover { opacity: 0.88; }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 4px;
+    }
+    .site-nav a {
+      color: #5C534C;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .site-nav a:hover { color: #1A1614; background: #FFFBF5; }
+    .site-nav a[aria-current="page"] {
+      color: #2F6B4F;
+      background: #E8F0EA;
+    }
+    .site-nav .nav-cta {
+      background: #C45C26;
+      color: #FFFBF5 !important;
+      margin-left: 4px;
+    }
+    .site-nav .nav-cta:hover { background: #A84C1F; color: #FFFBF5 !important; }
+    .site-nav a.nav-cta[aria-current="page"] {
+      background: #2F6B4F;
+      color: #FFFBF5 !important;
+    }
+    @media (max-width: 640px) {
+      .site-header .inner { padding: 10px 14px; }
+      .site-nav { width: 100%; }
+      .site-nav a { padding: 8px 10px; font-size: 0.9rem; }
+      .site-nav .nav-cta { margin-left: 0; }
+    }
+    .site-footer {
+      background: #2A221C;
+      color: #a8a29e;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 14px;
+      padding: 48px 20px;
+    }
+    .site-footer .wrap { max-width: 720px; margin: 0 auto; }
+    .site-footer .oneliner { color: #fafaf9; margin-bottom: 16px; }
+    .site-footer .cols {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      margin-bottom: 18px;
+    }
+    .site-footer .cols h3 {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #a8a29e;
+      font-weight: 600;
+    }
+    .site-footer a {
+      color: #e7e5e4;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 12px 8px 0;
+    }
+    .site-footer a:hover { color: #F3DCC8; }
+    .site-footer .legal { margin: 8px 0 0; font-size: 13px; }
+    .site-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .site-logo-icon {
+      width: 36px;
+      height: 36px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+    .site-logo-text {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.2em;
+      line-height: 1;
+    }
+    .logo-mind {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: #1A1614;
+    }
+    .logo-reclaim-img {
+      height: 1.55rem;
+      width: auto;
+      display: block;
+      /* Optical baseline vs Fraunces "Mind"; descenders sit slightly below */
+      transform: translateY(0.14em);
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar, menu, and logo. This page only. Do not change the icon, the word Mind, or brand/mind-reclaim-reclaim-hand.png. -->
+  <div class="banner">Mind Reclaim · Bring attention and creativity back home</div>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-logo" href="/"><img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-3" width="36" height="36" alt="" /><span class="site-logo-text"><span class="logo-mind">Mind</span><img class="logo-reclaim-img" src="/brand/mind-reclaim-reclaim-hand.png?v=hand-1" alt="Reclaim" height="25" /></span></a>
+                      <nav class="site-nav" aria-label="Primary">
+      <a href="/how-it-works">How it works</a>
+      <a href="/manifesto">Manifesto</a>
+      <a href="/about">About</a>
+      <a href="/ai-and-learning">AI &amp; learning</a>
+      <a href="/better-ways">Better ways</a>
+      <a href="/kit">Kit</a>
+      <a href="/research">Research</a>
+      <a href="/volunteer">Volunteer</a>
+      <a href="/invite">Invite us</a>
+      <a class="nav-cta" href="/#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Parent companion · 19–23 October 2026</p>
+      <h1>Digital Citizenship Week at home</h1>
+      <p>Common Sense Education runs Digital Citizenship Week from Monday 19 to Friday 23 October 2026. This year’s theme is critical thinking for a world with AI, and they offer <a href="https://www.commonsense.org/education/digital-citizenship-week" style="color:var(--accent);font-weight:600">free classroom activities</a>.</p>
+      <p>Mind Reclaim’s angle stays the same: feeds are built to hold attention, and kids need room to think offline first. This page is a short home companion, not a rebrand of their curriculum.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Talk about it at home</h2>
+      <p class="muted">Five minutes, no lecture.</p>
+      <ol>
+        <li>Ask what they noticed online today that tried to pull them back in (autoplay, “next up”, a streak, a notification).</li>
+        <li>Name the pattern without blaming them: the product is designed that way.</li>
+        <li>Try one device-free stretch together (homework start, dinner, or the first five minutes after school) and notice how settling feels.</li>
+        <li>If they use AI for schoolwork, ask: did you try first, or did the tool go first?</li>
+      </ol>
+      <div class="cta-box">
+        <h2>Free Mind Reclaim kit</h2>
+        <p class="muted">For staff and parent evenings.</p>
+        <p style="margin:0"><a class="btn btn-primary" href="/kit">Get the free kit</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Age-band links</h2>
+      <p class="muted">Free lessons from Common Sense Education.</p>
+      <p class="section-kicker">Middle school: critical ignoring, AI algorithms</p>
+      <article class="story"><a class="title" href="https://www.commonsense.org/education/digital-literacy/what-is-critical-ignoring">What Is Critical Ignoring?</a></article>
+      <article class="story"><a class="title" href="https://www.commonsense.org/education/digital-literacy/ai-algorithms-how-well-do-they-know-you">AI Algorithms: How Well Do They Know You?</a></article>
+      <p class="section-kicker">High school: deliberate AI choices</p>
+      <article class="story"><a class="title" href="https://www.commonsense.org/education/digital-literacy/is-ai-a-choice-or-a-necessity">Is AI a Choice or a Necessity?</a></article>
+      <p class="section-kicker">Every grade band</p>
+      <article class="story"><a class="title" href="https://www.commonsense.org/education/digital-citizenship-week">Full week by grade band (K–2 through 9–12)</a></article>
+      <p class="muted" style="margin-top:20px">UK schools already using Common Sense’s <a href="https://www.commonsense.org/education/uk/about-digital-citizenship" style="color:var(--accent);font-weight:600">UK Digital Citizenship curriculum</a> can treat this week as a home echo of what teachers may already cover.</p>
+    </div>
+  </section>
+
+  <!-- Footer links. This page only. -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="oneliner">We help parents and communities protect children’s attention and the work of learning—and build a fuller life offline.</p>
+      <div class="cols">
+        <div>
+          <h3>Explore</h3>
+          <a href="/">Home</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/ai-and-learning">AI &amp; learning</a>
+          <a href="/better-ways">Better ways</a>
+          <a href="/kit">Kit</a>
+          <a href="/research">Research</a>
+          <a href="/newsletter">Newsletter</a>
+        </div>
+        <div>
+          <h3>Act</h3>
+          <a href="/volunteer">Volunteer</a>
+          <a href="/invite">Invite us</a>
+          <a href="/#newsletter">Newsletter</a>
+        </div>
+        <div>
+          <h3>About</h3>
+          <a href="/about">About</a>
+          <a href="/manifesto">Manifesto</a>
+          <a href="/sources">Sources</a>
+          <a href="mailto:hello@mindreclaim.org">Contact</a>
+        </div>
+      </div>
+      <p class="legal">Sources: U.S. Surgeon General (2023) · APA (2023) · UNESCO · OECD · Common Sense Media · Science Advances</p>
+      <p class="legal">Analytics: cookieless Cloudflare Web Analytics — no personal profiles.</p>
+      <p class="legal">© Mind Reclaim — Bring attention and creativity back home</p>
+    </div>
+  </footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a79ef8869f4f4928ae95044ee9c4bb53"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
