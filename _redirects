@@ -1,2 +1,5 @@
 # /about-us sends visitors to /about. Other lines are ignored.
 /about-us /about 301
+# Campaign short links (signup-tracking-SPEC §4.2): /r/email-w9 -> /kit?ref=email-w9.
+# Refs name a channel only, never a person (lowercase, hyphens). Infrastructure counts /r/* in zone HTTP analytics.
+/r/:ref /kit?ref=:ref 302
