@@ -357,6 +357,17 @@
       transform: translateY(0.14em);
     }
 
+    /* Soft sign-up offer above the volunteer form (signup-tracking-SPEC §1). */
+    .cta-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 8px 0 18px;
+    }
+    .cta-box h3 { margin-bottom: 6px; }
+    .cta-box .ctas { margin: 12px 0 0; }
+    .btn:focus-visible { outline: 3px solid var(--spark); outline-offset: 3px; }
   </style>
 </head>
 <body>
@@ -471,6 +482,14 @@
     <div class="wrap">
       <h2>Apply to volunteer</h2>
       <p class="muted">Tell us a little about yourself. We’ll reply with next steps. The printable kit is already free at <a class="linkish" href="/kit">/kit</a>.</p>
+      <!-- Soft offer. Links to the one shared Brevo form on /kit#signup (no second embed here). -->
+      <div class="cta-box" id="not-ready" aria-labelledby="not-ready-title">
+        <h3 id="not-ready-title">Not ready to volunteer yet?</h3>
+        <p class="muted" style="margin:0">Start with the free kit and one short note a month. You can volunteer whenever you like.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="/kit#signup">Get the free kit + a monthly note</a>
+        </div>
+      </div>
       <div class="form-card" id="volunteer-form">
         <!-- TALLY_EMBED -->
         <iframe
@@ -521,7 +540,7 @@
       </details>
       <div class="ctas" style="margin-top:22px">
         <a class="btn btn-secondary" href="/how-it-works">How it works</a>
-        <a class="btn btn-primary" href="/#newsletter">Get the newsletter</a>
+        <a class="btn btn-primary" href="/kit#signup">Get the free kit + a monthly note</a>
       </div>
     </div>
   </section>

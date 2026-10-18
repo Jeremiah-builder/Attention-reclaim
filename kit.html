@@ -269,6 +269,62 @@
     }
     .site-footer a:hover { color: #F3DCC8; }
     .site-footer .legal { margin: 8px 0 0; font-size: 13px; }
+    /* Sign-up: "Get the free kit + a monthly note" (signup-tracking-SPEC §1). */
+    .cta-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 26px;
+      margin-top: 8px;
+    }
+    .btn {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #FFFBF5; }
+    .btn-primary:hover { background: #A84C1F; color: #FFFBF5; }
+    .btn:focus-visible, .downloads a:focus-visible, .linkish:focus-visible {
+      outline: 3px solid var(--spark);
+      outline-offset: 3px;
+    }
+    .micro { font-size: 13px; color: var(--muted); }
+    .micro a, .linkish { color: var(--spark); font-weight: 600; }
+    .brevo-embed iframe {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-height: 305px;
+      border: 0;
+      border-radius: 12px;
+      background: #fff;
+    }
+    /* Thank-you line after Brevo DOI confirm. The redirect is
+       /kit?ref=doi-confirmed#thanks, so :target shows it with no JS. */
+    .thanks { display: none; }
+    .thanks:target, .thanks.is-visible {
+      display: block;
+      background: #E8F0EA;
+      border-left: 4px solid var(--spark);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 16px;
+      margin: 0 0 20px;
+      scroll-margin-top: 96px;
+    }
+    .thanks p { margin: 0; }
+    .thanks p + p { margin-top: 6px; }
+    #signup { scroll-margin-top: 80px; }
+    @media (max-width: 640px) {
+      /* The sticky header wraps to ~3 rows (~200px) on phones. */
+      #signup, .thanks:target, .thanks.is-visible { scroll-margin-top: 215px; }
+      .cta-box { padding: 20px 18px; }
+    }
   </style>
 </head>
 <body>
@@ -352,6 +408,42 @@
       </ul>
     </div>
   </section>
+
+  <!-- Sign-up: one Brevo double opt-in form (list 3) shared with index.html #newsletter.
+       BREVO_FORM_URL: keep the iframe src identical on kit.html and index.html.
+       If Infrastructure replaces the form instead of editing it in place, swap the src on both pages. -->
+  <section id="signup" aria-labelledby="signup-title">
+    <div class="wrap">
+      <div id="thanks" class="thanks" role="status">
+        <p><strong>Thanks for confirming. You’re in.</strong></p>
+        <p>Your kit is right above: download the PDFs any time. We’ll send one short note a month.</p>
+      </div>
+      <div class="cta-box">
+        <h2 id="signup-title">Get the free kit + a monthly note</h2>
+        <p class="muted">The PDFs above are free to download now. Leave your email and we’ll send new cards when we make them, plus one short note a month.</p>
+        <div class="brevo-embed">
+          <iframe
+            title="Get the free kit + a monthly note: email sign-up form"
+            width="100%"
+            height="480"
+            loading="lazy"
+            src="https://21515d31.sibforms.com/v2/serve/MUIFAGcwM4ZH3DtZZb7AoCqAu-bhkYmtLp74ztzwEziF1DKXFevjVSs5jzLuwndlrhz_sgWkrrLm3EY2tmqJIp1q3oLN3AUEKtN0fc_F6ijdltOQnikBCgffMY7wrv3qt4ZTH4zdMoS-GBgeP1t4ErAoKK-7IdRSCOQXjGY_9Gbt8v9HaHTx33myoW5tJR09hvhrFfQRi5ZYbMty2g=="
+            frameborder="0"
+            scrolling="auto"></iframe>
+        </div>
+        <p class="micro" style="margin:12px 0 0">Double opt-in · one short note a month · leave anytime. Form not loading? <a href="https://21515d31.sibforms.com/v2/serve/MUIFAGcwM4ZH3DtZZb7AoCqAu-bhkYmtLp74ztzwEziF1DKXFevjVSs5jzLuwndlrhz_sgWkrrLm3EY2tmqJIp1q3oLN3AUEKtN0fc_F6ijdltOQnikBCgffMY7wrv3qt4ZTH4zdMoS-GBgeP1t4ErAoKK-7IdRSCOQXjGY_9Gbt8v9HaHTx33myoW5tJR09hvhrFfQRi5ZYbMty2g==" target="_blank" rel="noopener">Open the sign-up form in a new tab</a> or email <a href="mailto:hello@mindreclaim.org?subject=Kit%20%2B%20monthly%20note">hello@mindreclaim.org</a>.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Shows the thank-you line if ?ref=doi-confirmed arrives without the #thanks hash. Optional; CSS :target covers the normal case. -->
+  <script>
+    (function () {
+      if (new URLSearchParams(location.search).get('ref') === 'doi-confirmed') {
+        var t = document.getElementById('thanks');
+        if (t) t.classList.add('is-visible');
+      }
+    })();
+  </script>
 
   <!-- Footer links. This page only. -->
   <footer class="site-footer">
