@@ -306,10 +306,13 @@
       border-radius: 12px;
       background: #fff;
     }
-    /* Brevo form height. Measured 18 Oct with the current form: ~504px of content at >=768px wide,
-       ~604px at 390px. Extra headroom for the spec's consent checkbox and small print. */
-    .brevo-embed iframe { height: 600px; }
-    @media (max-width: 640px) { .brevo-embed iframe { height: 720px; } }
+    /* Brevo form height, measured 18 Oct on the edited live form (email, consent checkbox,
+       button, small print): content ends at 536px at >=655px viewports (581px at 641-654px), and at
+       752px at a 390px viewport. Height = content + 32px headroom. The success/error panel
+       adds 68px (104px on phones) above the form; scrolling="auto" covers that case. */
+    .brevo-embed iframe { height: 568px; }
+    @media (max-width: 660px) { .brevo-embed iframe { height: 612px; } } /* text wraps: content 581px at 641-654px */
+    @media (max-width: 640px) { .brevo-embed iframe { height: 784px; } }
     /* Thank-you line after Brevo DOI confirm. The redirect is
        /kit?ref=doi-confirmed#thanks, so :target shows it with no JS. */
     .thanks { display: none; }
@@ -434,14 +437,14 @@
           <iframe
             title="Get the free kit + a monthly note: email sign-up form"
             width="100%"
-            height="600"
+            height="568"
             loading="lazy"
             src="https://21515d31.sibforms.com/v2/serve/MUIFAGcwM4ZH3DtZZb7AoCqAu-bhkYmtLp74ztzwEziF1DKXFevjVSs5jzLuwndlrhz_sgWkrrLm3EY2tmqJIp1q3oLN3AUEKtN0fc_F6ijdltOQnikBCgffMY7wrv3qt4ZTH4zdMoS-GBgeP1t4ErAoKK-7IdRSCOQXjGY_9Gbt8v9HaHTx33myoW5tJR09hvhrFfQRi5ZYbMty2g=="
             frameborder="0"
-            scrolling="auto"></iframe>
+            scrolling="auto"
+            allowfullscreen></iframe>
         </div>
-        <!-- DOI_WORDING: add "Double opt-in · " back at the start of this line once Infrastructure confirms the Brevo DOI form is live. -->
-        <p class="micro" style="margin:12px 0 0">One short note a month · leave anytime. Form not loading? <a href="https://21515d31.sibforms.com/v2/serve/MUIFAGcwM4ZH3DtZZb7AoCqAu-bhkYmtLp74ztzwEziF1DKXFevjVSs5jzLuwndlrhz_sgWkrrLm3EY2tmqJIp1q3oLN3AUEKtN0fc_F6ijdltOQnikBCgffMY7wrv3qt4ZTH4zdMoS-GBgeP1t4ErAoKK-7IdRSCOQXjGY_9Gbt8v9HaHTx33myoW5tJR09hvhrFfQRi5ZYbMty2g==" target="_blank" rel="noopener">Open the sign-up form in a new tab</a> or email <a href="mailto:hello@mindreclaim.org?subject=Kit%20%2B%20monthly%20note">hello@mindreclaim.org</a>.</p>
+        <p class="micro" style="margin:12px 0 0">Double opt-in · one short note a month · leave anytime. Form not loading? <a href="https://21515d31.sibforms.com/v2/serve/MUIFAGcwM4ZH3DtZZb7AoCqAu-bhkYmtLp74ztzwEziF1DKXFevjVSs5jzLuwndlrhz_sgWkrrLm3EY2tmqJIp1q3oLN3AUEKtN0fc_F6ijdltOQnikBCgffMY7wrv3qt4ZTH4zdMoS-GBgeP1t4ErAoKK-7IdRSCOQXjGY_9Gbt8v9HaHTx33myoW5tJR09hvhrFfQRi5ZYbMty2g==" target="_blank" rel="noopener">Open the sign-up form in a new tab</a> or email <a href="mailto:hello@mindreclaim.org?subject=Kit%20%2B%20monthly%20note">hello@mindreclaim.org</a>.</p>
       </div>
     </div>
   </section>
