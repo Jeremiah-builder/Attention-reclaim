@@ -1,26 +1,26 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-19",
   "items": [
     {
-      "title": "Bradford teens join trial cutting social media time",
-      "summary": "Born in Bradford recruits 4,000 secondary students for an IRL study on limiting social media, to inform the UK’s planned under-16 ban.",
-      "url": "https://www.bbc.co.uk/news/articles/cqgm0yy8dnkro",
+      "title": "Greece votes this week on under-15 social media ban",
+      "summary": "Greece's bill bars under-15s from social networks from January 2027, with platforms verifying age via privacy-preserving digital tokens. Plenary vote set for 22 October.",
+      "url": "https://www.euronews.com/2026/10/12/greeces-social-media-ban-for-under-15s-what-you-need-to-know",
       "date": "2026-10-12",
-      "source": "BBC News"
+      "source": "Euronews"
     },
     {
-      "title": "Classroom phone bans raise grades in large trial",
-      "summary": "A Science study of 16,683 Indian college students found lecture phone bans lifted GPA, with the biggest gains for lower performers.",
-      "url": "https://www.science.org/doi/10.1126/science.aef7249",
-      "date": "2026-10-08",
-      "source": "Science"
+      "title": "40 attorneys general demand child protections in Character.AI sale",
+      "summary": "A bipartisan coalition led by New York asks the bankruptcy court to require real age checks, harmful-content safeguards and private-data protections before any sale.",
+      "url": "https://ag.ny.gov/press-release/2026/attorney-general-james-urges-court-protect-children-and-consumers-characterai",
+      "date": "2026-10-14",
+      "source": "New York State Attorney General"
     },
     {
-      "title": "US bill would stop chatbots acting human with kids",
-      "summary": "Bipartisan House bill makes a non-personified mode the default for minors: no claimed feelings, guilt-tripping, or relationship-building to keep kids engaged.",
-      "url": "https://whitesides.house.gov/2026/10/01/rep-whitesides-introduces-bipartisan-legislation-to-protect-children-from-human-like-chatbots/",
-      "date": "2026-10-01",
-      "source": "Office of Rep. George Whitesides"
+      "title": "Turkey's under-15 social media ban takes effect 1 November",
+      "summary": "Newly published law requires platforms to verify ages and bars services with an \"addictive effect\" for older minors, joining a widening global push.",
+      "url": "https://www.politico.eu/article/turkey-bans-social-media-for-kids-under-15/",
+      "date": "2026-10-10",
+      "source": "POLITICO Europe"
     }
   ]
 }
