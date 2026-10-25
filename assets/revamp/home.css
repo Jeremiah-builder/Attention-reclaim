@@ -509,7 +509,7 @@ h3 {
 .portal-mail { margin: 0.9rem 0 0; }
 .portal-mail a { text-underline-offset: 0.14em; }
 
-/* Allies — six visible, the rest scroll */
+/* Allies — first six visible; the rest behind Show more */
 .allies {
   background: var(--cream);
   padding-block: var(--section-y);
@@ -549,6 +549,24 @@ h3 {
 .ally:hover { border-color: var(--ink); }
 .ally-name { font-weight: 700; }
 .ally-line { color: var(--muted); font-weight: 400; }
+.ally-more { margin: 0.85rem 0 0; }
+.ally-more summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-underline-offset: 0.14em;
+}
+.ally-row-extra {
+  margin-top: 0.75rem;
+  overflow-x: visible;
+  flex-wrap: wrap;
+}
+.ally-row-extra li { flex: 0 0 min(100%, 18rem); }
 .about-inline {
   max-width: 38rem;
   margin: 1.75rem auto 0;
@@ -563,6 +581,7 @@ h3 {
     align-items: center;
   }
   .ally-row li { flex-basis: calc((100% - 60px) / 6); }
+  .ally-row-extra li { flex: 0 0 calc((100% - 60px) / 6); }
 }
 
 /* Footer */
