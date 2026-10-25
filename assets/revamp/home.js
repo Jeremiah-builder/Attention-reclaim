@@ -38,7 +38,7 @@
     if (meter) meter.setAttribute("aria-valuenow", String(rc));
     if (meterBar) meterBar.style.width = (rules.length ? Math.round((rc / rules.length) * 100) : 0) + "%";
     if (status) {
-      status.textContent = rc + " of " + rules.length + " rules kept · " + dc + " of " + days.length + " days marked";
+      status.textContent = rc + " of " + rules.length + " moves kept · " + dc + " of " + days.length + " days marked";
     }
   }
 
