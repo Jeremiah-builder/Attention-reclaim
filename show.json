@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "layer": "observed",
+      "title": "Design aimed at keeping you there",
+      "summary": "5Rights’ Childhood Redrawn (2026) tested nine social, AI, and gaming services with child avatars. Attention-grabbing notifications showed up in all but one. Autoplay and personalised feeds each showed up in six. Manipulative design is widespread across the services kids use — not only “social media.”",
+      "url": "https://5rightsfoundation.com/childhood-redrawn-new-analysis-reveals-pick-and-mix-of-harmful-design-across-social-media-ai-and-gaming/",
+      "source": "5Rights Foundation"
+    },
+    {
+      "layer": "observed",
+      "title": "Safety tools that do not hold",
+      "summary": "Fairplay’s Teen Accounts, Broken Promises tested Instagram’s teen safety tools with partners including Cybersecurity for Democracy. Two out of three tools checked were ineffective or nonexistent. The product also recommended that teens connect with adult strangers.",
+      "url": "https://fairplayforkids.org/pf/teenaccountsbrokenpromises",
+      "source": "Fairplay"
+    },
+    {
+      "layer": "observed",
+      "title": "The business model",
+      "summary": "The Center for Humane Technology describes platforms built on attention-based business models, incentivised to keep people on site, with designs that capitalise on how vulnerable brains are under those incentives — and AI companions that monetise intimate data inside models that thrive on prolonged engagement.",
+      "url": "https://www.humanetech.com/social-media-society",
+      "source": "Center for Humane Technology"
+    },
+    {
+      "layer": "observed",
+      "title": "The physical plug",
+      "summary": "Keep the Future Human (Anthony Aguirre) notes that powerful general AI still depends on truly massive, scarce computation — hardware concentrated in a short chain (lithography, fabrication, chip design). As long as people and governments supply the electricity and the machines, humanity can still refuse the next rung. Firms racing for profit and market share are unlikely to refuse it for us.",
+      "url": "https://keepthefuturehuman.ai/essay/docs/chapter-8",
+      "source": "Keep the Future Human"
+    }
+  ]
+}

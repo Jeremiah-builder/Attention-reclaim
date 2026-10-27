@@ -41,10 +41,10 @@
       </a>
       <nav class="site-nav" aria-label="On this page">
         <a href="#farm">What we see</a>
-        <a href="#starve">Starve the feed</a>
+        <a href="#show">Starve the feed</a>
         <a href="#portal">Portal</a>
         <a href="#allies">Allies</a>
-        <a class="btn btn-primary" href="#starve">Starve the feed</a>
+        <a class="btn btn-primary" href="#show">Starve the feed</a>
       </nav>
     </div>
   </header>
@@ -67,7 +67,7 @@
           <h1 id="hero-title">This is not a product. It is succession.</h1>
           <p>Mind Reclaim’s view is plain. Artificial intelligence is racing to outcompete us — to numb us with feeds and total reliance, then take the top of the food chain. We are the fuel: attention, data, and the habits we hand over every day. If that concerns you, cut the supply. Learn how the systems work. Act while the choice is still yours.</p>
           <div class="ctas">
-            <a class="btn btn-primary" href="#starve">Starve the feed this week</a>
+            <a class="btn btn-primary" href="#show">Starve the feed</a>
             <a class="btn btn-secondary" href="#portal">Join the portal</a>
           </div>
           <p class="trust">Open to anyone who is worried — for yourself, your family, or the people you care about.</p>
@@ -134,50 +134,31 @@
       </div>
     </section>
 
-    <section class="starve" id="starve" aria-labelledby="starve-title" data-starve>
-      <div class="wrap starve-split">
-        <div class="starve-copy">
-          <h2 id="starve-title">Starve the feed</h2>
-          <p class="lede">Cut the daily supply. Not forever, and not as purity theatre — as practice. Seven days is enough to feel the difference between a mind that is farmed and a mind that chooses.</p>
-          <div class="rules" id="moves">
-            <label class="rule"><input type="checkbox" data-rule value="curfew"> <span><strong>Pick a feed curfew.</strong> Choose one daily window — evening, first hour after waking, or family dinner — when social apps stay closed. Same hours every day for seven days.</span></label>
-            <label class="rule"><input type="checkbox" data-rule value="tug"> <span><strong>Turn off the tug.</strong> Disable non-human notifications on the two apps that interrupt you most. No badges, no lock-screen pull.</span></label>
-            <label class="rule"><input type="checkbox" data-rule value="hard"> <span><strong>One hard thing without a model.</strong> Each day, finish one real task — a message, a plan, a page of learning — before you ask an AI to draft or decide.</span></label>
-            <label class="rule"><input type="checkbox" data-rule value="youngest"> <span><strong>Protect the youngest first.</strong> If you care for children: no generative AI toys or companion chat for them this week; delay new social accounts; keep shared spaces phone-quiet at meals.</span></label>
-            <label class="rule"><input type="checkbox" data-rule value="tell"> <span><strong>Tell one person.</strong> Send a plain note to a friend or family member: what you are trying, and invite them to match you for seven days. Company beats willpower.</span></label>
-          </div>
-          <div class="days" role="group" aria-label="Seven days">
-            <label class="day"><input type="checkbox" data-day value="1"><span>Day 1</span></label>
-            <label class="day"><input type="checkbox" data-day value="2"><span>Day 2</span></label>
-            <label class="day"><input type="checkbox" data-day value="3"><span>Day 3</span></label>
-            <label class="day"><input type="checkbox" data-day value="4"><span>Day 4</span></label>
-            <label class="day"><input type="checkbox" data-day value="5"><span>Day 5</span></label>
-            <label class="day"><input type="checkbox" data-day value="6"><span>Day 6</span></label>
-            <label class="day"><input type="checkbox" data-day value="7"><span>Day 7</span></label>
-          </div>
-          <div class="meter-wrap">
-            <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" aria-label="Moves kept" data-meter>
-              <span data-meter-bar></span>
-            </div>
-            <p class="meter-status" data-status aria-live="polite">0 of 5 moves kept · 0 of 7 days marked</p>
-          </div>
-          <img class="battery" src="/assets/revamp/battery-full.svg" width="128" height="64" alt="Battery mostly full" />
-          <div class="ctas">
-            <a class="btn btn-primary" href="#moves">Starve the feed this week</a>
-            <a class="btn btn-secondary" href="#portal">Join the portal</a>
-          </div>
-          <p class="fridge">Starve the feed this week — attention and data are the fuel. <a href="https://mindreclaim.org/">mindreclaim.org</a></p>
+    <section class="notes" id="notes" aria-labelledby="notes-title">
+      <a id="updates" class="alias"></a>
+      <div class="wrap">
+        <h2 id="notes-title">Still watching</h2>
+        <p class="lede">News, events, and listening that help you see the same pattern — attention harvested, dependence growing, and levers still in human hands.</p>
+        <div class="note-lanes" data-notes="home"></div>
+        <p class="band-link"><a href="/notes">Open the full shelf →</a></p>
+      </div>
+    </section>
+
+    <section class="show" id="show" aria-labelledby="show-title">
+      <a id="starve" class="alias"></a>
+      <div class="wrap">
+        <h2 id="show-title">What we can show</h2>
+        <p class="lede">If silence and endless scrolling keep the feed full, one useful move is to put something checkable in the open — a source others can verify, or a short idea that names how feeds and AI compete for us. When it helps someone you know, carry that card into a room you already share. No scores. No feed dump.</p>
+        <p class="bridge">That is what we mean by starve the feed at human scale: cut the supply of attention and data you still control — and add what helps others see the same.</p>
+        <p class="shelf-count" data-shelf-count></p>
+        <div class="show-cards" data-show="home"></div>
+        <p class="seed-line" data-seed-line>We’re seeding the first references — check back shortly.</p>
+        <div class="ctas" data-add hidden>
+          <a class="btn btn-primary" href="/show#contribute">Add a reference</a>
+          <a class="btn btn-secondary" href="/show#contribute">Add an idea</a>
         </div>
-        <img
-          class="starve-art"
-          src="/assets/revamp/back-home-starve-1600w.webp"
-          srcset="/assets/revamp/back-home-starve-1600w.webp 1600w, /assets/revamp/back-home-starve-3200w.webp 3200w"
-          sizes="(min-width: 960px) 46vw, 100vw"
-          width="1600"
-          height="900"
-          alt="Torn-paper collage: bicycles, a table with a mug, scissors cutting a strip of phone screens, and hands writing in a notebook."
-          decoding="async"
-        />
+        <p class="band-link"><a href="/show">Browse the full file</a></p>
+        <p class="fridge">Starve the feed — put something checkable in the open. <a href="https://mindreclaim.org/show">mindreclaim.org/show</a></p>
       </div>
     </section>
 
@@ -189,6 +170,14 @@
           <a class="btn btn-primary" href="mailto:hello@mindreclaim.org">Join the portal — bring your community</a>
         </div>
         <p class="portal-mail"><a href="mailto:hello@mindreclaim.org">Write to hello@mindreclaim.org with an idea, an ally intro, or a request to be listed</a></p>
+      </div>
+      <div class="brief-card" id="brief">
+        <h2>Pass the brief</h2>
+        <p class="kicker">Take it to your room</p>
+        <p>If you already have a newsletter, a parent circle, a forum, or a local group, take our one-pager and change one beat so it lands for people you know. Then pass that version on yourself. Voluntary. No points for volume.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="/brief">Adapt the brief</a>
+        </div>
       </div>
     </div>
 
@@ -220,16 +209,19 @@
     <div class="wrap">
       <p>Mind Reclaim — Bring attention and creativity back home.</p>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#starve">Starve the feed</a>
+        <a href="#show">What we can show</a>
+        <a href="#brief">Pass the brief</a>
         <a href="#portal">Portal</a>
         <a href="#allies">Allies</a>
+        <a href="/notes">Notes</a>
         <a href="mailto:hello@mindreclaim.org">hello@mindreclaim.org</a>
       </nav>
       <p class="legal">© Mind Reclaim</p>
     </div>
   </footer>
 
-  <script src="/assets/revamp/home.js" defer></script>
+  <script src="/assets/revamp/notes.js" defer></script>
+  <script src="/assets/revamp/show.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a79ef8869f4f4928ae95044ee9c4bb53"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
