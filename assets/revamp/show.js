@@ -45,6 +45,13 @@
     });
   }
 
+  function settleHash() {
+    var id = (location.hash || "").replace(/^#/, "");
+    if (!id) return;
+    var node = document.getElementById(id);
+    if (node && node.scrollIntoView) node.scrollIntoView();
+  }
+
   function applySeedState(observed, published) {
     var open = observed >= MIN;
     document.querySelectorAll("[data-add]").forEach(function (node) {
@@ -74,6 +81,7 @@
         mount.innerHTML = list.map(card).join("");
         wireCarry(mount);
       });
+      settleHash();
       var filters = document.querySelector("[data-filters]");
       if (filters) {
         filters.addEventListener("click", function (event) {
@@ -91,5 +99,6 @@
     })
     .catch(function () {
       applySeedState(0, 0);
+      settleHash();
     });
 })();
