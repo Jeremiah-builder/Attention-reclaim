@@ -260,14 +260,18 @@ h3 {
   border-radius: var(--radius-card);
   border: 1px solid var(--line);
 }
-.hero h1 { max-width: 17ch; text-wrap: balance; hyphens: none; }
-.h1-short { display: none; }
+.hero h1 { max-width: 16em; hyphens: none; }
+.hero-deck {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 28em;
+}
 .trust { color: var(--muted); margin-top: 14px; font-size: 0.95rem; }
 .hero .battery { width: 48px; }
 @media (max-width: 599px) {
-  .hero h1 { font-size: clamp(1.9rem, 8vw, 2.1rem); }
-  .h1-full { display: none; }
-  .h1-short { display: inline; }
+  .hero h1 { font-size: clamp(1.9rem, 8vw, 2.1rem); max-width: none; }
 }
 @media (min-width: 960px) {
   .hero { padding-bottom: 0; }
@@ -281,9 +285,9 @@ h3 {
   .hero-art {
     width: 100%;
     margin: 0;
-    aspect-ratio: 4 / 5;
-    max-height: 720px;
-    object-position: 55% 30%;
+    aspect-ratio: 16 / 9;
+    max-height: none;
+    object-position: center center;
   }
   .hero-copy {
     order: 0;
