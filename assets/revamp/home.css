@@ -347,6 +347,12 @@ h3 {
   max-width: 42rem;
 }
 .feed-farm h2 { color: var(--farm-cream); }
+.farm-cue {
+  color: var(--farm-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0.15rem 0 0.85rem;
+}
 .feed-farm .lede { color: var(--farm-body); }
 .feed-farm :focus-visible { outline-color: var(--farm-cream); }
 .beat-grid { display: grid; gap: 18px; }
@@ -370,8 +376,14 @@ h3 {
   color: var(--farm-cream);
   margin: 0 0 0.5rem;
 }
-.beat p {
+.beat-scan {
   color: var(--farm-body);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  margin: 0 0 0.7rem;
+}
+.beat-body {
+  color: var(--farm-muted);
   font-size: 1.0625rem;
   line-height: 1.55;
   margin: 0;
