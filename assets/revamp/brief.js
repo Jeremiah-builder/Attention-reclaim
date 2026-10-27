@@ -1,27 +1,124 @@
-/* Pass the brief. Nothing is posted publicly from this form. */
+/* Pass the brief. Progress stays in this browser. Nothing is posted. */
 (function () {
-  var form = document.querySelector("[data-brief-form]");
-  if (!form) return;
-  var wrap = document.querySelector("[data-pass-wrap]");
-  var button = document.querySelector("[data-pass]");
-  var text = "";
+  var key = "mr-pass";
+  var names = ["get", "bend", "pass"];
+  var labels = { get: "Get", bend: "Bend", pass: "Pass" };
+  var tips = {
+    newsletter: "Newsletter — paste once in an issue",
+    circle: "Parent circle — send to the group chat, don’t blast a public feed",
+    forum: "Forum — one clear post, no spam",
+    other: "Other — one room you already belong to"
+  };
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var room = form.room.value.trim();
-    var link = form.version.value.trim();
-    text = "I adapted Mind Reclaim\u2019s brief for " + room + ". Here is my version: " + link + ". Original: mindreclaim.org";
-    wrap.hidden = false;
+  function load() {
+    try {
+      var saved = JSON.parse(sessionStorage.getItem(key) || "");
+      if (saved && typeof saved === "object") return saved;
+    } catch (err) {}
+    return { get: false, bend: false, pass: false, room: "" };
+  }
+
+  function save(state) {
+    try { sessionStorage.setItem(key, JSON.stringify(state)); } catch (err) {}
+  }
+
+  function paint(state) {
+    var current = "get";
+    if (state.get && !state.bend) current = "bend";
+    else if (state.bend && !state.pass) current = "pass";
+    else if (state.pass) current = "pass";
+    document.querySelectorAll("[data-pip]").forEach(function (item) {
+      var name = item.getAttribute("data-pip");
+      item.classList.toggle("is-done", !!state[name]);
+      item.classList.toggle("is-current", !state.pass && name === current && !state[name]);
+      if (!state.pass && name === current && !state[name]) item.setAttribute("aria-current", "step");
+      else item.removeAttribute("aria-current");
+    });
+    var step = 1;
+    if (state.get) step = 2;
+    if (state.bend) step = 3;
+    if (state.pass) step = 3;
+    var line = state.pass ? "Passed. Thank you." : "Step " + step + " of 3 — " + labels[state.pass ? "pass" : current];
+    document.querySelectorAll("[data-step-line]").forEach(function (node) { node.textContent = line; });
+    document.querySelectorAll("[data-done]").forEach(function (node) { node.hidden = !state.pass; });
+    document.querySelectorAll("[data-reset-wrap]").forEach(function (node) { node.hidden = !state.pass; });
+  }
+
+  var state = load();
+  paint(state);
+
+  var read = document.querySelector("[data-read]");
+  if (read) {
+    read.addEventListener("click", function () {
+      state.get = true;
+      save(state);
+      paint(state);
+    });
+  }
+
+  var version = document.querySelector("[name=version]");
+  if (version) {
+    version.addEventListener("input", function () {
+      var enough = version.value.trim().split(/\s+/).length >= 4 || /[.!?]/.test(version.value);
+      if (enough && version.value.trim().length > 12) {
+        state.bend = true;
+        save(state);
+        paint(state);
+      }
+    });
+  }
+
+  document.querySelectorAll("[data-room]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var room = button.getAttribute("data-room");
+      state.room = room;
+      save(state);
+      document.querySelectorAll("[data-room]").forEach(function (other) {
+        other.setAttribute("aria-pressed", other === button ? "true" : "false");
+      });
+      var tip = document.querySelector("[data-room-tip]");
+      if (tip) tip.textContent = tips[room] || "";
+      var field = document.querySelector("[name=room]");
+      if (field && !field.value.trim()) field.value = button.textContent.trim();
+    });
   });
 
-  button.addEventListener("click", function () {
-    if (!text) return;
-    if (navigator.share) {
-      navigator.share({ text: text }).catch(function () {});
-      return;
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).catch(function () {});
-    }
-  });
+  var pass = document.querySelector("[data-pass]");
+  if (pass) {
+    pass.addEventListener("click", function () {
+      var roomField = document.querySelector("[name=room]");
+      var linkField = document.querySelector("[name=version]");
+      var room = roomField ? roomField.value.trim() : "";
+      var link = linkField ? linkField.value.trim() : "";
+      if (!room) room = "people I know";
+      var text = "I am sharing Mind Reclaim’s story with " + room + ". Here is my version: " + link + ". Original: mindreclaim.org · Talk with us: discord.gg/zSSX63JeP";
+      state.bend = true;
+      state.pass = true;
+      save(state);
+      paint(state);
+      if (navigator.share) {
+        navigator.share({ text: text }).catch(function () {});
+        return;
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(function () {});
+      }
+    });
+  }
+
+  var reset = document.querySelector("[data-reset]");
+  if (reset) {
+    reset.addEventListener("click", function () {
+      state = { get: false, bend: false, pass: false, room: "" };
+      save(state);
+      paint(state);
+      var form = document.querySelector("[data-brief-form]");
+      if (form) form.reset();
+      document.querySelectorAll("[data-room]").forEach(function (button) {
+        button.setAttribute("aria-pressed", "false");
+      });
+      var tip = document.querySelector("[data-room-tip]");
+      if (tip) tip.textContent = "";
+    });
+  }
 })();

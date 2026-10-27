@@ -6,13 +6,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mind Reclaim — This is not a product. It is succession.</title>
-  <meta name="description" content="Mind Reclaim’s view is plain. Artificial intelligence is racing to outcompete us. Feeds and total reliance keep us numb while that race runs." />
+  <title>Mind Reclaim — This is not a product. It is succession — and there is room for you.</title>
+  <meta name="description" content="Mind Reclaim’s view is plain. Artificial intelligence is racing to outcompete us. Feeds and total reliance keep us numb while that race runs. If that worries you, you belong here." />
   <link rel="canonical" href="https://mindreclaim.org/" />
-  <meta property="og:title" content="Mind Reclaim — This is not a product. It is succession." />
-  <meta property="og:description" content="Mind Reclaim’s view is plain. Artificial intelligence is racing to outcompete us. Feeds and total reliance keep us numb while that race runs." />
-  <meta property="og:image" content="https://mindreclaim.org/assets/revamp/low-battery-hero-1600w.webp" />
-  <meta property="og:image:alt" content="Paper collage of a family at a table. Three phones send pale roots downward." />
+  <meta property="og:title" content="Mind Reclaim — This is not a product. It is succession — and there is room for you." />
+  <meta property="og:description" content="Mind Reclaim’s view is plain. Artificial intelligence is racing to outcompete us. Feeds and total reliance keep us numb while that race runs. If that worries you, you belong here." />
+  <meta property="og:image" content="https://mindreclaim.org/assets/revamp/hero-a-16x9-1600.webp" />
+  <meta property="og:image:alt" content="Several older women talk around a table with mugs and papers; one leans in to make a point." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://mindreclaim.org/assets/revamp/low-battery-hero-1600w.webp" />
   <meta name="theme-color" content="#F7F0E6" />
@@ -24,7 +24,9 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
   <link rel="icon" href="/brand/favicon.ico?v=f1-3" sizes="any">
   <link rel="apple-touch-icon" href="/brand/mind-reclaim-icon-48.png?v=f1-3">
-  <link rel="preload" as="image" href="/assets/revamp/low-battery-hero-1600w.webp" imagesrcset="/assets/revamp/low-battery-hero-1600w.webp 1600w, /assets/revamp/low-battery-hero-3200w.webp 3200w" imagesizes="100vw">
+  <link rel="preload" as="image" href="/assets/revamp/hero-a-4x5-960.webp" media="(min-width: 960px)">
+  <link rel="preload" as="image" href="/assets/revamp/hero-a-16x9-1600.webp" media="(max-width: 959px)">
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="/assets/revamp/home.css">
 </head>
 <body>
@@ -42,33 +44,46 @@
       <nav class="site-nav" aria-label="On this page">
         <a href="#farm">What we see</a>
         <a href="#show">Starve the feed</a>
-        <a href="#portal">Portal</a>
+        <a href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="#allies">Allies</a>
         <a class="btn btn-primary" href="#show">Starve the feed</a>
       </nav>
     </div>
   </header>
 
+  <nav class="journey" id="journey" aria-label="Where you are">
+    <p class="journey-here"><span class="visually-hidden">You’re in: </span><span data-journey-label>Notice</span></p>
+    <ol>
+      <li><a href="#farm" data-chapter="notice" data-els="farm evidence notes"><span class="num">01</span><span class="label">Notice</span></a></li>
+      <li><a href="#show" data-chapter="show" data-els="show-top"><span class="num">02</span><span class="label">Show</span></a></li>
+      <li><a href="#starve" data-chapter="starve" data-els="starve"><span class="num">03</span><span class="label">Starve</span></a></li>
+      <li><a href="#discord" data-chapter="meet" data-els="discord"><span class="num">04</span><span class="label">Meet</span></a></li>
+      <li><a href="#brief" data-chapter="pass" data-els="brief allies"><span class="num">05</span><span class="label">Pass</span></a></li>
+    </ol>
+    <span class="journey-hair" aria-hidden="true"></span>
+  </nav>
+
   <main id="content">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero-frame">
-        <img
-          class="hero-art"
-          src="/assets/revamp/low-battery-hero-1600w.webp"
-          srcset="/assets/revamp/low-battery-hero-1600w.webp 1600w, /assets/revamp/low-battery-hero-3200w.webp 3200w"
-          sizes="100vw"
-          width="1600"
-          height="900"
-          alt="Paper collage of a family at a kitchen table, with oranges and a mug. Three phones on the table send pale branching roots downward."
-          fetchpriority="high"
-          decoding="async"
-        />
+        <picture class="hero-picture">
+          <source media="(min-width: 960px)" srcset="/assets/revamp/hero-a-4x5-960.webp" />
+          <img
+            class="hero-art"
+            src="/assets/revamp/hero-a-16x9-1600.webp"
+            width="1600"
+            height="900"
+            alt="Several older women talk around a table with mugs and papers; one leans in to make a point."
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
         <div class="hero-copy">
-          <h1 id="hero-title">This is not a product. It is succession.</h1>
-          <p>Mind Reclaim’s view is plain. Artificial intelligence is racing to outcompete us. Feeds and total reliance keep us numb while that race runs. We are the fuel: our attention, our data, and the habits we hand over every day. If that worries you, cut the supply. Learn how these systems work. Act while the choice is still yours.</p>
+          <h1 id="hero-title"><span class="h1-full">This is not a product. It is succession — and there is room for you.</span><span class="h1-short">This is not a product. It is succession.</span></h1>
+          <p>Mind Reclaim’s view is plain. Artificial intelligence is racing to outcompete us. Feeds and total reliance keep us numb while that race runs. We are the fuel: our attention, our data, and the habits we hand over every day. If that worries you, you belong here. Cut the supply. Learn how these systems work. Act while the choice is still yours. If you already organise with others, meet us on Discord.</p>
           <div class="ctas">
             <a class="btn btn-primary" href="#show">Starve the feed</a>
-            <a class="btn btn-secondary" href="#portal">Join the portal</a>
+            <a class="btn btn-secondary" href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer"><svg class="discord-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join us on Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
           </div>
           <p class="trust">Open to anyone who is worried — for yourself, your family, or the people you care about.</p>
           <img class="battery" src="/assets/revamp/battery-low.svg" width="128" height="64" alt="Low battery" />
@@ -85,19 +100,22 @@
           <p class="lede">Something smarter than us does not need a secret plan. It needs us scrolling. It needs us handing over hard choices. It needs us feeding it what we think and want. Apps already know how to hold a mind. AI tools already know how to finish our sentences. Together, that is not a helpful product cycle. It is how a successor climbs — while we stay useful as energy, data, and demand.</p>
         </div>
         <div class="beat-grid">
-          <article class="beat">
+          <article class="beat reveal" style="--i:0">
+            <span class="beat-edge" aria-hidden="true"></span>
             <img class="beat-glyph" src="/assets/revamp/farm-glyph-captured.svg" width="48" height="48" alt="" aria-hidden="true" />
             <h3>Captured</h3>
             <p class="beat-scan">Your attention is the first harvest — apps are built to keep you scrolling.</p>
             <p class="beat-body">Your attention is the first harvest. Platforms that sell attention try to keep you on the app as long as they can. They lean on how tired, curious, or socially afraid brains behave. Infinite scroll. Autoplay. Personalised feeds. Notifications that feel like a friend who “misses” you. Independent audits keep finding the same pattern in the apps people use — including children.</p>
           </article>
-          <article class="beat">
+          <article class="beat reveal" style="--i:1">
+            <span class="beat-edge" aria-hidden="true"></span>
             <img class="beat-glyph" src="/assets/revamp/farm-glyph-converted.svg" width="48" height="48" alt="" aria-hidden="true" />
             <h3>Converted</h3>
             <p class="beat-scan">What you give away becomes training data and ad fuel. The farm gets smarter.</p>
             <p class="beat-body">What leaves your day does not disappear. It becomes training data and advertising fuel. Long chats with AI companions are especially useful to that business: the longer you stay, the more it learns. Money, data, computing power, and talent pile up in a small number of firms. The farm gets smarter. The person on the other side gets more dependent.</p>
           </article>
-          <article class="beat">
+          <article class="beat reveal" style="--i:2">
+            <span class="beat-edge" aria-hidden="true"></span>
             <img class="beat-glyph" src="/assets/revamp/farm-glyph-numbed.svg" width="48" height="48" alt="" aria-hidden="true" />
             <h3>Numbed</h3>
             <p class="beat-scan">Total reliance is the quiet end — ask the model first, skip the hard work of learning.</p>
@@ -156,42 +174,69 @@
     </section>
 
     <section class="show" id="show" aria-labelledby="show-title">
-      <a id="starve" class="alias"></a>
       <div class="wrap">
-        <h2 id="show-title">What we can show</h2>
-        <p class="lede">Silence and endless scrolling keep the feed full. One useful move is to put something checkable in the open. That can be a source other people can verify. Or a short idea that names how feeds and AI compete for us. When a card helps someone you know, carry it into a room you already share. No scores. No dump into another feed.</p>
-        <p class="bridge">That is what we mean by starve the feed at human scale: cut the supply of attention and data you still control — and add what helps others see the same.</p>
-        <p class="shelf-count" data-shelf-count></p>
-        <div class="show-cards" data-show="home"></div>
-        <p class="seed-line" data-seed-line>We’re seeding the first references — check back shortly.</p>
-        <div class="ctas" data-add hidden>
-          <a class="btn btn-primary" href="/show#contribute">Add a reference</a>
-          <a class="btn btn-secondary" href="/show#contribute">Add an idea</a>
+        <div id="show-top">
+          <h2 id="show-title">What we can show</h2>
+          <p class="lede">Silence and endless scrolling keep the feed full. One useful move is to put something checkable in the open. That can be a source other people can verify. Or a short idea that names how feeds and AI compete for us. When a card helps someone you know, carry it into a room you already share. No scores. No dump into another feed.</p>
+          <p class="shelf-count" data-shelf-count></p>
+          <div class="show-cards" data-show="home"></div>
         </div>
-        <p class="band-link"><a href="/show">Browse the full file</a></p>
-        <p class="fridge">Starve the feed — put something checkable in the open. <a href="https://mindreclaim.org/show">mindreclaim.org/show</a></p>
+        <div id="starve">
+          <p class="bridge">That is what we mean by starve the feed at human scale: cut the supply of attention and data you still control — and add what helps others see the same.</p>
+          <p class="seed-line" data-seed-line>We’re seeding the first references — check back shortly.</p>
+          <div class="ctas" data-add hidden>
+            <a class="btn btn-primary" href="/show#contribute">Add a reference</a>
+            <a class="btn btn-secondary" href="/show#contribute">Add an idea</a>
+          </div>
+          <p class="band-link"><a href="/show">Browse the full file</a></p>
+          <p class="fridge">Starve the feed — put something checkable in the open. <a href="https://mindreclaim.org/show">mindreclaim.org/show</a></p>
+          <img class="battery battery-full" src="/assets/revamp/battery-full.svg" width="128" height="64" alt="Full battery" />
+        </div>
       </div>
     </section>
 
-    <div class="portal-band">
-      <div class="portal-card" id="portal">
-        <h2>A portal, not a product</h2>
-        <p>Mind Reclaim is also a place for joint work. If you run a newsletter, a local group, a forum, a sister campaign, or any online space that cares about human attention and a human future, use this site as a door. Share what you are trying. Borrow what helps. Build the next step with others. We are not selling software. We are not building a personal brand.</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="mailto:hello@mindreclaim.org">Join the portal — bring your community</a>
-        </div>
-        <p class="portal-mail"><a href="mailto:hello@mindreclaim.org">Write to hello@mindreclaim.org with an idea, an ally intro, or a request to be listed</a></p>
-      </div>
-      <div class="brief-card" id="brief">
-        <h2>Pass the brief</h2>
-        <p>A short one-page summary of Mind Reclaim’s case — ready for you to take into a room you already belong to.</p>
-        <p>Our brief, plus a simple way to change one part so it fits the people you know. You keep the thesis honest. You pass your version on yourself. No points. No volume game.</p>
-        <p>Open the brief. Adapt one beat for your newsletter, parent circle, forum, or local group. Then share that version with them.</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="/brief">Get the brief</a>
+    <section class="discord" id="discord" aria-labelledby="discord-title">
+      <a id="portal" class="alias"></a>
+      <a id="meet" class="alias"></a>
+      <div class="discord-card">
+        <h2 id="discord-title">Meet others on Discord</h2>
+        <p class="discord-body">This is where we talk. Concerned individuals and people already organising — same door. Bring questions, allies, and what you are trying. #general is open. We are not selling software. We are not building a personal brand. You do not have to endorse our full succession reading to walk in.</p>
+        <div class="discord-actions">
+          <a class="btn btn-primary" href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer"><svg class="discord-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Join Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <p class="discord-mail"><a href="mailto:hello@mindreclaim.org">Prefer email? Write to hello@mindreclaim.org</a></p>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="brief-strip" id="brief" aria-labelledby="brief-title">
+      <div class="inner">
+        <h2 id="brief-title">Pass the brief</h2>
+        <p class="lede">This is how you share Mind Reclaim’s story with people you already know.</p>
+        <p class="brief-offer">A three-beat pass — get the brief, bend one line for your room, pass it on. Local progress only. No public scores. No streaks on this site.</p>
+        <ol class="pips" aria-label="Your pass progress" data-pips>
+          <li data-pip="get">
+            <span class="pip-mark" aria-hidden="true">1</span>
+            <span class="pip-label">Get</span>
+            <p class="pip-desc">open the brief (Must keep / Must not stay here).</p>
+          </li>
+          <li data-pip="bend">
+            <span class="pip-mark" aria-hidden="true">2</span>
+            <span class="pip-label">Bend</span>
+            <p class="pip-desc">change one beat for your room (hook, audience, or local example).</p>
+          </li>
+          <li data-pip="pass">
+            <span class="pip-mark" aria-hidden="true">3</span>
+            <span class="pip-label">Pass</span>
+            <p class="pip-desc">send to people you know (share sheet).</p>
+          </li>
+        </ol>
+        <p class="visually-hidden" aria-live="polite" data-step-line></p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="/brief">Start a pass</a>
+        </div>
+        <p class="pass-help">Three beats. Quit anytime.</p>
+      </div>
+    </section>
 
     <section class="allies" id="allies" aria-labelledby="allies-title">
       <div class="wrap">
@@ -223,17 +268,20 @@
       <nav class="footer-nav" aria-label="Footer">
         <a href="#show">What we can show</a>
         <a href="#brief">Pass the brief</a>
-        <a href="#portal">Portal</a>
+        <a href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="#allies">Allies</a>
         <a href="/notes">Notes</a>
         <a href="mailto:hello@mindreclaim.org">hello@mindreclaim.org</a>
       </nav>
       <p class="legal">© Mind Reclaim</p>
+      <p class="credit">Hero photo: Age Cymru / Unsplash</p>
     </div>
   </footer>
 
   <script src="/assets/revamp/notes.js" defer></script>
   <script src="/assets/revamp/show.js" defer></script>
+  <script src="/assets/revamp/brief.js" defer></script>
+  <script src="/assets/revamp/motion.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a79ef8869f4f4928ae95044ee9c4bb53"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

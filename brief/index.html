@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pass the brief — Mind Reclaim</title>
-  <meta name="description" content="This page gives you Mind Reclaim’s one-page case in a form you can take to people you already talk to." />
+  <meta name="description" content="This is how you share Mind Reclaim’s story with people you already know." />
   <link rel="canonical" href="https://mindreclaim.org/brief" />
   <meta name="theme-color" content="#F7F0E6" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png?v=f1-3">
   <link rel="icon" href="/brand/favicon.ico?v=f1-3" sizes="any">
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="/assets/revamp/home.css">
 </head>
 <body>
@@ -28,7 +29,7 @@
       <nav class="site-nav" aria-label="On this page">
         <a href="/#farm">What we see</a>
         <a href="/#show">Starve the feed</a>
-        <a href="/#portal">Portal</a>
+        <a href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="/#allies">Allies</a>
         <a class="btn btn-primary" href="/#show">Starve the feed</a>
       </nav>
@@ -36,24 +37,36 @@
   </header>
   <main id="content" class="page-main">
     <div class="wrap">
-      <h1>Pass the brief</h1>
-      <p class="lede">This page gives you Mind Reclaim’s one-page case in a form you can take to people you already talk to — a newsletter, a parent circle, a forum, a local group, or another room you belong to.</p>
-      <p>You get our brief. You change one beat so it lands for that room. You keep the succession reading honest. Then you pass your version on yourself. This is voluntary. There are no points for volume.</p>
-      <p>Read the Must keep / Must not list. Adapt one beat. Submit or copy your version. Share it with your room.</p>
+      <div class="brief-progress" data-brief-progress>
+        <ol class="pips" aria-label="Your pass progress" data-pips>
+          <li data-pip="get"><span class="pip-mark" aria-hidden="true">1</span><span class="pip-label">Get</span></li>
+          <li data-pip="bend"><span class="pip-mark" aria-hidden="true">2</span><span class="pip-label">Bend</span></li>
+          <li data-pip="pass"><span class="pip-mark" aria-hidden="true">3</span><span class="pip-label">Pass</span></li>
+        </ol>
+        <p class="step-line" aria-live="polite" data-step-line>Step 1 of 3 — Get</p>
+      </div>
+      <h1 class="brief-page">Pass the brief</h1>
+      <p class="lede">This is how you share Mind Reclaim’s story with people you already know.</p>
+      <p>A three-beat pass — get the brief, bend one line for your room, pass it on. Voluntary. No points for volume. No public scores.</p>
+      <section id="get" aria-labelledby="get-title">
+        <h2 id="get-title">Get</h2>
+        <p>Open the one-pager. Read Must keep / Must not before you bend anything.</p>
+        <p><button class="btn btn-secondary" type="button" data-read>I’ve read it</button></p>
+      </section>
       <section class="keep-block" aria-labelledby="must-keep">
         <h2 id="must-keep">Must keep</h2>
-        <ul>
+        <ul class="keep-yes">
           <li>The succession reading in plain words: AI racing to outcompete us; feeds and total reliance as how we stay useful as fuel.</li>
           <li>Starve the feed as the human-scale lever (attention, habits, data you still control).</li>
-          <li>Portal as a door for joint work — not a product pitch.</li>
+          <li>Discord as the main place to talk and collaborate — not a product pitch.</li>
           <li>Cite-safe facts stay cite-safe; label beliefs as our reading.</li>
           <li>Anonymous / no personal-brand hero story.</li>
-          <li>Open to any concerned individual — not schools-only framing.</li>
+          <li>Open to any concerned individual — activists meet us on Discord.</li>
         </ul>
       </section>
       <section class="keep-block" aria-labelledby="must-not">
         <h2 id="must-not">Must not claim</h2>
-        <ul>
+        <ul class="keep-no">
           <li>A secret cabal, mind control, or “they” as a cartoon villain.</li>
           <li>That starving your own feed alone unplugs a frontier lab.</li>
           <li>Medical diagnoses, cure promises, or guaranteed outcomes.</li>
@@ -62,23 +75,41 @@
           <li>Soft substitute thesis (“just healthier screen time”) that erases succession.</li>
         </ul>
       </section>
-      <p>Adapt for your room. Do not sand the thesis down to mush, and do not sharpen it into rage-bait.</p>
-      <form class="form-block" data-brief-form>
-        <label>Which beat you changed (one sentence)
-          <input name="beat" required />
-        </label>
-        <label>Who the room is (newsletter, circle, forum, other)
-          <input name="room" required />
-        </label>
-        <label>Your adapted text or link
-          <textarea name="version" required></textarea>
-        </label>
-        <label>Ally name to nominate (optional — never required)
-          <input name="ally" />
-        </label>
-        <button class="btn btn-primary" type="submit">Adapt the brief</button>
-      </form>
-      <p hidden data-pass-wrap><button type="button" class="btn btn-secondary" data-pass>Pass it on</button></p>
+      <p>Bend for your room. Do not sand the thesis down to mush, and do not sharpen it into rage-bait.</p>
+      <section id="bend" aria-labelledby="bend-title">
+        <h2 id="bend-title">Bend</h2>
+        <p>Change one beat (hook, audience, or local example).</p>
+        <form class="form-block" data-brief-form>
+          <label>Which beat you changed (one sentence)
+            <input name="beat" />
+          </label>
+          <label>Who the room is (newsletter, circle, forum, friends, other)
+            <input name="room" />
+          </label>
+          <label>Your adapted text or link
+            <textarea name="version"></textarea>
+          </label>
+          <label>Ally name to nominate (optional — never required)
+            <input name="ally" />
+          </label>
+        </form>
+      </section>
+      <section id="pass-step" aria-labelledby="pass-title">
+        <h2 id="pass-title">Pass</h2>
+        <div class="room-chips" role="group" aria-label="Room helpers">
+          <button type="button" data-room="newsletter" aria-pressed="false">Newsletter</button>
+          <button type="button" data-room="circle" aria-pressed="false">Parent circle</button>
+          <button type="button" data-room="forum" aria-pressed="false">Forum</button>
+          <button type="button" data-room="other" aria-pressed="false">Other</button>
+        </div>
+        <p class="room-tip" data-room-tip></p>
+        <p><button type="button" class="btn btn-primary" data-pass>Pass it on</button></p>
+        <div class="done-line" data-done hidden>
+          <p>Passed. Thank you.</p>
+          <img src="/assets/revamp/battery-full.svg" width="84" height="42" alt="" />
+        </div>
+        <p data-reset-wrap hidden><button type="button" class="btn btn-secondary" data-reset>Start another pass</button></p>
+      </section>
     </div>
   </main>
   <footer class="site-footer">
@@ -87,7 +118,7 @@
       <nav class="footer-nav" aria-label="Footer">
         <a href="/show">What we can show</a>
         <a href="/brief">Pass the brief</a>
-        <a href="/#portal">Portal</a>
+        <a href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="/#allies">Allies</a>
         <a href="/notes">Notes</a>
         <a href="mailto:hello@mindreclaim.org">hello@mindreclaim.org</a>
@@ -95,6 +126,7 @@
     </div>
   </footer>
   <script src="/assets/revamp/brief.js" defer></script>
+  <script src="/assets/revamp/motion.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a79ef8869f4f4928ae95044ee9c4bb53"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
