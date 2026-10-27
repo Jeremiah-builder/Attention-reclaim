@@ -28,6 +28,7 @@
       <nav class="site-nav" aria-label="On this page">
         <a href="/#farm">What we see</a>
         <a href="/#show">Starve the feed</a>
+        <a href="/show#contribute">Collaborate with us</a>
         <a href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="/#allies">Allies</a>
         <a class="btn btn-primary" href="/#show">Starve the feed</a>
@@ -37,7 +38,8 @@
   <main id="content" class="page-main">
     <div class="wrap">
       <h1 class="show-page">What we can show</h1>
-      <p class="lede">This is a living file of checkable references and visitor ideas. It covers how feeds harvest attention, how tools deepen dependence, and where people still hold a lever. We cite-check references before they appear as Observed. Ideas stay labelled Ideas — they are not our editorial reading. Our succession reading lives in the site’s own copy.</p>
+      <p class="lede">This is for groups and organisations who want to build the evidence with us — not a personal unplug list. Bring a checkable source or a short idea. Joint work happens on Discord.</p>
+      <p>This is a living file of checkable references and visitor ideas. It covers how feeds harvest attention, how tools deepen dependence, and where people still hold a lever. We cite-check references before they appear as Observed. Ideas stay labelled Ideas — they are not our editorial reading. Our succession reading lives in the site’s own copy.</p>
       <div class="filters" data-filters role="group" aria-label="Filters">
         <button type="button" data-filter="all" aria-pressed="true">All</button>
         <button type="button" data-filter="observed" aria-pressed="false">Observed</button>
@@ -46,8 +48,11 @@
       </div>
       <p class="shelf-count" data-shelf-count></p>
       <div class="show-list" data-show="page"></div>
+      <div id="contribute">
       <p class="seed-line" data-seed-line>We’re seeding the first references — check back shortly.</p>
-      <form class="form-block" id="contribute" data-add hidden>
+      <p class="show-help">Then meet us on <a href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a> to shape what comes next.</p>
+      <p class="band-link"><a href="https://discord.gg/zSSX63JeP" target="_blank" rel="noopener noreferrer">Join Discord to collaborate<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <form class="form-block" data-add hidden>
         <p class="reject">We don’t publish secret plans, hive-mind villains, leaked “agendas,” or medical claims about children. Ideas are labelled Ideas. References need a checkable URL and appear as Observed only after we cite-check them.</p>
         <label>Type: Reference / Idea
           <select name="type">
@@ -73,6 +78,7 @@
         </fieldset>
         <button class="btn btn-primary" type="submit">Add a reference</button>
       </form>
+      </div>
     </div>
   </main>
   <footer class="site-footer">
