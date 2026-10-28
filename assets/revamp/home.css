@@ -753,7 +753,6 @@ h3 {
   gap: 12px;
   margin-top: 1.15rem;
 }
-.shelf-count { color: var(--muted); margin: 0.25rem 0 0; }
 .seed-line { max-width: 40rem; }
 .show-help {
   color: var(--muted);

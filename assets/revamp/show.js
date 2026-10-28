@@ -131,9 +131,6 @@
     document.querySelectorAll("[data-seed-line]").forEach(function (node) {
       node.hidden = !seeding;
     });
-    document.querySelectorAll("[data-shelf-count]").forEach(function (node) {
-      node.textContent = published >= 1 ? published + " on the shelf" : "";
-    });
   }
 
   wireContribute();
