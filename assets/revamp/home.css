@@ -394,7 +394,9 @@ h3 {
 .chip p { margin: 0; }
 .chip a { text-underline-offset: 0.14em; }
 .plug-col h2 { margin-top: 0; }
-.plug-mark { display: block; width: 64px; height: 64px; margin: 0 0 0.75rem; }
+.plug-mark { display: block; width: 64px; height: 64px; margin: 0 0 0.75rem; line-height: 0; }
+.plug-mark img,
+.pass-mark img { display: block; width: 100%; height: auto; }
 .attr {
   margin: 1.25rem 0 0;
   max-width: 46rem;
@@ -531,7 +533,7 @@ h3 {
   margin: 0 0 0.75rem;
 }
 .brief-head h2 { margin: 0; }
-.pass-mark { display: block; width: 48px; height: 48px; flex: none; }
+.pass-mark { display: block; width: 48px; height: 48px; flex: none; line-height: 0; }
 @media (max-width: 759px) {
   #brief { scroll-margin-top: 15rem; }
 }
