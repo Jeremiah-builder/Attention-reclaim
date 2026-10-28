@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What we can show — Mind Reclaim</title>
+  <meta name="description" content="This is a living file of checkable references and visitor ideas. It covers how feeds harvest attention, how tools deepen dependence, and where people still hold a lever." />
+  <link rel="canonical" href="https://mindreclaim.org/show" />
+  <meta name="theme-color" content="#F7F0E6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/mind-reclaim-icon-32.png?v=f1-3">
+  <link rel="icon" href="/brand/favicon.ico?v=f1-3" sizes="any">
+  <link rel="stylesheet" href="/assets/revamp/home.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-logo" href="/">
+        <img class="site-logo-icon" src="/brand/mind-reclaim-icon-48.png?v=f1-3" width="36" height="36" alt="" />
+        <span class="site-logo-lockup">
+          <span class="site-logo-text"><span class="logo-mind">Mind</span><img class="logo-reclaim-img" src="/brand/mind-reclaim-reclaim-hand.png?v=hand-1" alt="Reclaim" height="25" /></span>
+          <span class="logo-tagline">Bring attention and creativity back home.</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="On this page">
+        <a href="/#farm">What we see</a>
+        <a href="/#show">What we can show</a>
+        <a href="/show#contribute">Collaborate with us</a>
+        <a href="https://discord.gg/BrMMWHwcz" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="/#allies">Allies</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content" class="page-main">
+    <div class="wrap">
+      <h1 class="show-page">What we can show</h1>
+      <p class="lede">This is a living file of checkable references and ideas. Anyone worried can read and carry a card. Groups and organisations are invited to add to it with us — not as a personal unplug list. It covers how feeds harvest attention, how tools deepen dependence, and where people still hold a lever. We cite-check references before they appear as Observed. Ideas stay labelled Ideas — they are not our editorial reading. Joint work happens on Discord. Our succession reading lives in the site’s own copy.</p>
+      <div class="filters" data-filters role="group" aria-label="Filters">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="observed" aria-pressed="false">Observed</button>
+        <button type="button" data-filter="idea" aria-pressed="false">Ideas</button>
+        <button type="button" data-filter="reading" aria-pressed="false">Our reading (editorial)</button>
+      </div>
+      <div class="show-list" data-show="page"></div>
+      <div id="contribute">
+      <p class="seed-line" data-seed-line>We’re seeding the first references — check back shortly.</p>
+      <p class="show-help">Then meet us on <a href="https://discord.gg/BrMMWHwcz" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a> to shape what comes next.</p>
+      <p class="band-link"><a href="https://discord.gg/BrMMWHwcz" target="_blank" rel="noopener noreferrer">Join Discord to collaborate<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <form class="form-block" data-add hidden>
+        <p class="reject">We don’t publish secret plans, hive-mind villains, leaked “agendas,” or medical claims about children. Ideas are labelled Ideas. References need a checkable URL and appear as Observed only after we cite-check them.</p>
+        <label>Type: Reference / Idea
+          <select name="type">
+            <option>Reference</option>
+            <option>Idea</option>
+          </select>
+        </label>
+        <label>Link (required if Reference)
+          <input name="link" type="url" />
+        </label>
+        <label>Why it matters / your idea (plain words, short)
+          <textarea name="why"></textarea>
+        </label>
+        <fieldset>
+          <legend>Name on card: Anonymous / first name</legend>
+          <label class="choice"><input type="radio" name="name" value="Anonymous" checked /> Anonymous</label>
+          <label class="choice"><input type="radio" name="name" value="first name" /> first name</label>
+        </fieldset>
+        <fieldset>
+          <legend>OK to feature in the monthly note? (yes/no)</legend>
+          <label class="choice"><input type="radio" name="note" value="yes" /> yes</label>
+          <label class="choice"><input type="radio" name="note" value="no" checked /> no</label>
+        </fieldset>
+        <p class="copy-status" role="status" aria-live="polite" data-contribute-status></p>
+        <button class="btn btn-primary" type="submit">Add a reference</button>
+      </form>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Mind Reclaim — Bring attention and creativity back home.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/brief">Pass the brief</a>
+        <a href="https://discord.gg/BrMMWHwcz" target="_blank" rel="noopener noreferrer">Discord<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="/notes">Notes</a>
+        <a href="/#show">Starve the feed</a>
+        <a href="mailto:hello@mindreclaim.org">hello@mindreclaim.org</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="/assets/revamp/show.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a79ef8869f4f4928ae95044ee9c4bb53"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
