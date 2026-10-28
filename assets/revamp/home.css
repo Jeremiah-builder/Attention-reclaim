@@ -764,6 +764,9 @@ h3 {
   font-weight: 700;
   text-underline-offset: 0.14em;
 }
+.copy-status { margin: 0.35rem 0 0; max-width: 40rem; font-weight: 700; }
+.copy-status:empty { display: none; }
+.copy-status a { font-weight: 700; text-underline-offset: 0.14em; }
 .carry {
   margin-top: 0.75rem;
   padding: 0;

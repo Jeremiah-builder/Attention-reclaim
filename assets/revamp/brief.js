@@ -56,15 +56,40 @@
     });
   }
 
+  function versionEnough(value) {
+    var text = String(value || "").trim();
+    if (!text) return false;
+    var words = text.split(/\s+/).length >= 4;
+    var sentence = /[.!?]/.test(text);
+    return text.length > 12 && (words || sentence);
+  }
+
+  function shareText(room, version) {
+    var line = "I am sharing Mind Reclaim’s story with " + room + ".";
+    if (version) {
+      line += " Here is my version: " + version;
+      if (!/[.!?]$/.test(version)) line += ".";
+    }
+    line += " Original: mindreclaim.org · Talk with us: https://discord.gg/BrMMWHwcz";
+    return line;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(function () { return "copied"; });
+    }
+    if (navigator.share) {
+      return navigator.share({ text: text }).then(function () { return "shared"; });
+    }
+    return Promise.reject(new Error("no-copy"));
+  }
+
   var version = document.querySelector("[name=version]");
   if (version) {
     version.addEventListener("input", function () {
-      var enough = version.value.trim().split(/\s+/).length >= 4 || /[.!?]/.test(version.value);
-      if (enough && version.value.trim().length > 12) {
-        state.bend = true;
-        save(state);
-        paint(state);
-      }
+      state.bend = versionEnough(version.value);
+      save(state);
+      paint(state);
     });
   }
 
@@ -91,18 +116,17 @@
       var room = roomField ? roomField.value.trim() : "";
       var link = linkField ? linkField.value.trim() : "";
       if (!room) room = "people I know";
-      var text = "I am sharing Mind Reclaim’s story with " + room + ". Here is my version: " + link + ". Original: mindreclaim.org · Talk with us: https://discord.gg/BrMMWHwcz";
-      state.bend = true;
+      var text = shareText(room, link);
+      state.bend = versionEnough(link);
       state.pass = true;
       save(state);
       paint(state);
-      if (navigator.share) {
-        navigator.share({ text: text }).catch(function () {});
-        return;
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).catch(function () {});
-      }
+      var status = document.querySelector("[data-pass-status]");
+      copyText(text).then(function (kind) {
+        if (status) status.textContent = kind === "shared" ? "Shared." : "Copied.";
+      }).catch(function () {
+        if (status) status.textContent = text;
+      });
     });
   }
 
@@ -119,6 +143,8 @@
       });
       var tip = document.querySelector("[data-room-tip]");
       if (tip) tip.textContent = "";
+      var status = document.querySelector("[data-pass-status]");
+      if (status) status.textContent = "";
     });
   }
 })();

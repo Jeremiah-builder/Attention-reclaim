@@ -2,7 +2,7 @@
 (function () {
   var mounts = document.querySelectorAll("[data-show]");
   if (!mounts.length) return;
-  var MIN = 8;
+  var MIN = 4;
   var labels = { observed: "Observed", idea: "Idea", reading: "Our reading" };
 
   function esc(s) {
@@ -30,18 +30,89 @@
     );
   }
 
+  function copyStatus(anchor) {
+    var status = anchor.nextElementSibling;
+    if (!status || !status.hasAttribute("data-copy-status")) {
+      status = document.createElement("p");
+      status.className = "copy-status";
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      status.setAttribute("data-copy-status", "");
+      anchor.insertAdjacentElement("afterend", status);
+    }
+    return status;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(function () { return "copied"; });
+    }
+    if (navigator.share) {
+      return navigator.share({ text: text }).then(function () { return "shared"; });
+    }
+    return Promise.reject(new Error("no-copy"));
+  }
+
   function wireCarry(scope) {
     scope.addEventListener("click", function (event) {
       var button = event.target.closest ? event.target.closest("[data-carry]") : null;
-      if (!button) return;
+      if (!button || !scope.contains(button)) return;
       var text = carryLine(button.getAttribute("data-carry"));
-      if (navigator.share) {
-        navigator.share({ text: text }).catch(function () {});
+      copyText(text).then(function (kind) {
+        copyStatus(button).textContent = kind === "shared" ? "Shared." : "Copied.";
+      }).catch(function () {
+        copyStatus(button).textContent = text;
+      });
+    });
+  }
+
+  function wireContribute() {
+    var form = document.querySelector("#contribute form");
+    if (!form) return;
+    var status = form.querySelector("[data-contribute-status]");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var type = String((form.elements.type && form.elements.type.value) || "");
+      var linkField = form.elements.link;
+      var whyField = form.elements.why;
+      var link = linkField ? linkField.value.trim() : "";
+      var why = whyField ? whyField.value.trim() : "";
+      var name = form.elements.name ? form.elements.name.value : "Anonymous";
+      var feature = form.elements.note ? form.elements.note.value : "no";
+      if (type === "Reference" && (!link || (linkField && !linkField.checkValidity()))) {
+        status.textContent = "A reference needs a checkable link.";
+        if (linkField) linkField.focus();
         return;
       }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).catch(function () {});
+      if (link && linkField && !linkField.checkValidity()) {
+        status.textContent = "A reference needs a checkable link.";
+        linkField.focus();
+        return;
       }
+      if (!why) {
+        status.textContent = "Add a short note on why it matters.";
+        if (whyField) whyField.focus();
+        return;
+      }
+      var lines = ["Type: " + type];
+      if (link) lines.push("Link: " + link);
+      lines.push("Why it matters: " + why);
+      lines.push("Name on card: " + name);
+      lines.push("OK to feature in the monthly note: " + feature);
+      var mail = "mailto:hello@mindreclaim.org?subject=" + encodeURIComponent("What we can show") + "&body=" + encodeURIComponent(lines.join("\n"));
+      status.textContent = "";
+      status.appendChild(document.createTextNode("Thank you — we’ll review it. If it fits, it goes on the shelf. "));
+      var mailLink = document.createElement("a");
+      mailLink.href = mail;
+      mailLink.textContent = "Email this to hello@mindreclaim.org";
+      status.appendChild(mailLink);
+      status.appendChild(document.createTextNode(" "));
+      var discord = document.createElement("a");
+      discord.href = "https://discord.gg/BrMMWHwcz";
+      discord.target = "_blank";
+      discord.rel = "noopener noreferrer";
+      discord.textContent = "Join Discord to collaborate";
+      status.appendChild(discord);
     });
   }
 
@@ -64,6 +135,8 @@
       node.textContent = published + " on the shelf";
     });
   }
+
+  wireContribute();
 
   fetch("/show.json")
     .then(function (r) { return r.json(); })
