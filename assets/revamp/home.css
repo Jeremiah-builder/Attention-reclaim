@@ -243,11 +243,9 @@ h3 {
   border-color: var(--ink);
 }
 .btn-secondary:hover { background: var(--card); color: var(--ink); }
-.battery { width: 84px; height: auto; display: block; margin: 0.75rem 0 0; }
-
-/* Hero — inviting split. Photo A left, copy on solid cream. */
+/* Hero — inviting split. Collage beside copy on solid cream. */
 .hero { background: var(--cream); padding-bottom: 1.5rem; }
-.hero-picture { display: block; }
+.hero-picture { display: block; margin: 0; }
 .hero-frame { display: flex; flex-direction: column; }
 .hero-copy { order: -1; padding: 1.5rem var(--gutter) 0.25rem; max-width: 40rem; }
 .hero-art {
@@ -255,9 +253,8 @@ h3 {
   width: calc(100% - (var(--gutter) * 2));
   height: auto;
   margin: 0.5rem var(--gutter) 0;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: 60% 35%;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--radius-card);
   border: 1px solid var(--line);
 }
@@ -270,7 +267,7 @@ h3 {
   max-width: 28em;
 }
 .trust { color: var(--muted); margin-top: 14px; font-size: 0.95rem; }
-.hero .battery { width: 48px; }
+.hero-picture .credit { margin: 0.45rem var(--gutter) 0; }
 @media (max-width: 599px) {
   .hero h1 { font-size: clamp(1.9rem, 8vw, 2.1rem); max-width: none; }
 }
@@ -286,7 +283,7 @@ h3 {
   .hero-art {
     width: 100%;
     margin: 0;
-    aspect-ratio: 16 / 9;
+    height: auto;
     max-height: none;
     object-position: center center;
   }
@@ -295,6 +292,7 @@ h3 {
     padding: 0;
     max-width: none;
   }
+  .hero-picture .credit { margin: 0.45rem 0 0; }
 }
 
 /* Feed Farm — solid cards on dim pods */
@@ -585,16 +583,6 @@ h3 {
   margin-top: 2px;
 }
 .pip-desc { color: var(--muted); font-size: 0.95rem; margin: 0; }
-.pips li:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  left: calc(var(--pip) / 2 - 0.75px);
-  top: calc(var(--pip) + 4px);
-  bottom: -1rem;
-  width: var(--pip-line);
-  background: var(--line);
-}
-.pips li.is-done:not(:last-child)::before { background: var(--leaf); }
 .pips li.is-current .pip-mark { border: 2px solid var(--clay); color: var(--clay); }
 .pips li.is-done .pip-mark {
   background: var(--leaf);
@@ -611,14 +599,6 @@ h3 {
 @media (min-width: 760px) {
   .pips { grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .pips li { grid-template-columns: var(--pip) 1fr; }
-  .pips li:not(:last-child)::before {
-    left: calc(var(--pip) + 8px);
-    right: 8px;
-    top: calc(var(--pip) / 2);
-    bottom: auto;
-    width: auto;
-    height: var(--pip-line);
-  }
 }
 .room-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0.75rem 0; }
 .room-chips button {
@@ -651,14 +631,6 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin: 0;
-}
-.brief-progress .pips li:not(:last-child)::before {
-  left: calc(var(--pip) + 6px);
-  right: 4px;
-  top: 13px;
-  bottom: auto;
-  width: auto;
-  height: var(--pip-line);
 }
 .step-line { color: var(--muted); font-size: 0.9rem; margin: 0.35rem 0 0; }
 .credit { color: var(--muted); font-size: 0.85rem; margin-top: 0.8rem; }
@@ -987,7 +959,6 @@ body[data-zone="farm"] .journey-here { color: var(--farm-cream); }
   body[data-zone="farm"] .journey { background: transparent; }
   body[data-zone="farm"] .journey a::before { background: var(--farm-card-line); }
 }
-.battery-full { width: 84px; transform-origin: left center; }
 .beat { position: relative; }
 .beat-edge {
   display: none;
@@ -1012,8 +983,6 @@ body[data-zone="farm"] .journey-here { color: var(--farm-cream); }
   .js .beat { border-left-color: transparent; }
   .js .beat-edge { display: block; transform: scaleY(0); }
   .js .beat.in .beat-edge { transform: scaleY(1); transition: transform 500ms var(--ease) 180ms; }
-  .js .battery-full { transform: scaleX(0); }
-  .js #starve.in .battery-full { transform: scaleX(1); transition: transform 480ms var(--ease); }
   @view-transition { navigation: auto; }
   ::view-transition-old(root), ::view-transition-new(root) {
     animation-duration: var(--t-route);
@@ -1035,5 +1004,5 @@ body[data-zone="farm"] .journey-here { color: var(--farm-cream); }
   }
   .reveal { opacity: 1 !important; transform: none !important; }
   .feed-farm::before { opacity: 0.4 !important; }
-  .beat-edge, .battery-full { transform: none !important; }
+  .beat-edge { transform: none !important; }
 }
