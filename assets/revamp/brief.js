@@ -91,7 +91,7 @@
       var room = roomField ? roomField.value.trim() : "";
       var link = linkField ? linkField.value.trim() : "";
       if (!room) room = "people I know";
-      var text = "I am sharing Mind Reclaim’s story with " + room + ". Here is my version: " + link + ". Original: mindreclaim.org · Talk with us: discord.gg/zSSX63JeP";
+      var text = "I am sharing Mind Reclaim’s story with " + room + ". Here is my version: " + link + ". Original: mindreclaim.org · Talk with us: https://discord.gg/BrMMWHwcz";
       state.bend = true;
       state.pass = true;
       save(state);
