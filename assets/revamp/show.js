@@ -1,7 +1,6 @@
 /* What we can show. Observed seeds live in /show.json. Visitor posts are not added here. */
 (function () {
   var mounts = document.querySelectorAll("[data-show]");
-  if (!mounts.length) return;
   var MIN = 4;
   var labels = { observed: "Observed", idea: "Idea", reading: "Our reading" };
 
@@ -124,15 +123,16 @@
   }
 
   function applySeedState(observed, published) {
-    var open = observed >= MIN;
+    var seeding = published === 0;
+    var open = published >= 1 || observed >= MIN;
     document.querySelectorAll("[data-add]").forEach(function (node) {
       node.hidden = !open;
     });
     document.querySelectorAll("[data-seed-line]").forEach(function (node) {
-      node.hidden = open;
+      node.hidden = !seeding;
     });
     document.querySelectorAll("[data-shelf-count]").forEach(function (node) {
-      node.textContent = published + " on the shelf";
+      node.textContent = published >= 1 ? published + " on the shelf" : "";
     });
   }
 
@@ -147,11 +147,8 @@
       var observed = items.filter(function (item) { return item.layer === "observed"; }).length;
       applySeedState(observed, items.length);
       mounts.forEach(function (mount) {
-        var home = mount.getAttribute("data-show") === "home";
-        var list = home
-          ? items.filter(function (item) { return item.layer === "observed"; }).slice(0, 4)
-          : items;
-        mount.innerHTML = list.map(card).join("");
+        if (mount.getAttribute("data-show") === "home") return;
+        mount.innerHTML = items.map(card).join("");
         wireCarry(mount);
       });
       settleHash();
