@@ -9,6 +9,7 @@
   --line: #E6DCCD;
   --clay: #C45C26;
   --clay-btn: #A84C1F;
+  --clay-text: #A84C1F;
   --clay-btn-hover: #8E3E16;
   --leaf: #2F6B4F;
   --farm: #0C0F0D;
@@ -34,6 +35,7 @@
   --rise: 20px;
   --pip: 28px;
   --pip-line: 1.5px;
+  --pip-current: var(--clay-text);
   --header-offset: 8rem;
 }
 
@@ -569,7 +571,7 @@ h3 {
   margin-top: 2px;
 }
 .pip-desc { color: var(--muted); font-size: 0.95rem; margin: 0; }
-.pips li.is-current .pip-mark { border: 2px solid var(--clay); color: var(--clay); }
+.pips li.is-current .pip-mark { border: 2px solid var(--pip-current); color: var(--pip-current); }
 .pips li.is-done .pip-mark {
   background: var(--leaf);
   border-color: var(--leaf);
@@ -602,7 +604,7 @@ h3 {
 .room-chips button[aria-pressed="true"] { background: #EFE5D6; border-color: var(--ink); }
 .room-tip { color: var(--muted); max-width: 36rem; }
 .keep-yes li::marker { color: var(--leaf); }
-.keep-no li::marker { color: var(--clay); }
+.keep-no li::marker { color: var(--clay-text); }
 .done-line { display: flex; align-items: center; gap: 12px; margin-top: 1rem; }
 .brief-progress {
   position: sticky;
@@ -893,7 +895,7 @@ h3 {
 }
 .journey .num { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 0.95rem; }
 .journey a.is-active { color: var(--ink); font-weight: 700; }
-.journey a.is-active .num { color: var(--clay); }
+.journey a.is-active .num { color: var(--clay-text); }
 .journey a.is-past { color: var(--ink); }
 .journey-hair {
   position: absolute;
