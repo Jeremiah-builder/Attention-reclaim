@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-28",
   "items": [
     {
       "type": "event",
@@ -104,6 +104,46 @@
       "url": "https://fosi.org/event/fosi-2026-annual-conference/",
       "date": "2026-11-19",
       "source": "Family Online Safety Institute"
+    },
+    {
+      "type": "podcast",
+      "title": "There Is No AI, Really (It’s Just People)",
+      "summary": "Jaron Lanier with Neil deGrasse Tyson on what went wrong with the web, social media addiction, and AI as people’s work rather than a new being.",
+      "url": "https://www.youtube.com/watch?v=TTppvBU2rU4",
+      "date": "2026-05-23",
+      "source": "StarTalk"
+    },
+    {
+      "type": "video",
+      "title": "The Catastrophic Risks of AI — and a Safer Path",
+      "summary": "Yoshua Bengio on agentic AI, the loss of human control, and a safer design.",
+      "url": "https://www.youtube.com/watch?v=qe9QSCF-d88",
+      "date": "2025-04-08",
+      "source": "TED"
+    },
+    {
+      "type": "video",
+      "title": "Why AI Is Our Ultimate Test and Greatest Invitation",
+      "summary": "Tristan Harris applies the lessons of the social media engagement race to AI and lays out a narrow path.",
+      "url": "https://www.youtube.com/watch?v=6kPHnl-RsVI",
+      "date": "2025-04-09",
+      "source": "TED"
+    },
+    {
+      "type": "podcast",
+      "title": "'A Turning Point in History': Yuval Noah Harari on AI’s Cultural Takeover",
+      "summary": "Yuval Noah Harari with Aza Raskin on AI as a non-human agent that starts shaping stories, culture, and history.",
+      "url": "https://www.humanetech.com/podcast/a-turning-point-in-history-yuval-noah-harari-on-ais-cultural-takeover",
+      "date": "2024-10-07",
+      "source": "Your Undivided Attention"
+    },
+    {
+      "type": "podcast",
+      "title": "Ep. 355: Quit Social Media (For Real This Time)",
+      "summary": "Cal Newport on a practical case and plan for leaving the feed and taking back attention.",
+      "url": "https://www.youtube.com/watch?v=CKDYt1sgymg",
+      "date": "2025-06-02",
+      "source": "The Deep Life"
     }
   ]
 }
