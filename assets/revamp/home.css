@@ -392,6 +392,7 @@ h3 {
 .chip p { margin: 0; }
 .chip a { text-underline-offset: 0.14em; }
 .plug-col h2 { margin-top: 0; }
+.plug-mark { display: block; width: 64px; height: 64px; margin: 0 0 0.75rem; }
 .attr {
   margin: 1.25rem 0 0;
   max-width: 46rem;
@@ -400,37 +401,6 @@ h3 {
   color: var(--muted);
 }
 .attr a { color: var(--ink); text-underline-offset: 0.14em; }
-.sockets {
-  display: flex;
-  align-items: flex-end;
-  gap: 14px;
-  margin: 0.25rem 0 0.5rem;
-}
-.socket {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 32% 42%, #12100E 5px, transparent 6px),
-    radial-gradient(circle at 68% 42%, #12100E 5px, transparent 6px),
-    radial-gradient(circle at 50% 68%, #12100E 4px, transparent 5px),
-    #2A2724;
-  box-shadow: inset 0 0 0 7px #141210;
-}
-.unplugged { display: flex; flex-direction: column; align-items: center; }
-.prongs {
-  width: 22px;
-  height: 8px;
-  background:
-    linear-gradient(#C8BFB4, #C8BFB4) 0 0 / 4px 8px no-repeat,
-    linear-gradient(#C8BFB4, #C8BFB4) 10px 0 / 4px 8px no-repeat;
-}
-.plug {
-  width: 28px;
-  height: 16px;
-  background: #E7D7C4;
-  border-radius: 3px;
-}
 @media (min-width: 980px) {
   .evidence-layout { flex-direction: row; align-items: flex-start; gap: 1.75rem; }
   .chips { flex: 1.2; grid-template-columns: 1fr 1fr; }
@@ -551,6 +521,22 @@ h3 {
   padding: clamp(40px, 6vw, 64px) var(--gutter) var(--section-y);
 }
 .brief-strip .inner { width: min(var(--wrap), 100%); margin-inline: auto; }
+.brief-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 0.75rem;
+}
+.brief-head h2 { margin: 0; }
+.pass-mark { display: block; width: 48px; height: 48px; flex: none; }
+@media (max-width: 759px) {
+  #brief { scroll-margin-top: 15rem; }
+}
+@media (min-width: 760px) {
+  .brief-head { flex-direction: row; align-items: center; gap: 14px; }
+  .pass-mark { width: 56px; height: 56px; }
+}
 .brief-offer { color: var(--muted); max-width: 40rem; }
 .pass-help { color: var(--muted); font-size: 0.9rem; margin: 0.75rem 0 0; }
 .pips {
