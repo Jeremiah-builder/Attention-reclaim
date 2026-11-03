@@ -70,7 +70,7 @@
       line += " Here is my version: " + version;
       if (!/[.!?]$/.test(version)) line += ".";
     }
-    line += " Original: mindreclaim.org · Talk with us: https://discord.gg/BrMMWHwcz";
+    line += " Original: mindreclaim.org · Talk with us: https://discord.gg/TbRmKpNVMn";
     return line;
   }
 

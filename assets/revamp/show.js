@@ -107,7 +107,7 @@
       status.appendChild(mailLink);
       status.appendChild(document.createTextNode(" "));
       var discord = document.createElement("a");
-      discord.href = "https://discord.gg/BrMMWHwcz";
+      discord.href = "https://discord.gg/TbRmKpNVMn";
       discord.target = "_blank";
       discord.rel = "noopener noreferrer";
       discord.textContent = "Join Discord to collaborate";
